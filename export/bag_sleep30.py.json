@@ -1,0 +1,116 @@
+{
+  "input/sub16.zip": {
+    "input": "output/sub16_2.nii.gz",
+    "output": "output/sub16_3.nii.gz",
+    "task1_res": {
+      "input": "input/sub16.zip",
+      "output": "output/sub16_1.nii.gz",
+      "stats": {
+        "size": 1618576908,
+        "memory": 1634590720,
+        "total_time": 40.99090600013733,
+        "reading_time": 7.422820806503296,
+        "writing_time": 3.537537097930908
+      }
+    },
+    "task2_res": {
+      "input": "output/sub16_1.nii.gz",
+      "output": "output/sub16_2.nii.gz",
+      "stats": {
+        "size": 1618576908,
+        "memory": 1634394112,
+        "total_time": 35.412250995635986,
+        "reading_time": 0.6024425029754639,
+        "writing_time": 4.7794153690338135
+      }
+    },
+    "task3_res": {
+      "input": "output/sub16_2.nii.gz",
+      "output": "output/sub16_3.nii.gz",
+      "stats": {
+        "size": 1618576908,
+        "memory": 1634414592,
+        "total_time": 35.664692401885986,
+        "reading_time": 0.6075401306152344,
+        "writing_time": 3.7083842754364014
+      }
+    },
+    "total_time": 112.12771534919739
+  },
+  "input/synthesizedFLASH25inMNI_6010.nii.gz": {
+    "input": "output/synthesizedFLASH25inMNI_2.nii.gz",
+    "output": "output/synthesizedFLASH25inMNI_3.nii.gz",
+    "task1_res": {
+      "input": "input/synthesizedFLASH25inMNI_6010.nii.gz",
+      "output": "output/synthesizedFLASH25inMNI_1.nii.gz",
+      "stats": {
+        "size": 6009892187,
+        "memory": 6025891840,
+        "total_time": 115.05053281784058,
+        "reading_time": 26.889933824539185,
+        "writing_time": 58.152225732803345
+      }
+    },
+    "task2_res": {
+      "input": "output/synthesizedFLASH25inMNI_1.nii.gz",
+      "output": "output/synthesizedFLASH25inMNI_2.nii.gz",
+      "stats": {
+        "size": 6009892187,
+        "memory": 6025719808,
+        "total_time": 141.57073330879211,
+        "reading_time": 54.04407525062561,
+        "writing_time": 57.496251821517944
+      }
+    },
+    "task3_res": {
+      "input": "output/synthesizedFLASH25inMNI_2.nii.gz",
+      "output": "output/synthesizedFLASH25inMNI_3.nii.gz",
+      "stats": {
+        "size": 6009892187,
+        "memory": 6025826304,
+        "total_time": 163.12139201164246,
+        "reading_time": 65.33130836486816,
+        "writing_time": 67.75968217849731
+      }
+    },
+    "total_time": 420.07848858833313
+  },
+  "input/synthesized_FLASH25.nii.gz": {
+    "input": "output/synthesized_2.nii.gz",
+    "output": "output/synthesized_3.nii.gz",
+    "task1_res": {
+      "input": "input/synthesized_FLASH25.nii.gz",
+      "output": "output/synthesized_1.nii.gz",
+      "stats": {
+        "size": 13004423168,
+        "memory": 13020422144,
+        "total_time": 268.25958132743835,
+        "reading_time": 84.1929361820221,
+        "writing_time": 154.05703401565552
+      }
+    },
+    "task2_res": {
+      "input": "output/synthesized_1.nii.gz",
+      "output": "output/synthesized_2.nii.gz",
+      "stats": {
+        "size": 13004423168,
+        "memory": 13020397568,
+        "total_time": 325.6756823062897,
+        "reading_time": 130.32274532318115,
+        "writing_time": 165.3412926197052
+      }
+    },
+    "task3_res": {
+      "input": "output/synthesized_2.nii.gz",
+      "output": "output/synthesized_3.nii.gz",
+      "stats": {
+        "size": 13004423168,
+        "memory": 13020295168,
+        "total_time": 315.95772886276245,
+        "reading_time": 126.82916760444641,
+        "writing_time": 159.09695291519165
+      }
+    },
+    "total_time": 910.876211643219
+  },
+}

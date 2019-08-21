@@ -1,0 +1,23 @@
+{
+  "input/sub16.zip": {
+    "size": 1618576908,
+    "memory": 1637748736,
+    "total_time": 3.8347482681274414,
+    "reading_time": 0.6671290397644043,
+    "writing_time": 3.167179822921753
+  },
+  "input/synthesizedFLASH25inMNI_6010.nii.gz": {
+    "size": 6009892187,
+    "memory": 6029053952,
+    "total_time": 84.65855526924133,
+    "reading_time": 24.977737188339233,
+    "writing_time": 59.68041634559631
+  },
+  "input/synthesized_FLASH25.nii.gz": {
+    "size": 13004423168,
+    "memory": 13023600640,
+    "total_time": 251.49894165992737,
+    "reading_time": 84.24340987205505,
+    "writing_time": 167.25508451461792
+  }
+}
