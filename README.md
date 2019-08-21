@@ -9,11 +9,11 @@ Investigation of read/write operations of neuroimaging data files
 ## How to run
 Run *plotting.py* to show the result.
 
-
 ## System specs
 1. CPU: Intel(R) Core(TM)2 Quad CPU Q8400  @ 2.66GHz
 2. RAM: 15 MB of RAM
 3. Disk: 220 GB
+4. Measure disk bandwidth using *dd* command (run randomly):  163 MBps / 696 MBps (read/write)
  
 ## Cases
 Task detail: read input file and generate 2 output files.
