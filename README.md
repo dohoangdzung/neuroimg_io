@@ -2,9 +2,9 @@
 Investigation of read/write operations of neuroimaging data files
     
 ## Requirement
-1. python3
-2. dask 
-3. matplotlib
+1. *python3*
+2. *dask* 
+3. *matplotlib*
 
 ## How to run
 Run *plotting.py* to show the result.
@@ -16,7 +16,7 @@ Run *plotting.py* to show the result.
 4. Measure disk bandwidth using *dd* command (run randomly):  163 MBps / 696 MBps (read/write)
  
 ## Cases
-Task detail: read input file and generate 2 output files.
+Task detail: read input file and generate 1 output file, 1 temp file.
 
 1. Run single task.
 2. Run single task with 30s sleep time between reading and writing.
