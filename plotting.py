@@ -47,13 +47,14 @@ def plot_single_io():
     return f
 
 
-def create_pipeline_table(obj):
+def create_pipeline_table(obj, title):
     f = plt.figure(1)
 
     files = list(dict(obj).keys())
 
     headers = ["", "Read (s)", "Write (s)", "Total (s)"]
     fig, axes = plt.subplots(len(files), 1)
+    fig.suptitle(title)
 
     for i in range(0, len(files)):
         key = files[i]
@@ -84,13 +85,14 @@ def create_pipeline_table(obj):
         table_data = [headers, task1, task2, task3]
 
         axes[i].table(cellText=table_data, loc='center')
-        axes[i].set_title("{0:.0f} MB".format(task1_stats[Pipeline.SIZE] / 1000000))
+        axes[i].set_title("File size: {0:.0f} MB".format(task1_stats[Pipeline.SIZE] / 1000000))
         axes[i].axis('off')
 
     return f
 
 
 f1 = plot_single_io()
-f2 = create_pipeline_table(bag)
+f2 = create_pipeline_table(bag, "Pipeline tasks without CPU sleep time")
+f3 = create_pipeline_table(bag_sleep, "Pipeline tasks with 30s CPU sleep time")
 
 plt.show()
