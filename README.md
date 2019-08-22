@@ -1,5 +1,5 @@
 # neuroimg_io
-Investigation of read/write operations of neuroimaging data files
+Investigation of file read/write operations of neuroimaging pipelines
     
 ## Requirement
 1. *python3*
