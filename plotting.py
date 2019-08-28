@@ -4,40 +4,54 @@ import ast
 from pipeline import Pipeline
 
 single = ast.literal_eval(open("export/single.py.json", "r").read())
-single_sleep = ast.literal_eval(open("export/single_sleep30.py.json", "r").read())
 bag = ast.literal_eval(open("export/bag.py.json", "r").read())
-bag_sleep = ast.literal_eval(open("export/bag_sleep30.py.json", "r").read())
 
 
-def parse_single_stats(obj, attr):
-    keys = dict(obj).keys()
-    read_arr = []
-    for filename in keys:
-        read_arr.append(obj[filename][attr])
+def parse_single_records(results, attr):
 
-    return read_arr
+    stats = {}
+
+    filenames = []
+    if len(results) > 0:
+        filenames = dict(results[0]).keys()
+        for fn in filenames:
+            stats[fn] = []
+
+    for res in results:
+        for fn in filenames:
+            stats[fn].append(res[fn][attr])
 
 
-sizes = [x / pow(2, 20) for x in parse_single_stats(single, Pipeline.SIZE)]
+    return stats
+
+
+single_result = single[0]
+sizes = [x[Pipeline.SIZE] / pow(2, 20) for x in dict(single_result).values()]
 
 
 def plot_single_io():
     f = plt.figure(0)
 
-    single_read_arr = parse_single_stats(single, Pipeline.READING_TIME)
-    single_write_arr = parse_single_stats(single, Pipeline.WRITING_TIME)
-    single_sleep_read_arr = parse_single_stats(single_sleep, Pipeline.READING_TIME)
-    single_sleep_write_arr = parse_single_stats(single_sleep, Pipeline.WRITING_TIME)
+    single_read_records = parse_single_records(single, Pipeline.READING_TIME)
+    single_write_records = parse_single_records(single, Pipeline.WRITING_TIME)
+
+    single_read_avg = []
+    for fn in single_read_records.keys():
+        single_read_avg.append(sum(single_read_records[fn]) / len(single_read_records[fn]))
+
+    single_write_avg = []
+    for fn in single_write_records.keys():
+        single_write_avg.append(sum(single_write_records[fn]) / len(single_write_records[fn]))
+
+    single_read_records.values()
 
     fig, (read, write) = plt.subplots(1, 2)
 
-    read.plot(sizes, single_read_arr, 'r.', label='No CPU sleep')
-    read.plot(sizes, single_sleep_read_arr, 'b.', label='30s CPU sleep')
+    read.plot(sizes, single_read_avg, 'r.')
     read.set_title("read")
     read.legend(loc="upper left")
 
-    write.plot(sizes, single_write_arr, 'r.', label='No CPU sleep')
-    write.plot(sizes, single_sleep_write_arr, 'b.', label='30s CPU sleep')
+    write.plot(sizes, single_write_avg, 'b.')
     write.set_title("write")
     write.legend(loc="upper left")
 
@@ -92,7 +106,6 @@ def create_pipeline_table(obj, title):
 
 
 f1 = plot_single_io()
-f2 = create_pipeline_table(bag, "Pipeline tasks without CPU sleep time")
-f3 = create_pipeline_table(bag_sleep, "Pipeline tasks with 30s CPU sleep time")
+# f2 = create_pipeline_table(bag, "Pipeline tasks")
 
 plt.show()

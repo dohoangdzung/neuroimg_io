@@ -1,23 +1,56 @@
-{
-  "input/sub16.zip": {
-    "size": 1618576908,
-    "memory": 1637748736,
-    "total_time": 3.8347482681274414,
-    "reading_time": 0.6671290397644043,
-    "writing_time": 3.167179822921753
+[
+  {
+    "input/sub16.zip": {
+      "size": 1618576908,
+      "memory": 1366142976,
+      "total_time": 6.075493812561035,
+      "reading_time": 0.9597837924957275,
+      "writing_time": 4.828063011169434,
+      "cpu_time": 0.2875509262084961
+    },
+    "input/synthesizedFLASH25inMNI_6010.nii.gz": {
+      "size": 6009892187,
+      "memory": 6036996096,
+      "total_time": 24.85607385635376,
+      "reading_time": 7.13280987739563,
+      "writing_time": 12.564775943756104,
+      "cpu_time": 5.157613754272461
+    }
   },
-  "input/synthesizedFLASH25inMNI_6010.nii.gz": {
-    "size": 6009892187,
-    "memory": 6029053952,
-    "total_time": 84.65855526924133,
-    "reading_time": 24.977737188339233,
-    "writing_time": 59.68041634559631
+  {
+    "input/sub16.zip": {
+      "size": 1618576908,
+      "memory": 1646493696,
+      "total_time": 6.394366264343262,
+      "reading_time": 1.8459970951080322,
+      "writing_time": 3.4585912227630615,
+      "cpu_time": 1.0890178680419922
+    },
+    "input/synthesizedFLASH25inMNI_6010.nii.gz": {
+      "size": 6009892187,
+      "memory": 6033862656,
+      "total_time": 25.36139225959778,
+      "reading_time": 9.547742128372192,
+      "writing_time": 10.913245916366577,
+      "cpu_time": 4.899482250213623
+    }
   },
-  "input/synthesized_FLASH25.nii.gz": {
-    "size": 13004423168,
-    "memory": 13023600640,
-    "total_time": 251.49894165992737,
-    "reading_time": 84.24340987205505,
-    "writing_time": 167.25508451461792
+  {
+    "input/sub16.zip": {
+      "size": 1618576908,
+      "memory": 1649889280,
+      "total_time": 3.9927268028259277,
+      "reading_time": 0.9197566509246826,
+      "writing_time": 2.84035587310791,
+      "cpu_time": 0.23255395889282227
+    },
+    "input/synthesizedFLASH25inMNI_6010.nii.gz": {
+      "size": 6009892187,
+      "memory": 6036725760,
+      "total_time": 20.923295974731445,
+      "reading_time": 5.679638862609863,
+      "writing_time": 10.363469123840332,
+      "cpu_time": 4.880105972290039
+    }
   }
-}
+]

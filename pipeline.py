@@ -1,10 +1,12 @@
 import dask.bag as db
 # import nibabel as nb
+import numpy as np
 import time
 import gc
 import psutil
 import os
 import glob
+# import sys
 
 
 # def load_volume(volume):
@@ -64,6 +66,7 @@ class Pipeline:
     MEMORY = "memory"
     READING_TIME = "reading_time"
     WRITING_TIME = "writing_time"
+    CPU_TIME = "cpu_time"
     TOTAL_TIME = "total_time"
 
     def __init__(self, input_file, steps=None):
@@ -74,7 +77,8 @@ class Pipeline:
             .map(self.task2) \
             .map(self.task3)
 
-    def copy(self, input_file, suffix):
+    def modify(self, input_file, suffix):
+        print("\nPIPELINE TASK STARTING...")
         process = psutil.Process(os.getpid())
 
         input_filepath = input_file.split('/')
@@ -85,33 +89,39 @@ class Pipeline:
 
         start_reading = time.time()
 
-        inp = open(input_file, 'rb')
-        file_obj = inp.read()
-
+        # inp = open(input_file, 'rb')
+        # file_obj = inp.read()
+        byte_arr = np.fromfile(input_file, dtype="int32")
         finish_reading = time.time()
         reading_time = finish_reading - start_reading
 
         statinfo = os.stat(input_file)
         print("File size: {0} bytes".format(statinfo.st_size))
 
+        start_cpu = time.time()
+
+        byte_arr += 1
+
+        end_cpu = time.time()
+        cpu_time = end_cpu - start_cpu
+
         output_file = "output/{0}_{1}.nii.gz".format(subject, suffix)
-        temp_file = "output/{0}_{1}_temp.nii.gz".format(subject, suffix)
+        # temp_file = "output/{0}_{1}_temp.nii.gz".format(subject, suffix)
 
-        out = open(output_file, 'wb')
-        out_temp = open(temp_file, 'wb')
-
-        time.sleep(30)
+        # out = open(output_file, 'wb')
+        # out_temp = open(temp_file, 'wb')
 
         start_writing = time.time()
 
-        out.write(file_obj)
-        out_temp.write(file_obj)
+        byte_arr.tofile(output_file)
+        # out.write(byte_arr.tobytes())
+        # out_temp.write(file_obj)
 
         finish_writing = time.time()
 
-        inp.close()
-        out.close()
-        out_temp.close()
+        # inp.close()
+        # out.close()
+        # out_temp.close()
 
         writing_time = finish_writing - start_writing
 
@@ -120,9 +130,9 @@ class Pipeline:
         print("Duration: {0:.2f} sec".format(duration))
         print("Reading time: {0:.2f} sec".format(reading_time))
         print("Writing time: {0:.2f} sec".format(writing_time))
+        print("CPU time: {0:.2f} sec".format(cpu_time))
         print("Memory usage:")
         print(process.memory_info())
-        print("=====================================\n")
         gc.collect()
 
         result = process.memory_info()
@@ -135,16 +145,17 @@ class Pipeline:
                 Pipeline.MEMORY: result[0],
                 Pipeline.TOTAL_TIME: duration,
                 Pipeline.READING_TIME: reading_time,
-                Pipeline.WRITING_TIME: writing_time
+                Pipeline.WRITING_TIME: writing_time,
+                Pipeline.CPU_TIME: cpu_time
             }
         }
 
     def task1(self, input_file):
-        return self.copy(input_file, 1)
+        return self.modify(input_file, 1)
 
     def task2(self, task1_res):
         input_file = task1_res[Pipeline.OUTPUT]
-        result = self.copy(input_file, 2)
+        result = self.modify(input_file, 2)
         return {
             Pipeline.INPUT: input_file,
             Pipeline.OUTPUT: result[Pipeline.OUTPUT],
@@ -154,7 +165,7 @@ class Pipeline:
 
     def task3(self, task2_res):
         input_file = task2_res[Pipeline.OUTPUT]
-        result = self.copy(input_file, 3)
+        result = self.modify(input_file, 3)
         return {
             Pipeline.INPUT: input_file,
             Pipeline.OUTPUT: result[Pipeline.OUTPUT],
