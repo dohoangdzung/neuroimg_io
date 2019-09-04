@@ -9,7 +9,7 @@ INPUTS0="input/sub08.zip"
 INPUTS1="input/sub16.zip"
 INPUTS2="input/synthesizedFLASH25inMNI_6010.nii.gz"
 
-for ((i=0;i<1;i+=1))
+for ((i=0;i<100;i+=1))
 do
     echo "Iteration:" ${i}
     for input in ${INPUTS0} ${INPUTS1} ${INPUTS2}
