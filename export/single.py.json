@@ -1,1 +1,28 @@
-[{"input/sub16.zip": {"size": 1618576908, "memory": 1649127424, "total_time": 8.141396045684814, "reading_time": 6.2161314487457275, "writing_time": 1.7188987731933594, "cpu_time": 0.20482349395751953}, "input/synthesizedFLASH25inMNI_6010.nii.gz": {"size": 6009892187, "memory": 6040440832, "total_time": 50.501529693603516, "reading_time": 22.624515533447266, "writing_time": 27.064709901809692, "cpu_time": 0.8120741844177246}, "input/sub08.zip": {"size": 809288782, "memory": 839839744, "total_time": 4.5102598667144775, "reading_time": 3.7649450302124023, "writing_time": 0.6208422183990479, "cpu_time": 0.12423253059387207}}, {"input/sub16.zip": {"size": 1618576908, "memory": 1649143808, "total_time": 10.296411991119385, "reading_time": 6.695926189422607, "writing_time": 3.4098846912384033, "cpu_time": 0.19050383567810059}, "input/synthesizedFLASH25inMNI_6010.nii.gz": {"size": 6009892187, "memory": 6040453120, "total_time": 70.0730950832367, "reading_time": 25.70667052268982, "writing_time": 43.65935277938843, "cpu_time": 0.7069766521453857}}]
+[
+  {
+    "input/sub08.zip": {
+      "size": 809288782,
+      "memory": 840646656,
+      "total_time": 2.61759090423584,
+      "reading_time": 0.42247509956359863,
+      "writing_time": 2.091360092163086,
+      "cpu_time": 0.10362911224365234
+    },
+    "input/sub16.zip": {
+      "size": 1618576908,
+      "memory": 1649721344,
+      "total_time": 4.869342088699341,
+      "reading_time": 1.0887861251831055,
+      "writing_time": 3.5501952171325684,
+      "cpu_time": 0.2302560806274414
+    },
+    "input/synthesizedFLASH25inMNI_6010.nii.gz": {
+      "size": 6009892187,
+      "memory": 6037798912,
+      "total_time": 23.0090548992157,
+      "reading_time": 6.154669761657715,
+      "writing_time": 11.673158168792725,
+      "cpu_time": 5.180256128311157
+    }
+  }
+]

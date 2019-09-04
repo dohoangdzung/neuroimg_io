@@ -1,1 +1,127 @@
-[{"input/sub16.zip": {"input": "output/sub16_2.nii.gz", "output": "output/sub16_3.nii.gz", "task1_res": {"input": "input/sub16.zip", "output": "output/sub16_1.nii.gz", "stats": {"size": 1618576908, "memory": 1643139072, "total_time": 8.013923645019531, "reading_time": 6.211258411407471, "writing_time": 1.5918269157409668, "cpu_time": 0.21036624908447266}}, "task2_res": {"input": "output/sub16_1.nii.gz", "output": "output/sub16_2.nii.gz", "stats": {"size": 1618576908, "memory": 1643241472, "total_time": 5.488393068313599, "reading_time": 0.7050678730010986, "writing_time": 4.554518699645996, "cpu_time": 0.22861146926879883}}, "task3_res": {"input": "output/sub16_2.nii.gz", "output": "output/sub16_3.nii.gz", "stats": {"size": 1618576908, "memory": 1643241472, "total_time": 9.188966989517212, "reading_time": 0.653165340423584, "writing_time": 8.354403495788574, "cpu_time": 0.18121814727783203}}, "total_time": 22.768571138381958}, "input/sub08.zip": {"input": "output/sub08_2.nii.gz", "output": "output/sub08_3.nii.gz", "task1_res": {"input": "input/sub08.zip", "output": "output/sub08_1.nii.gz", "stats": {"size": 809288782, "memory": 833921024, "total_time": 4.434190273284912, "reading_time": 3.6979541778564453, "writing_time": 0.6294589042663574, "cpu_time": 0.1065053939819336}}, "task2_res": {"input": "output/sub08_1.nii.gz", "output": "output/sub08_2.nii.gz", "stats": {"size": 809288782, "memory": 833949696, "total_time": 1.3408069610595703, "reading_time": 0.34433650970458984, "writing_time": 0.901771068572998, "cpu_time": 0.09450173377990723}}, "task3_res": {"input": "output/sub08_2.nii.gz", "output": "output/sub08_3.nii.gz", "stats": {"size": 809288782, "memory": 833949696, "total_time": 1.2540738582611084, "reading_time": 0.3396167755126953, "writing_time": 0.819807767868042, "cpu_time": 0.09444642066955566}}, "total_time": 7.207587242126465}, "input/synthesizedFLASH25inMNI_6010.nii.gz": {"input": "output/synthesizedFLASH25inMNI_2.nii.gz", "output": "output/synthesizedFLASH25inMNI_3.nii.gz", "task1_res": {"input": "input/synthesizedFLASH25inMNI_6010.nii.gz", "output": "output/synthesizedFLASH25inMNI_1.nii.gz", "stats": {"size": 6009892187, "memory": 6034456576, "total_time": 50.65307903289795, "reading_time": 22.66753578186035, "writing_time": 27.008119821548462, "cpu_time": 0.9770925045013428}}, "task2_res": {"input": "output/synthesizedFLASH25inMNI_1.nii.gz", "output": "output/synthesizedFLASH25inMNI_2.nii.gz", "stats": {"size": 6009892187, "memory": 6034055168, "total_time": 38.43771409988403, "reading_time": 2.701087713241577, "writing_time": 34.990299701690674, "cpu_time": 0.7461111545562744}}, "task3_res": {"input": "output/synthesizedFLASH25inMNI_2.nii.gz", "output": "output/synthesizedFLASH25inMNI_3.nii.gz", "stats": {"size": 6009892187, "memory": 6033891328, "total_time": 61.75508785247803, "reading_time": 32.35675501823425, "writing_time": 28.635395288467407, "cpu_time": 0.7626791000366211}}, "total_time": 151.07600498199463}}]
+[
+  {
+    "input/sub08.zip": {
+      "input": "output/sub08_2.nii.gz",
+      "output": "output/sub08_3.nii.gz",
+      "task1_res": {
+        "input": "input/sub08.zip",
+        "output": "output/sub08_1.nii.gz",
+        "stats": {
+          "size": 809288782,
+          "memory": 830668800,
+          "total_time": 2.436467170715332,
+          "reading_time": 0.47106218338012695,
+          "writing_time": 1.868675947189331,
+          "cpu_time": 0.09657502174377441
+        }
+      },
+      "task2_res": {
+        "input": "output/sub08_1.nii.gz",
+        "output": "output/sub08_2.nii.gz",
+        "stats": {
+          "size": 809288782,
+          "memory": 830672896,
+          "total_time": 2.316895008087158,
+          "reading_time": 0.3811929225921631,
+          "writing_time": 1.842210054397583,
+          "cpu_time": 0.09338974952697754
+        }
+      },
+      "task3_res": {
+        "input": "output/sub08_2.nii.gz",
+        "output": "output/sub08_3.nii.gz",
+        "stats": {
+          "size": 809288782,
+          "memory": 830681088,
+          "total_time": 2.3927202224731445,
+          "reading_time": 0.379885196685791,
+          "writing_time": 1.9183013439178467,
+          "cpu_time": 0.09442996978759766
+        }
+      },
+      "total_time": 7.330657958984375
+    },
+    "input/sub16.zip": {
+      "input": "output/sub16_2.nii.gz",
+      "output": "output/sub16_3.nii.gz",
+      "task1_res": {
+        "input": "input/sub16.zip",
+        "output": "output/sub16_1.nii.gz",
+        "stats": {
+          "size": 1618576908,
+          "memory": 1640026112,
+          "total_time": 4.879548072814941,
+          "reading_time": 0.9661440849304199,
+          "writing_time": 3.7226219177246094,
+          "cpu_time": 0.1905808448791504
+        }
+      },
+      "task2_res": {
+        "input": "output/sub16_1.nii.gz",
+        "output": "output/sub16_2.nii.gz",
+        "stats": {
+          "size": 1618576908,
+          "memory": 1640026112,
+          "total_time": 4.322388172149658,
+          "reading_time": 0.8345701694488525,
+          "writing_time": 3.3010990619659424,
+          "cpu_time": 0.1866161823272705
+        }
+      },
+      "task3_res": {
+        "input": "output/sub16_2.nii.gz",
+        "output": "output/sub16_3.nii.gz",
+        "stats": {
+          "size": 1618576908,
+          "memory": 1640046592,
+          "total_time": 4.824054956436157,
+          "reading_time": 1.0279018878936768,
+          "writing_time": 3.6081221103668213,
+          "cpu_time": 0.1879270076751709
+        }
+      },
+      "total_time": 14.359096050262451
+    },
+    "input/synthesizedFLASH25inMNI_6010.nii.gz": {
+      "input": "output/synthesizedFLASH25inMNI_2.nii.gz",
+      "output": "output/synthesizedFLASH25inMNI_3.nii.gz",
+      "task1_res": {
+        "input": "input/synthesizedFLASH25inMNI_6010.nii.gz",
+        "output": "output/synthesizedFLASH25inMNI_1.nii.gz",
+        "stats": {
+          "size": 6009892187,
+          "memory": 5652226048,
+          "total_time": 23.01878309249878,
+          "reading_time": 5.028619050979614,
+          "writing_time": 14.834547996520996,
+          "cpu_time": 3.155427932739258
+        }
+      },
+      "task2_res": {
+        "input": "output/synthesizedFLASH25inMNI_1.nii.gz",
+        "output": "output/synthesizedFLASH25inMNI_2.nii.gz",
+        "stats": {
+          "size": 6009892187,
+          "memory": 6030794752,
+          "total_time": 15.163668870925903,
+          "reading_time": 4.051772832870483,
+          "writing_time": 10.361639022827148,
+          "cpu_time": 0.7499589920043945
+        }
+      },
+      "task3_res": {
+        "input": "output/synthesizedFLASH25inMNI_2.nii.gz",
+        "output": "output/synthesizedFLASH25inMNI_3.nii.gz",
+        "stats": {
+          "size": 6009892187,
+          "memory": 6030811136,
+          "total_time": 15.766515970230103,
+          "reading_time": 3.8912177085876465,
+          "writing_time": 11.06704592704773,
+          "cpu_time": 0.8081181049346924
+        }
+      },
+      "total_time": 55.42593216896057
+    }
+  }
+]

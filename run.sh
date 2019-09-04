@@ -1,7 +1,7 @@
 #! /bin/bash
 
-true > single.py.json
-true > bag.py.json
+echo '[]' > single.py.json
+echo '[]' > bag.py.json
 
 echo "Starting running benchmark..."
 
