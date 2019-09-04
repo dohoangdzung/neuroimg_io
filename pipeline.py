@@ -1,5 +1,4 @@
 import dask.bag as db
-# import nibabel as nb
 import numpy as np
 import time
 import gc
@@ -21,8 +20,8 @@ import glob
 #                          'format that Nibabel can load, or a nibabel'
 #                          'SpatialImage.')
 #     return image
-#
-#
+
+
 # def save_volume(filename, volume, dtype='float32', overwrite_file=True):
 #     if dtype is not None:
 #         volume.set_data_dtype(dtype)
@@ -88,22 +87,21 @@ class Pipeline:
         subject = filename_parts[0].split('_')[0]
 
         start_reading = time.time()
-
         # inp = open(input_file, 'rb')
         # file_obj = inp.read()
-        byte_arr = np.fromfile(input_file, dtype="int32")
+        byte_arr = np.fromfile(input_file, dtype=np.int8)
         finish_reading = time.time()
         reading_time = finish_reading - start_reading
 
         statinfo = os.stat(input_file)
         print("File size: {0} bytes".format(statinfo.st_size))
+        print("Reading time: {0:.2f} sec".format(reading_time))
 
         start_cpu = time.time()
-
         byte_arr += 1
-
         end_cpu = time.time()
         cpu_time = end_cpu - start_cpu
+        print("CPU time: {0:.2f} sec".format(cpu_time))
 
         output_file = "output/{0}_{1}.nii.gz".format(subject, suffix)
         # temp_file = "output/{0}_{1}_temp.nii.gz".format(subject, suffix)
@@ -124,13 +122,11 @@ class Pipeline:
         # out_temp.close()
 
         writing_time = finish_writing - start_writing
+        print("Writing time: {0:.2f} sec".format(writing_time))
 
         duration = finish_writing - start_reading
-
         print("Duration: {0:.2f} sec".format(duration))
-        print("Reading time: {0:.2f} sec".format(reading_time))
-        print("Writing time: {0:.2f} sec".format(writing_time))
-        print("CPU time: {0:.2f} sec".format(cpu_time))
+
         print("Memory usage:")
         print(process.memory_info())
         gc.collect()

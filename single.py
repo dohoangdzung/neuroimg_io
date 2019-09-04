@@ -33,7 +33,6 @@ else:
     stats[iteration][in_file] = result[Pipeline.STATS]
 
     Pipeline.clean_output_folder()
-
     end = time.time()
     print("TOTAL RUNTIME: {0:.4f}".format(end - start))
     print("=====================================\n")

@@ -1,12 +1,15 @@
 #! /bin/bash
 
+true > single.py.json
+true > bag.py.json
+
 echo "Starting running benchmark..."
 
-INPUTS0="input/sub16.zip"
-INPUTS1="input/synthesizedFLASH25inMNI_6010.nii.gz"
-INPUTS2="input/synthesized_FLASH25.nii.gz"
+INPUTS0="input/sub08.zip"
+INPUTS1="input/sub16.zip"
+INPUTS2="input/synthesizedFLASH25inMNI_6010.nii.gz"
 
-for ((i=1;i<100;i+=1))
+for ((i=0;i<1;i+=1))
 do
     echo "Iteration:" ${i}
     for input in ${INPUTS0} ${INPUTS1} ${INPUTS2}
