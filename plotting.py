@@ -45,25 +45,27 @@ def plot_single_avg():
     single_write_arrs = parse_single_records(single, Pipeline.WRITING_TIME)
 
     single_read_avg = []
-    for fn in single_read_arrs.keys():
-        single_read_avg.append(sum(single_read_arrs[fn]) / len(single_read_arrs[fn]))
-
     single_write_avg = []
-    for fn in single_write_arrs.keys():
-        single_write_avg.append(sum(single_write_arrs[fn]) / len(single_write_arrs[fn]))
+    for fn in input_file_names:
+        file_size = input_files[fn]
+        single_read_avg.append(file_size * len(single_read_arrs[fn]) / sum(single_read_arrs[fn]))
+        single_write_avg.append(file_size * len(single_write_arrs[fn]) / sum(single_write_arrs[fn]))
 
     single_read_arrs.values()
 
-    fig, (read, write) = plt.subplots(1, 2)
+    fig, (read, write) = plt.subplots(1, 2, dpi=80)
+    plt.tight_layout()
 
     read.plot(file_sizes_in_mb, single_read_avg, 'r.')
     read.set_title("read")
+    read.set_xlabel('size (MB)')
+    read.set_ylabel('speed (MBps)')
 
     write.plot(file_sizes_in_mb, single_write_avg, 'b.')
     write.set_title("write")
+    write.set_xlabel('size (MB)')
+    write.set_ylabel('speed (MBps)')
 
-    plt.xlabel('size (MB)')
-    plt.ylabel('time (s)')
     plt.gca().xaxis.set_major_formatter(mtick.FormatStrFormatter('%.0f'))
 
 
@@ -71,7 +73,7 @@ def plot_single_spectrum():
     single_read_arrs = parse_single_records(single, Pipeline.READING_TIME)
     single_write_arrs = parse_single_records(single, Pipeline.WRITING_TIME)
 
-    fig, axes = plt.subplots(len(input_files), 2)
+    fig, axes = plt.subplots(len(input_files), 2, dpi=80)
     plt.tight_layout()
 
     for i in range(0, input_size):
