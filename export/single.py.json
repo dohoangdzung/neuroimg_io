@@ -1,28 +1,2602 @@
 [
   {
-    "input/sub08.zip": {
-      "size": 809288782,
-      "memory": 840646656,
-      "total_time": 2.61759090423584,
-      "reading_time": 0.42247509956359863,
-      "writing_time": 2.091360092163086,
-      "cpu_time": 0.10362911224365234
-    },
     "input/sub16.zip": {
       "size": 1618576908,
-      "memory": 1649721344,
-      "total_time": 4.869342088699341,
-      "reading_time": 1.0887861251831055,
-      "writing_time": 3.5501952171325684,
-      "cpu_time": 0.2302560806274414
+      "memory": 1649270784,
+      "total_time": 8.054871559143066,
+      "reading_time": 6.177018880844116,
+      "writing_time": 1.6146166324615479,
+      "cpu_time": 0.2629730701446533
     },
     "input/synthesizedFLASH25inMNI_6010.nii.gz": {
       "size": 6009892187,
-      "memory": 6037798912,
-      "total_time": 23.0090548992157,
-      "reading_time": 6.154669761657715,
-      "writing_time": 11.673158168792725,
-      "cpu_time": 5.180256128311157
+      "memory": 6040588288,
+      "total_time": 50.429137229919434,
+      "reading_time": 22.504839420318604,
+      "writing_time": 27.174559354782104,
+      "cpu_time": 0.7487339973449707
+    },
+    "input/sub08.zip": {
+      "size": 809288782,
+      "memory": 839987200,
+      "total_time": 4.587110757827759,
+      "reading_time": 3.7651426792144775,
+      "writing_time": 0.6849391460418701,
+      "cpu_time": 0.13677668571472168
+    }
+  },
+  {
+    "input/sub16.zip": {
+      "size": 1618576908,
+      "memory": 1649274880,
+      "total_time": 8.051586627960205,
+      "reading_time": 6.18064546585083,
+      "writing_time": 1.6730015277862549,
+      "cpu_time": 0.19772887229919434
+    },
+    "input/synthesizedFLASH25inMNI_6010.nii.gz": {
+      "size": 6009892187,
+      "memory": 6040592384,
+      "total_time": 50.99221348762512,
+      "reading_time": 22.556480646133423,
+      "writing_time": 27.671508073806763,
+      "cpu_time": 0.763969898223877
+    },
+    "input/sub08.zip": {
+      "size": 809288782,
+      "memory": 839983104,
+      "total_time": 4.578482151031494,
+      "reading_time": 3.7396507263183594,
+      "writing_time": 0.6790711879730225,
+      "cpu_time": 0.15951943397521973
+    }
+  },
+  {
+    "input/sub08.zip": {
+      "size": 809288782,
+      "memory": 839987200,
+      "total_time": 6.876122713088989,
+      "reading_time": 6.052459478378296,
+      "writing_time": 0.7071776390075684,
+      "cpu_time": 0.11610794067382812
+    },
+    "input/sub16.zip": {
+      "size": 1618576908,
+      "memory": 1649274880,
+      "total_time": 8.635375499725342,
+      "reading_time": 6.858045339584351,
+      "writing_time": 1.5636096000671387,
+      "cpu_time": 0.21344757080078125
+    },
+    "input/synthesizedFLASH25inMNI_6010.nii.gz": {
+      "size": 6009892187,
+      "memory": 6040592384,
+      "total_time": 57.71281814575195,
+      "reading_time": 24.48131799697876,
+      "writing_time": 32.45150542259216,
+      "cpu_time": 0.7796444892883301
+    }
+  },
+  {
+    "input/sub08.zip": {
+      "size": 809288782,
+      "memory": 839987200,
+      "total_time": 6.086601734161377,
+      "reading_time": 5.294409275054932,
+      "writing_time": 0.6864914894104004,
+      "cpu_time": 0.10540580749511719
+    },
+    "input/sub16.zip": {
+      "size": 1618576908,
+      "memory": 1649274880,
+      "total_time": 8.537673473358154,
+      "reading_time": 6.6499552726745605,
+      "writing_time": 1.6682696342468262,
+      "cpu_time": 0.21911120414733887
+    },
+    "input/synthesizedFLASH25inMNI_6010.nii.gz": {
+      "size": 6009892187,
+      "memory": 6040588288,
+      "total_time": 60.179526805877686,
+      "reading_time": 24.605563402175903,
+      "writing_time": 34.80373501777649,
+      "cpu_time": 0.7698705196380615
+    }
+  },
+  {
+    "input/sub08.zip": {
+      "size": 809288782,
+      "memory": 839983104,
+      "total_time": 5.622098445892334,
+      "reading_time": 4.829267501831055,
+      "writing_time": 0.6935837268829346,
+      "cpu_time": 0.09902286529541016
+    },
+    "input/sub16.zip": {
+      "size": 1618576908,
+      "memory": 1649270784,
+      "total_time": 8.185811996459961,
+      "reading_time": 6.38896918296814,
+      "writing_time": 1.588327169418335,
+      "cpu_time": 0.20826292037963867
+    },
+    "input/synthesizedFLASH25inMNI_6010.nii.gz": {
+      "size": 6009892187,
+      "memory": 6040592384,
+      "total_time": 54.974045276641846,
+      "reading_time": 23.124404668807983,
+      "writing_time": 31.07811737060547,
+      "cpu_time": 0.7711625099182129
+    }
+  },
+  {
+    "input/sub08.zip": {
+      "size": 809288782,
+      "memory": 839983104,
+      "total_time": 6.698873281478882,
+      "reading_time": 5.90348744392395,
+      "writing_time": 0.6866021156311035,
+      "cpu_time": 0.10854363441467285
+    },
+    "input/sub16.zip": {
+      "size": 1618576908,
+      "memory": 1649274880,
+      "total_time": 8.61777639389038,
+      "reading_time": 6.717793941497803,
+      "writing_time": 1.660886526107788,
+      "cpu_time": 0.23881292343139648
+    },
+    "input/synthesizedFLASH25inMNI_6010.nii.gz": {
+      "size": 6009892187,
+      "memory": 6040592384,
+      "total_time": 57.25535035133362,
+      "reading_time": 24.233041524887085,
+      "writing_time": 32.21003532409668,
+      "cpu_time": 0.8120036125183105
+    }
+  },
+  {
+    "input/sub08.zip": {
+      "size": 809288782,
+      "memory": 839983104,
+      "total_time": 6.388277292251587,
+      "reading_time": 5.581495761871338,
+      "writing_time": 0.6984076499938965,
+      "cpu_time": 0.10814499855041504
+    },
+    "input/sub16.zip": {
+      "size": 1618576908,
+      "memory": 1649287168,
+      "total_time": 8.429187774658203,
+      "reading_time": 6.701251268386841,
+      "writing_time": 1.5212252140045166,
+      "cpu_time": 0.20644354820251465
+    },
+    "input/synthesizedFLASH25inMNI_6010.nii.gz": {
+      "size": 6009892187,
+      "memory": 6040621056,
+      "total_time": 60.813591957092285,
+      "reading_time": 24.41352367401123,
+      "writing_time": 35.63160252571106,
+      "cpu_time": 0.7662043571472168
+    }
+  },
+  {
+    "input/sub08.zip": {
+      "size": 809288782,
+      "memory": 840019968,
+      "total_time": 5.667237043380737,
+      "reading_time": 4.861734867095947,
+      "writing_time": 0.6976103782653809,
+      "cpu_time": 0.10764074325561523
+    },
+    "input/sub16.zip": {
+      "size": 1618576908,
+      "memory": 1649324032,
+      "total_time": 8.211012125015259,
+      "reading_time": 6.508973598480225,
+      "writing_time": 1.489903450012207,
+      "cpu_time": 0.21187305450439453
+    },
+    "input/synthesizedFLASH25inMNI_6010.nii.gz": {
+      "size": 6009892187,
+      "memory": 6040657920,
+      "total_time": 57.369136333465576,
+      "reading_time": 23.49835729598999,
+      "writing_time": 33.09668040275574,
+      "cpu_time": 0.7738094329833984
+    }
+  },
+  {
+    "input/sub08.zip": {
+      "size": 809288782,
+      "memory": 840069120,
+      "total_time": 5.956416845321655,
+      "reading_time": 5.153797149658203,
+      "writing_time": 0.6976823806762695,
+      "cpu_time": 0.10468626022338867
+    },
+    "input/sub16.zip": {
+      "size": 1618576908,
+      "memory": 1649364992,
+      "total_time": 8.59835171699524,
+      "reading_time": 6.785260438919067,
+      "writing_time": 1.603119134902954,
+      "cpu_time": 0.20971131324768066
+    },
+    "input/synthesizedFLASH25inMNI_6010.nii.gz": {
+      "size": 6009892187,
+      "memory": 6040694784,
+      "total_time": 58.73040461540222,
+      "reading_time": 24.570522785186768,
+      "writing_time": 33.39837861061096,
+      "cpu_time": 0.757859468460083
+    }
+  },
+  {
+    "input/sub08.zip": {
+      "size": 809288782,
+      "memory": 840097792,
+      "total_time": 5.9145262241363525,
+      "reading_time": 5.114565372467041,
+      "writing_time": 0.6936168670654297,
+      "cpu_time": 0.10606527328491211
+    },
+    "input/sub16.zip": {
+      "size": 1618576908,
+      "memory": 1649393664,
+      "total_time": 8.568201065063477,
+      "reading_time": 6.521266937255859,
+      "writing_time": 1.8416533470153809,
+      "cpu_time": 0.20503020286560059
+    },
+    "input/synthesizedFLASH25inMNI_6010.nii.gz": {
+      "size": 6009892187,
+      "memory": 6040727552,
+      "total_time": 57.7276337146759,
+      "reading_time": 24.005520820617676,
+      "writing_time": 32.968716621398926,
+      "cpu_time": 0.7531068325042725
+    }
+  },
+  {
+    "input/sub08.zip": {
+      "size": 809288782,
+      "memory": 840126464,
+      "total_time": 6.050209045410156,
+      "reading_time": 5.268235921859741,
+      "writing_time": 0.6794021129608154,
+      "cpu_time": 0.10229778289794922
+    },
+    "input/sub16.zip": {
+      "size": 1618576908,
+      "memory": 1649430528,
+      "total_time": 8.487666368484497,
+      "reading_time": 6.657503366470337,
+      "writing_time": 1.6230051517486572,
+      "cpu_time": 0.20625972747802734
+    },
+    "input/synthesizedFLASH25inMNI_6010.nii.gz": {
+      "size": 6009892187,
+      "memory": 6040764416,
+      "total_time": 57.39029884338379,
+      "reading_time": 24.12544322013855,
+      "writing_time": 32.48721098899841,
+      "cpu_time": 0.7766780853271484
+    }
+  },
+  {
+    "input/sub08.zip": {
+      "size": 809288782,
+      "memory": 840245248,
+      "total_time": 6.131417512893677,
+      "reading_time": 5.3301873207092285,
+      "writing_time": 0.6976830959320068,
+      "cpu_time": 0.10324811935424805
+    },
+    "input/sub16.zip": {
+      "size": 1618576908,
+      "memory": 1649541120,
+      "total_time": 9.044396162033081,
+      "reading_time": 6.655906438827515,
+      "writing_time": 2.177764892578125,
+      "cpu_time": 0.21030282974243164
+    },
+    "input/synthesizedFLASH25inMNI_6010.nii.gz": {
+      "size": 6009892187,
+      "memory": 6040862720,
+      "total_time": 60.779231548309326,
+      "reading_time": 24.22559404373169,
+      "writing_time": 35.76901817321777,
+      "cpu_time": 0.7830002307891846
+    }
+  },
+  {
+    "input/sub08.zip": {
+      "size": 809288782,
+      "memory": 840273920,
+      "total_time": 5.751253604888916,
+      "reading_time": 4.91498875617981,
+      "writing_time": 0.7035238742828369,
+      "cpu_time": 0.13245630264282227
+    },
+    "input/sub16.zip": {
+      "size": 1618576908,
+      "memory": 1649565696,
+      "total_time": 8.371348142623901,
+      "reading_time": 6.56883430480957,
+      "writing_time": 1.585759162902832,
+      "cpu_time": 0.21570801734924316
+    },
+    "input/synthesizedFLASH25inMNI_6010.nii.gz": {
+      "size": 6009892187,
+      "memory": 6040879104,
+      "total_time": 57.764087438583374,
+      "reading_time": 23.37450408935547,
+      "writing_time": 33.62590169906616,
+      "cpu_time": 0.7633752822875977
+    }
+  },
+  {
+    "input/sub08.zip": {
+      "size": 809288782,
+      "memory": 840286208,
+      "total_time": 5.455945730209351,
+      "reading_time": 4.650156736373901,
+      "writing_time": 0.6723365783691406,
+      "cpu_time": 0.13308048248291016
+    },
+    "input/sub16.zip": {
+      "size": 1618576908,
+      "memory": 1649577984,
+      "total_time": 8.55907154083252,
+      "reading_time": 6.616046190261841,
+      "writing_time": 1.734412431716919,
+      "cpu_time": 0.2083420753479004
+    },
+    "input/synthesizedFLASH25inMNI_6010.nii.gz": {
+      "size": 6009892187,
+      "memory": 6040895488,
+      "total_time": 56.689069986343384,
+      "reading_time": 23.864342212677002,
+      "writing_time": 32.044464349746704,
+      "cpu_time": 0.7799842357635498
+    }
+  },
+  {
+    "input/sub08.zip": {
+      "size": 809288782,
+      "memory": 840302592,
+      "total_time": 6.050466537475586,
+      "reading_time": 5.28655743598938,
+      "writing_time": 0.6423041820526123,
+      "cpu_time": 0.12137150764465332
+    },
+    "input/sub16.zip": {
+      "size": 1618576908,
+      "memory": 1649602560,
+      "total_time": 8.369588851928711,
+      "reading_time": 6.593679666519165,
+      "writing_time": 1.5680150985717773,
+      "cpu_time": 0.20758771896362305
+    },
+    "input/synthesizedFLASH25inMNI_6010.nii.gz": {
+      "size": 6009892187,
+      "memory": 6040920064,
+      "total_time": 57.25724506378174,
+      "reading_time": 24.15000629425049,
+      "writing_time": 32.327723026275635,
+      "cpu_time": 0.7792160511016846
+    }
+  },
+  {
+    "input/sub08.zip": {
+      "size": 809288782,
+      "memory": 840323072,
+      "total_time": 6.2233967781066895,
+      "reading_time": 5.4556450843811035,
+      "writing_time": 0.6671044826507568,
+      "cpu_time": 0.10038065910339355
+    },
+    "input/sub16.zip": {
+      "size": 1618576908,
+      "memory": 1649623040,
+      "total_time": 8.150102615356445,
+      "reading_time": 6.5732786655426025,
+      "writing_time": 1.3715662956237793,
+      "cpu_time": 0.20497775077819824
+    },
+    "input/synthesizedFLASH25inMNI_6010.nii.gz": {
+      "size": 6009892187,
+      "memory": 6040944640,
+      "total_time": 58.84856390953064,
+      "reading_time": 24.078908443450928,
+      "writing_time": 33.981396198272705,
+      "cpu_time": 0.7878875732421875
+    }
+  },
+  {
+    "input/sub08.zip": {
+      "size": 809288782,
+      "memory": 840351744,
+      "total_time": 5.887466192245483,
+      "reading_time": 5.10266900062561,
+      "writing_time": 0.6820943355560303,
+      "cpu_time": 0.1024022102355957
+    },
+    "input/sub16.zip": {
+      "size": 1618576908,
+      "memory": 1649655808,
+      "total_time": 8.701040744781494,
+      "reading_time": 6.6435387134552,
+      "writing_time": 1.8483576774597168,
+      "cpu_time": 0.2088930606842041
+    },
+    "input/synthesizedFLASH25inMNI_6010.nii.gz": {
+      "size": 6009892187,
+      "memory": 6040989696,
+      "total_time": 57.08640742301941,
+      "reading_time": 23.855786085128784,
+      "writing_time": 32.435875415802,
+      "cpu_time": 0.7944459915161133
+    }
+  },
+  {
+    "input/sub08.zip": {
+      "size": 809288782,
+      "memory": 840392704,
+      "total_time": 6.01048731803894,
+      "reading_time": 5.2259626388549805,
+      "writing_time": 0.676788330078125,
+      "cpu_time": 0.10745930671691895
+    },
+    "input/sub16.zip": {
+      "size": 1618576908,
+      "memory": 1649688576,
+      "total_time": 9.292885065078735,
+      "reading_time": 7.173401594161987,
+      "writing_time": 1.8650093078613281,
+      "cpu_time": 0.25421857833862305
+    },
+    "input/synthesizedFLASH25inMNI_6010.nii.gz": {
+      "size": 6009892187,
+      "memory": 6041014272,
+      "total_time": 58.276819467544556,
+      "reading_time": 24.026199340820312,
+      "writing_time": 33.474538803100586,
+      "cpu_time": 0.7757847309112549
+    }
+  },
+  {
+    "input/sub08.zip": {
+      "size": 809288782,
+      "memory": 840417280,
+      "total_time": 6.102722883224487,
+      "reading_time": 5.297181844711304,
+      "writing_time": 0.6821615695953369,
+      "cpu_time": 0.12311768531799316
+    },
+    "input/sub16.zip": {
+      "size": 1618576908,
+      "memory": 1649729536,
+      "total_time": 8.838991641998291,
+      "reading_time": 6.784441947937012,
+      "writing_time": 1.8506007194519043,
+      "cpu_time": 0.20368742942810059
+    },
+    "input/synthesizedFLASH25inMNI_6010.nii.gz": {
+      "size": 6009892187,
+      "memory": 6041055232,
+      "total_time": 59.90997624397278,
+      "reading_time": 24.238242626190186,
+      "writing_time": 34.92513704299927,
+      "cpu_time": 0.7463083267211914
+    }
+  },
+  {
+    "input/sub08.zip": {
+      "size": 809288782,
+      "memory": 840458240,
+      "total_time": 5.865846395492554,
+      "reading_time": 5.044227123260498,
+      "writing_time": 0.6799294948577881,
+      "cpu_time": 0.1414022445678711
+    },
+    "input/sub16.zip": {
+      "size": 1618576908,
+      "memory": 1649766400,
+      "total_time": 8.4983651638031,
+      "reading_time": 6.496006488800049,
+      "writing_time": 1.7886404991149902,
+      "cpu_time": 0.21346211433410645
+    },
+    "input/synthesizedFLASH25inMNI_6010.nii.gz": {
+      "size": 6009892187,
+      "memory": 6041088000,
+      "total_time": 57.75383996963501,
+      "reading_time": 23.97298765182495,
+      "writing_time": 32.99340605735779,
+      "cpu_time": 0.7871103286743164
+    }
+  },
+  {
+    "input/sub08.zip": {
+      "size": 809288782,
+      "memory": 840687616,
+      "total_time": 6.248662948608398,
+      "reading_time": 5.452955722808838,
+      "writing_time": 0.6874344348907471,
+      "cpu_time": 0.1080169677734375
+    },
+    "input/sub16.zip": {
+      "size": 1618576908,
+      "memory": 1649987584,
+      "total_time": 8.123461961746216,
+      "reading_time": 6.479458570480347,
+      "writing_time": 1.4412055015563965,
+      "cpu_time": 0.20252776145935059
+    },
+    "input/synthesizedFLASH25inMNI_6010.nii.gz": {
+      "size": 6009892187,
+      "memory": 6041047040,
+      "total_time": 58.03160357475281,
+      "reading_time": 23.74913716316223,
+      "writing_time": 33.47239351272583,
+      "cpu_time": 0.8090980052947998
+    }
+  },
+  {
+    "input/sub08.zip": {
+      "size": 809288782,
+      "memory": 840445952,
+      "total_time": 6.380870819091797,
+      "reading_time": 5.591472387313843,
+      "writing_time": 0.6809673309326172,
+      "cpu_time": 0.10818624496459961
+    },
+    "input/sub16.zip": {
+      "size": 1618576908,
+      "memory": 1649741824,
+      "total_time": 8.434889793395996,
+      "reading_time": 6.7187700271606445,
+      "writing_time": 1.5016286373138428,
+      "cpu_time": 0.21346831321716309
+    },
+    "input/synthesizedFLASH25inMNI_6010.nii.gz": {
+      "size": 6009892187,
+      "memory": 6041051136,
+      "total_time": 59.563958168029785,
+      "reading_time": 24.15631341934204,
+      "writing_time": 34.654245376586914,
+      "cpu_time": 0.7531440258026123
+    }
+  },
+  {
+    "input/sub08.zip": {
+      "size": 809288782,
+      "memory": 840462336,
+      "total_time": 5.546757221221924,
+      "reading_time": 4.753986120223999,
+      "writing_time": 0.6913444995880127,
+      "cpu_time": 0.10113406181335449
+    },
+    "input/sub16.zip": {
+      "size": 1618576908,
+      "memory": 1649766400,
+      "total_time": 8.364611148834229,
+      "reading_time": 6.597909212112427,
+      "writing_time": 1.5484676361083984,
+      "cpu_time": 0.2179732322692871
+    },
+    "input/synthesizedFLASH25inMNI_6010.nii.gz": {
+      "size": 6009892187,
+      "memory": 6041079808,
+      "total_time": 56.75286555290222,
+      "reading_time": 23.686890125274658,
+      "writing_time": 32.30447745323181,
+      "cpu_time": 0.7605936527252197
+    }
+  },
+  {
+    "input/sub08.zip": {
+      "size": 809288782,
+      "memory": 840478720,
+      "total_time": 6.135425567626953,
+      "reading_time": 5.285145998001099,
+      "writing_time": 0.7083079814910889,
+      "cpu_time": 0.14161968231201172
+    },
+    "input/sub16.zip": {
+      "size": 1618576908,
+      "memory": 1649516544,
+      "total_time": 8.914920330047607,
+      "reading_time": 6.8243818283081055,
+      "writing_time": 1.882580280303955,
+      "cpu_time": 0.20770001411437988
+    },
+    "input/synthesizedFLASH25inMNI_6010.nii.gz": {
+      "size": 6009892187,
+      "memory": 6042931200,
+      "total_time": 58.693947076797485,
+      "reading_time": 24.206039905548096,
+      "writing_time": 33.70522999763489,
+      "cpu_time": 0.7823307514190674
+    }
+  },
+  {
+    "input/sub08.zip": {
+      "size": 809288782,
+      "memory": 840241152,
+      "total_time": 6.252884149551392,
+      "reading_time": 5.4566967487335205,
+      "writing_time": 0.6923234462738037,
+      "cpu_time": 0.10361719131469727
+    },
+    "input/sub16.zip": {
+      "size": 1618576908,
+      "memory": 1649528832,
+      "total_time": 8.222630500793457,
+      "reading_time": 6.598106384277344,
+      "writing_time": 1.4312467575073242,
+      "cpu_time": 0.19302940368652344
+    },
+    "input/synthesizedFLASH25inMNI_6010.nii.gz": {
+      "size": 6009892187,
+      "memory": 6040842240,
+      "total_time": 57.051554441452026,
+      "reading_time": 24.293165922164917,
+      "writing_time": 31.970871210098267,
+      "cpu_time": 0.7872390747070312
+    }
+  },
+  {
+    "input/sub08.zip": {
+      "size": 809288782,
+      "memory": 840261632,
+      "total_time": 5.8882317543029785,
+      "reading_time": 5.0706706047058105,
+      "writing_time": 0.7112953662872314,
+      "cpu_time": 0.10601449012756348
+    },
+    "input/sub16.zip": {
+      "size": 1618576908,
+      "memory": 1649557504,
+      "total_time": 8.340782403945923,
+      "reading_time": 6.557570934295654,
+      "writing_time": 1.5780372619628906,
+      "cpu_time": 0.20491862297058105
+    },
+    "input/synthesizedFLASH25inMNI_6010.nii.gz": {
+      "size": 6009892187,
+      "memory": 6040879104,
+      "total_time": 56.90622615814209,
+      "reading_time": 23.791161060333252,
+      "writing_time": 32.33483290672302,
+      "cpu_time": 0.7793443202972412
+    }
+  },
+  {
+    "input/sub08.zip": {
+      "size": 809288782,
+      "memory": 840286208,
+      "total_time": 6.481715679168701,
+      "reading_time": 5.686655044555664,
+      "writing_time": 0.6905324459075928,
+      "cpu_time": 0.10426115989685059
+    },
+    "input/sub16.zip": {
+      "size": 1618576908,
+      "memory": 1649569792,
+      "total_time": 8.945476770401001,
+      "reading_time": 6.657515048980713,
+      "writing_time": 2.036350965499878,
+      "cpu_time": 0.2512669563293457
+    },
+    "input/synthesizedFLASH25inMNI_6010.nii.gz": {
+      "size": 6009892187,
+      "memory": 6040887296,
+      "total_time": 59.151188135147095,
+      "reading_time": 24.302785396575928,
+      "writing_time": 34.09366774559021,
+      "cpu_time": 0.7545011043548584
+    }
+  },
+  {
+    "input/sub08.zip": {
+      "size": 809288782,
+      "memory": 840294400,
+      "total_time": 5.489499568939209,
+      "reading_time": 4.70046591758728,
+      "writing_time": 0.685239315032959,
+      "cpu_time": 0.1035468578338623
+    },
+    "input/sub16.zip": {
+      "size": 1618576908,
+      "memory": 1649594368,
+      "total_time": 8.871177434921265,
+      "reading_time": 6.768896102905273,
+      "writing_time": 1.8973388671875,
+      "cpu_time": 0.20473408699035645
+    },
+    "input/synthesizedFLASH25inMNI_6010.nii.gz": {
+      "size": 6009892187,
+      "memory": 6040903680,
+      "total_time": 60.33966684341431,
+      "reading_time": 24.402352571487427,
+      "writing_time": 35.15865206718445,
+      "cpu_time": 0.7784113883972168
+    }
+  },
+  {
+    "input/sub08.zip": {
+      "size": 809288782,
+      "memory": 840314880,
+      "total_time": 5.861806392669678,
+      "reading_time": 5.021983623504639,
+      "writing_time": 0.7290890216827393,
+      "cpu_time": 0.1104736328125
+    },
+    "input/sub16.zip": {
+      "size": 1618576908,
+      "memory": 1649606656,
+      "total_time": 8.506923198699951,
+      "reading_time": 6.519704341888428,
+      "writing_time": 1.7631821632385254,
+      "cpu_time": 0.22376227378845215
+    },
+    "input/synthesizedFLASH25inMNI_6010.nii.gz": {
+      "size": 6009892187,
+      "memory": 6040920064,
+      "total_time": 55.57274127006531,
+      "reading_time": 23.62598991394043,
+      "writing_time": 31.188615798950195,
+      "cpu_time": 0.7578408718109131
+    }
+  },
+  {
+    "input/sub08.zip": {
+      "size": 809288782,
+      "memory": 840327168,
+      "total_time": 6.655690670013428,
+      "reading_time": 5.837971210479736,
+      "writing_time": 0.7062573432922363,
+      "cpu_time": 0.11116743087768555
+    },
+    "input/sub16.zip": {
+      "size": 1618576908,
+      "memory": 1649819648,
+      "total_time": 8.34625506401062,
+      "reading_time": 6.616180419921875,
+      "writing_time": 1.5180420875549316,
+      "cpu_time": 0.2117598056793213
+    },
+    "input/synthesizedFLASH25inMNI_6010.nii.gz": {
+      "size": 6009892187,
+      "memory": 6041133056,
+      "total_time": 60.75324296951294,
+      "reading_time": 24.5166654586792,
+      "writing_time": 35.477540016174316,
+      "cpu_time": 0.7587454319000244
+    }
+  },
+  {
+    "input/sub08.zip": {
+      "size": 809288782,
+      "memory": 840536064,
+      "total_time": 6.9817214012146,
+      "reading_time": 6.15312385559082,
+      "writing_time": 0.7079050540924072,
+      "cpu_time": 0.12044024467468262
+    },
+    "input/sub16.zip": {
+      "size": 1618576908,
+      "memory": 1649831936,
+      "total_time": 8.469154119491577,
+      "reading_time": 6.769201278686523,
+      "writing_time": 1.485591173171997,
+      "cpu_time": 0.21412181854248047
+    },
+    "input/synthesizedFLASH25inMNI_6010.nii.gz": {
+      "size": 6009892187,
+      "memory": 6041145344,
+      "total_time": 60.08455228805542,
+      "reading_time": 24.32851004600525,
+      "writing_time": 34.974658250808716,
+      "cpu_time": 0.7811226844787598
+    }
+  },
+  {
+    "input/sub08.zip": {
+      "size": 809288782,
+      "memory": 840540160,
+      "total_time": 5.454694032669067,
+      "reading_time": 4.652226209640503,
+      "writing_time": 0.6981024742126465,
+      "cpu_time": 0.10411858558654785
+    },
+    "input/sub16.zip": {
+      "size": 1618576908,
+      "memory": 1649831936,
+      "total_time": 8.53149151802063,
+      "reading_time": 6.4264976978302,
+      "writing_time": 1.8954682350158691,
+      "cpu_time": 0.20927166938781738
+    },
+    "input/synthesizedFLASH25inMNI_6010.nii.gz": {
+      "size": 6009892187,
+      "memory": 6041149440,
+      "total_time": 55.65641665458679,
+      "reading_time": 23.02367329597473,
+      "writing_time": 31.87106704711914,
+      "cpu_time": 0.7614305019378662
+    }
+  },
+  {
+    "input/sub08.zip": {
+      "size": 809288782,
+      "memory": 840540160,
+      "total_time": 6.554064512252808,
+      "reading_time": 5.755808115005493,
+      "writing_time": 0.6900424957275391,
+      "cpu_time": 0.10795712471008301
+    },
+    "input/sub16.zip": {
+      "size": 1618576908,
+      "memory": 1649840128,
+      "total_time": 8.405468225479126,
+      "reading_time": 6.760995626449585,
+      "writing_time": 1.4315903186798096,
+      "cpu_time": 0.21262645721435547
+    },
+    "input/synthesizedFLASH25inMNI_6010.nii.gz": {
+      "size": 6009892187,
+      "memory": 6041165824,
+      "total_time": 59.2628436088562,
+      "reading_time": 24.285727977752686,
+      "writing_time": 34.225093841552734,
+      "cpu_time": 0.7517740726470947
+    }
+  },
+  {
+    "input/sub08.zip": {
+      "size": 809288782,
+      "memory": 840564736,
+      "total_time": 6.476890325546265,
+      "reading_time": 5.674164295196533,
+      "writing_time": 0.6982712745666504,
+      "cpu_time": 0.10420346260070801
+    },
+    "input/sub16.zip": {
+      "size": 1618576908,
+      "memory": 1649860608,
+      "total_time": 8.5314621925354,
+      "reading_time": 6.73193359375,
+      "writing_time": 1.5981500148773193,
+      "cpu_time": 0.20114660263061523
+    },
+    "input/synthesizedFLASH25inMNI_6010.nii.gz": {
+      "size": 6009892187,
+      "memory": 6041169920,
+      "total_time": 60.63004469871521,
+      "reading_time": 24.38846254348755,
+      "writing_time": 35.41049861907959,
+      "cpu_time": 0.8308203220367432
+    }
+  },
+  {
+    "input/sub08.zip": {
+      "size": 809288782,
+      "memory": 840568832,
+      "total_time": 5.865413427352905,
+      "reading_time": 5.027674198150635,
+      "writing_time": 0.7157559394836426,
+      "cpu_time": 0.1216883659362793
+    },
+    "input/sub16.zip": {
+      "size": 1618576908,
+      "memory": 1649860608,
+      "total_time": 8.503903150558472,
+      "reading_time": 6.493282079696655,
+      "writing_time": 1.797551155090332,
+      "cpu_time": 0.21277952194213867
+    },
+    "input/synthesizedFLASH25inMNI_6010.nii.gz": {
+      "size": 6009892187,
+      "memory": 6041178112,
+      "total_time": 56.98440480232239,
+      "reading_time": 23.762287855148315,
+      "writing_time": 32.436415672302246,
+      "cpu_time": 0.7854325771331787
+    }
+  },
+  {
+    "input/sub08.zip": {
+      "size": 809288782,
+      "memory": 840577024,
+      "total_time": 6.497659206390381,
+      "reading_time": 5.695489406585693,
+      "writing_time": 0.6882777214050293,
+      "cpu_time": 0.1136176586151123
+    },
+    "input/sub16.zip": {
+      "size": 1618576908,
+      "memory": 1649868800,
+      "total_time": 8.422245025634766,
+      "reading_time": 6.637525796890259,
+      "writing_time": 1.5629918575286865,
+      "cpu_time": 0.22054338455200195
+    },
+    "input/synthesizedFLASH25inMNI_6010.nii.gz": {
+      "size": 6009892187,
+      "memory": 6041075712,
+      "total_time": 57.369826555252075,
+      "reading_time": 24.166860580444336,
+      "writing_time": 32.418176889419556,
+      "cpu_time": 0.7844727039337158
+    }
+  },
+  {
+    "input/sub08.zip": {
+      "size": 809288782,
+      "memory": 840478720,
+      "total_time": 5.5965142250061035,
+      "reading_time": 4.795713424682617,
+      "writing_time": 0.6972088813781738,
+      "cpu_time": 0.10331010818481445
+    },
+    "input/sub16.zip": {
+      "size": 1618576908,
+      "memory": 1649778688,
+      "total_time": 8.288433074951172,
+      "reading_time": 6.638847827911377,
+      "writing_time": 1.443500280380249,
+      "cpu_time": 0.20583844184875488
+    },
+    "input/synthesizedFLASH25inMNI_6010.nii.gz": {
+      "size": 6009892187,
+      "memory": 6041100288,
+      "total_time": 58.91731405258179,
+      "reading_time": 24.393861770629883,
+      "writing_time": 33.77465510368347,
+      "cpu_time": 0.7464861869812012
+    }
+  },
+  {
+    "input/sub08.zip": {
+      "size": 809288782,
+      "memory": 840515584,
+      "total_time": 5.814149379730225,
+      "reading_time": 5.018453598022461,
+      "writing_time": 0.674595832824707,
+      "cpu_time": 0.12087011337280273
+    },
+    "input/sub16.zip": {
+      "size": 1618576908,
+      "memory": 1649803264,
+      "total_time": 8.525142192840576,
+      "reading_time": 6.50621771812439,
+      "writing_time": 1.8032734394073486,
+      "cpu_time": 0.2153623104095459
+    },
+    "input/synthesizedFLASH25inMNI_6010.nii.gz": {
+      "size": 6009892187,
+      "memory": 6041219072,
+      "total_time": 55.69889783859253,
+      "reading_time": 23.651012897491455,
+      "writing_time": 31.278867959976196,
+      "cpu_time": 0.7685182094573975
+    }
+  },
+  {
+    "input/sub08.zip": {
+      "size": 809288782,
+      "memory": 840613888,
+      "total_time": 6.30318284034729,
+      "reading_time": 5.5178515911102295,
+      "writing_time": 0.6789083480834961,
+      "cpu_time": 0.10544276237487793
+    },
+    "input/sub16.zip": {
+      "size": 1618576908,
+      "memory": 1649913856,
+      "total_time": 8.672083377838135,
+      "reading_time": 6.781258583068848,
+      "writing_time": 1.6859052181243896,
+      "cpu_time": 0.2046821117401123
+    },
+    "input/synthesizedFLASH25inMNI_6010.nii.gz": {
+      "size": 6009892187,
+      "memory": 6041227264,
+      "total_time": 58.57699704170227,
+      "reading_time": 24.54189109802246,
+      "writing_time": 33.26215624809265,
+      "cpu_time": 0.7709810733795166
+    }
+  },
+  {
+    "input/sub08.zip": {
+      "size": 809288782,
+      "memory": 840626176,
+      "total_time": 6.472872257232666,
+      "reading_time": 5.680619716644287,
+      "writing_time": 0.6895887851715088,
+      "cpu_time": 0.10238003730773926
+    },
+    "input/sub16.zip": {
+      "size": 1618576908,
+      "memory": 1649909760,
+      "total_time": 8.788999795913696,
+      "reading_time": 6.839568376541138,
+      "writing_time": 1.7495362758636475,
+      "cpu_time": 0.19960808753967285
+    },
+    "input/synthesizedFLASH25inMNI_6010.nii.gz": {
+      "size": 6009892187,
+      "memory": 6041227264,
+      "total_time": 60.00652766227722,
+      "reading_time": 24.250505208969116,
+      "writing_time": 34.987220764160156,
+      "cpu_time": 0.7685158252716064
+    }
+  },
+  {
+    "input/sub08.zip": {
+      "size": 809288782,
+      "memory": 840630272,
+      "total_time": 5.720215797424316,
+      "reading_time": 4.9215826988220215,
+      "writing_time": 0.6951284408569336,
+      "cpu_time": 0.10321331024169922
+    },
+    "input/sub16.zip": {
+      "size": 1618576908,
+      "memory": 1649905664,
+      "total_time": 8.737526893615723,
+      "reading_time": 6.469733953475952,
+      "writing_time": 2.0643601417541504,
+      "cpu_time": 0.20319652557373047
+    },
+    "input/synthesizedFLASH25inMNI_6010.nii.gz": {
+      "size": 6009892187,
+      "memory": 6041214976,
+      "total_time": 57.87803602218628,
+      "reading_time": 23.886435985565186,
+      "writing_time": 33.24302530288696,
+      "cpu_time": 0.7482638359069824
+    }
+  },
+  {
+    "input/sub08.zip": {
+      "size": 809288782,
+      "memory": 840634368,
+      "total_time": 6.058490037918091,
+      "reading_time": 5.256628513336182,
+      "writing_time": 0.6967282295227051,
+      "cpu_time": 0.10468482971191406
+    },
+    "input/sub16.zip": {
+      "size": 1618576908,
+      "memory": 1649926144,
+      "total_time": 8.984762907028198,
+      "reading_time": 6.632588148117065,
+      "writing_time": 2.1466004848480225,
+      "cpu_time": 0.20532917976379395
+    },
+    "input/synthesizedFLASH25inMNI_6010.nii.gz": {
+      "size": 6009892187,
+      "memory": 6041223168,
+      "total_time": 59.593565464019775,
+      "reading_time": 24.111631870269775,
+      "writing_time": 34.74048638343811,
+      "cpu_time": 0.7411618232727051
+    }
+  },
+  {
+    "input/sub08.zip": {
+      "size": 809288782,
+      "memory": 840638464,
+      "total_time": 6.594608783721924,
+      "reading_time": 5.762345314025879,
+      "writing_time": 0.7139225006103516,
+      "cpu_time": 0.11805462837219238
+    },
+    "input/sub16.zip": {
+      "size": 1618576908,
+      "memory": 1649913856,
+      "total_time": 8.637022972106934,
+      "reading_time": 6.7764809131622314,
+      "writing_time": 1.641359806060791,
+      "cpu_time": 0.21889209747314453
+    },
+    "input/synthesizedFLASH25inMNI_6010.nii.gz": {
+      "size": 6009892187,
+      "memory": 6041231360,
+      "total_time": 59.83603048324585,
+      "reading_time": 24.597702980041504,
+      "writing_time": 34.4551043510437,
+      "cpu_time": 0.7828905582427979
+    }
+  },
+  {
+    "input/sub08.zip": {
+      "size": 809288782,
+      "memory": 840626176,
+      "total_time": 6.2041473388671875,
+      "reading_time": 5.3877599239349365,
+      "writing_time": 0.7118940353393555,
+      "cpu_time": 0.10422062873840332
+    },
+    "input/sub16.zip": {
+      "size": 1618576908,
+      "memory": 1649913856,
+      "total_time": 8.464540719985962,
+      "reading_time": 6.587871551513672,
+      "writing_time": 1.6748557090759277,
+      "cpu_time": 0.2014460563659668
+    },
+    "input/synthesizedFLASH25inMNI_6010.nii.gz": {
+      "size": 6009892187,
+      "memory": 6041227264,
+      "total_time": 60.05368947982788,
+      "reading_time": 24.130412578582764,
+      "writing_time": 35.14309072494507,
+      "cpu_time": 0.7780544757843018
+    }
+  },
+  {
+    "input/sub08.zip": {
+      "size": 809288782,
+      "memory": 840634368,
+      "total_time": 5.914470911026001,
+      "reading_time": 5.134158134460449,
+      "writing_time": 0.6782927513122559,
+      "cpu_time": 0.10172462463378906
+    },
+    "input/sub16.zip": {
+      "size": 1618576908,
+      "memory": 1649922048,
+      "total_time": 8.418850898742676,
+      "reading_time": 6.647292852401733,
+      "writing_time": 1.5728466510772705,
+      "cpu_time": 0.19846034049987793
+    },
+    "input/synthesizedFLASH25inMNI_6010.nii.gz": {
+      "size": 6009892187,
+      "memory": 6041239552,
+      "total_time": 57.62101697921753,
+      "reading_time": 23.845853328704834,
+      "writing_time": 32.99825382232666,
+      "cpu_time": 0.7766106128692627
+    }
+  },
+  {
+    "input/sub08.zip": {
+      "size": 809288782,
+      "memory": 840650752,
+      "total_time": 5.407111883163452,
+      "reading_time": 4.625626087188721,
+      "writing_time": 0.6835198402404785,
+      "cpu_time": 0.09770917892456055
+    },
+    "input/sub16.zip": {
+      "size": 1618576908,
+      "memory": 1649954816,
+      "total_time": 8.427906274795532,
+      "reading_time": 6.684385776519775,
+      "writing_time": 1.5430707931518555,
+      "cpu_time": 0.20016217231750488
+    },
+    "input/synthesizedFLASH25inMNI_6010.nii.gz": {
+      "size": 6009892187,
+      "memory": 6041501696,
+      "total_time": 59.60113048553467,
+      "reading_time": 24.376174211502075,
+      "writing_time": 34.45019555091858,
+      "cpu_time": 0.7733063697814941
+    }
+  },
+  {
+    "input/sub08.zip": {
+      "size": 809288782,
+      "memory": 840908800,
+      "total_time": 5.887896537780762,
+      "reading_time": 5.05080246925354,
+      "writing_time": 0.7083699703216553,
+      "cpu_time": 0.12842106819152832
+    },
+    "input/sub16.zip": {
+      "size": 1618576908,
+      "memory": 1650204672,
+      "total_time": 8.68231725692749,
+      "reading_time": 6.579443693161011,
+      "writing_time": 1.9016571044921875,
+      "cpu_time": 0.2008991241455078
+    },
+    "input/synthesizedFLASH25inMNI_6010.nii.gz": {
+      "size": 6009892187,
+      "memory": 6041505792,
+      "total_time": 58.51678657531738,
+      "reading_time": 23.955034255981445,
+      "writing_time": 33.77805280685425,
+      "cpu_time": 0.7809751033782959
+    }
+  },
+  {
+    "input/sub08.zip": {
+      "size": 809288782,
+      "memory": 840921088,
+      "total_time": 6.06723952293396,
+      "reading_time": 5.273818731307983,
+      "writing_time": 0.6857521533966064,
+      "cpu_time": 0.1074216365814209
+    },
+    "input/sub16.zip": {
+      "size": 1618576908,
+      "memory": 1650216960,
+      "total_time": 8.54806661605835,
+      "reading_time": 6.634241819381714,
+      "writing_time": 1.7099335193634033,
+      "cpu_time": 0.2035539150238037
+    },
+    "input/synthesizedFLASH25inMNI_6010.nii.gz": {
+      "size": 6009892187,
+      "memory": 6041313280,
+      "total_time": 58.24460530281067,
+      "reading_time": 24.141765356063843,
+      "writing_time": 33.31404519081116,
+      "cpu_time": 0.7885336875915527
+    }
+  },
+  {
+    "input/sub08.zip": {
+      "size": 809288782,
+      "memory": 840712192,
+      "total_time": 6.101959466934204,
+      "reading_time": 5.273228168487549,
+      "writing_time": 0.7021498680114746,
+      "cpu_time": 0.1261157989501953
+    },
+    "input/sub16.zip": {
+      "size": 1618576908,
+      "memory": 1650016256,
+      "total_time": 8.413247108459473,
+      "reading_time": 6.60394287109375,
+      "writing_time": 1.607832908630371,
+      "cpu_time": 0.20121216773986816
+    },
+    "input/synthesizedFLASH25inMNI_6010.nii.gz": {
+      "size": 6009892187,
+      "memory": 6041333760,
+      "total_time": 58.28270721435547,
+      "reading_time": 23.899998903274536,
+      "writing_time": 33.608311891555786,
+      "cpu_time": 0.7741014957427979
+    }
+  },
+  {
+    "input/sub08.zip": {
+      "size": 809288782,
+      "memory": 840736768,
+      "total_time": 6.179847955703735,
+      "reading_time": 5.34149956703186,
+      "writing_time": 0.7140462398529053,
+      "cpu_time": 0.12401032447814941
+    },
+    "input/sub16.zip": {
+      "size": 1618576908,
+      "memory": 1650024448,
+      "total_time": 8.677641153335571,
+      "reading_time": 6.609264373779297,
+      "writing_time": 1.8565630912780762,
+      "cpu_time": 0.21150660514831543
+    },
+    "input/synthesizedFLASH25inMNI_6010.nii.gz": {
+      "size": 6009892187,
+      "memory": 6041350144,
+      "total_time": 59.15446066856384,
+      "reading_time": 24.16194772720337,
+      "writing_time": 34.240116119384766,
+      "cpu_time": 0.75215744972229
+    }
+  },
+  {
+    "input/sub08.zip": {
+      "size": 809288782,
+      "memory": 840753152,
+      "total_time": 5.8821516036987305,
+      "reading_time": 5.036445617675781,
+      "writing_time": 0.7221400737762451,
+      "cpu_time": 0.12331819534301758
+    },
+    "input/sub16.zip": {
+      "size": 1618576908,
+      "memory": 1650057216,
+      "total_time": 8.862298011779785,
+      "reading_time": 6.681487083435059,
+      "writing_time": 1.9418935775756836,
+      "cpu_time": 0.23862123489379883
+    },
+    "input/synthesizedFLASH25inMNI_6010.nii.gz": {
+      "size": 6009892187,
+      "memory": 6041378816,
+      "total_time": 58.70534563064575,
+      "reading_time": 24.019943714141846,
+      "writing_time": 33.89097809791565,
+      "cpu_time": 0.7927484512329102
+    }
+  },
+  {
+    "input/sub08.zip": {
+      "size": 809288782,
+      "memory": 840765440,
+      "total_time": 6.146016836166382,
+      "reading_time": 5.351988077163696,
+      "writing_time": 0.6851208209991455,
+      "cpu_time": 0.10866546630859375
+    },
+    "input/sub16.zip": {
+      "size": 1618576908,
+      "memory": 1650061312,
+      "total_time": 8.671048879623413,
+      "reading_time": 6.666189193725586,
+      "writing_time": 1.7802281379699707,
+      "cpu_time": 0.22436237335205078
+    },
+    "input/synthesizedFLASH25inMNI_6010.nii.gz": {
+      "size": 6009892187,
+      "memory": 6041395200,
+      "total_time": 61.40956664085388,
+      "reading_time": 24.228267192840576,
+      "writing_time": 36.386515617370605,
+      "cpu_time": 0.7944810390472412
+    }
+  },
+  {
+    "input/sub08.zip": {
+      "size": 809288782,
+      "memory": 840802304,
+      "total_time": 6.227439641952515,
+      "reading_time": 5.434796333312988,
+      "writing_time": 0.686434268951416,
+      "cpu_time": 0.10593366622924805
+    },
+    "input/sub16.zip": {
+      "size": 1618576908,
+      "memory": 1650098176,
+      "total_time": 8.633939027786255,
+      "reading_time": 6.677501678466797,
+      "writing_time": 1.7530550956726074,
+      "cpu_time": 0.20307326316833496
+    },
+    "input/synthesizedFLASH25inMNI_6010.nii.gz": {
+      "size": 6009892187,
+      "memory": 6041415680,
+      "total_time": 61.78710389137268,
+      "reading_time": 24.40252661705017,
+      "writing_time": 36.63148522377014,
+      "cpu_time": 0.7528510093688965
+    }
+  },
+  {
+    "input/sub08.zip": {
+      "size": 809288782,
+      "memory": 840839168,
+      "total_time": 5.861252546310425,
+      "reading_time": 5.031758069992065,
+      "writing_time": 0.7254300117492676,
+      "cpu_time": 0.1038210391998291
+    },
+    "input/sub16.zip": {
+      "size": 1618576908,
+      "memory": 1650130944,
+      "total_time": 8.109619855880737,
+      "reading_time": 6.354645252227783,
+      "writing_time": 1.5589337348937988,
+      "cpu_time": 0.19579482078552246
+    },
+    "input/synthesizedFLASH25inMNI_6010.nii.gz": {
+      "size": 6009892187,
+      "memory": 6041452544,
+      "total_time": 56.591498136520386,
+      "reading_time": 23.683638334274292,
+      "writing_time": 32.091193199157715,
+      "cpu_time": 0.8162407875061035
+    }
+  },
+  {
+    "input/sub08.zip": {
+      "size": 809288782,
+      "memory": 840855552,
+      "total_time": 6.0258870124816895,
+      "reading_time": 5.255642652511597,
+      "writing_time": 0.6692159175872803,
+      "cpu_time": 0.1007850170135498
+    },
+    "input/sub16.zip": {
+      "size": 1618576908,
+      "memory": 1650270208,
+      "total_time": 8.366157531738281,
+      "reading_time": 6.716952562332153,
+      "writing_time": 1.4420661926269531,
+      "cpu_time": 0.20687484741210938
+    },
+    "input/synthesizedFLASH25inMNI_6010.nii.gz": {
+      "size": 6009892187,
+      "memory": 6041595904,
+      "total_time": 59.787405490875244,
+      "reading_time": 24.324326038360596,
+      "writing_time": 34.694886922836304,
+      "cpu_time": 0.7673063278198242
+    }
+  },
+  {
+    "input/sub08.zip": {
+      "size": 809288782,
+      "memory": 840994816,
+      "total_time": 6.076932430267334,
+      "reading_time": 5.269257307052612,
+      "writing_time": 0.6643292903900146,
+      "cpu_time": 0.14309382438659668
+    },
+    "input/sub16.zip": {
+      "size": 1618576908,
+      "memory": 1650290688,
+      "total_time": 8.516457319259644,
+      "reading_time": 6.756737470626831,
+      "writing_time": 1.5263667106628418,
+      "cpu_time": 0.23306608200073242
+    },
+    "input/synthesizedFLASH25inMNI_6010.nii.gz": {
+      "size": 6009892187,
+      "memory": 6041604096,
+      "total_time": 61.26704216003418,
+      "reading_time": 24.43656826019287,
+      "writing_time": 36.06739950180054,
+      "cpu_time": 0.761927604675293
+    }
+  },
+  {
+    "input/sub08.zip": {
+      "size": 809288782,
+      "memory": 840998912,
+      "total_time": 5.844668865203857,
+      "reading_time": 5.037370920181274,
+      "writing_time": 0.6954729557037354,
+      "cpu_time": 0.11157035827636719
+    },
+    "input/sub16.zip": {
+      "size": 1618576908,
+      "memory": 1650294784,
+      "total_time": 8.863014221191406,
+      "reading_time": 6.467455148696899,
+      "writing_time": 2.1868479251861572,
+      "cpu_time": 0.20845961570739746
+    },
+    "input/synthesizedFLASH25inMNI_6010.nii.gz": {
+      "size": 6009892187,
+      "memory": 6041604096,
+      "total_time": 58.29699397087097,
+      "reading_time": 23.936307907104492,
+      "writing_time": 33.583648681640625,
+      "cpu_time": 0.776724100112915
+    }
+  },
+  {
+    "input/sub08.zip": {
+      "size": 809288782,
+      "memory": 841007104,
+      "total_time": 6.226671457290649,
+      "reading_time": 5.393198013305664,
+      "writing_time": 0.7093791961669922,
+      "cpu_time": 0.12382125854492188
+    },
+    "input/sub16.zip": {
+      "size": 1618576908,
+      "memory": 1650208768,
+      "total_time": 8.734478235244751,
+      "reading_time": 6.597673416137695,
+      "writing_time": 1.932145357131958,
+      "cpu_time": 0.20439577102661133
+    },
+    "input/synthesizedFLASH25inMNI_6010.nii.gz": {
+      "size": 6009892187,
+      "memory": 6041513984,
+      "total_time": 59.57583737373352,
+      "reading_time": 23.956977128982544,
+      "writing_time": 34.85656380653381,
+      "cpu_time": 0.7613441944122314
+    }
+  },
+  {
+    "input/sub08.zip": {
+      "size": 809288782,
+      "memory": 840929280,
+      "total_time": 6.09851861000061,
+      "reading_time": 5.3112688064575195,
+      "writing_time": 0.682248592376709,
+      "cpu_time": 0.10472416877746582
+    },
+    "input/sub16.zip": {
+      "size": 1618576908,
+      "memory": 1650208768,
+      "total_time": 8.65022349357605,
+      "reading_time": 6.567784070968628,
+      "writing_time": 1.8696067333221436,
+      "cpu_time": 0.21255230903625488
+    },
+    "input/synthesizedFLASH25inMNI_6010.nii.gz": {
+      "size": 6009892187,
+      "memory": 6041530368,
+      "total_time": 60.40865707397461,
+      "reading_time": 24.162195920944214,
+      "writing_time": 35.4498815536499,
+      "cpu_time": 0.7955236434936523
+    }
+  },
+  {
+    "input/sub08.zip": {
+      "size": 809288782,
+      "memory": 840937472,
+      "total_time": 5.383507490158081,
+      "reading_time": 4.588737964630127,
+      "writing_time": 0.6809747219085693,
+      "cpu_time": 0.11351752281188965
+    },
+    "input/sub16.zip": {
+      "size": 1618576908,
+      "memory": 1650233344,
+      "total_time": 8.642431735992432,
+      "reading_time": 6.647271394729614,
+      "writing_time": 1.7707264423370361,
+      "cpu_time": 0.22417283058166504
+    },
+    "input/synthesizedFLASH25inMNI_6010.nii.gz": {
+      "size": 6009892187,
+      "memory": 6041546752,
+      "total_time": 57.876795291900635,
+      "reading_time": 24.054697513580322,
+      "writing_time": 33.02208638191223,
+      "cpu_time": 0.7990450859069824
+    }
+  },
+  {
+    "input/sub08.zip": {
+      "size": 809288782,
+      "memory": 840953856,
+      "total_time": 6.0035669803619385,
+      "reading_time": 5.207423448562622,
+      "writing_time": 0.686561107635498,
+      "cpu_time": 0.10932564735412598
+    },
+    "input/sub16.zip": {
+      "size": 1618576908,
+      "memory": 1649975296,
+      "total_time": 8.361286163330078,
+      "reading_time": 6.623006105422974,
+      "writing_time": 1.5293445587158203,
+      "cpu_time": 0.20868921279907227
+    },
+    "input/synthesizedFLASH25inMNI_6010.nii.gz": {
+      "size": 6009892187,
+      "memory": 6041300992,
+      "total_time": 58.07108688354492,
+      "reading_time": 23.683226823806763,
+      "writing_time": 33.60505247116089,
+      "cpu_time": 0.7825427055358887
+    }
+  },
+  {
+    "input/sub08.zip": {
+      "size": 809288782,
+      "memory": 840732672,
+      "total_time": 6.46621561050415,
+      "reading_time": 5.657011985778809,
+      "writing_time": 0.7007453441619873,
+      "cpu_time": 0.10816240310668945
+    },
+    "input/sub16.zip": {
+      "size": 1618576908,
+      "memory": 1650008064,
+      "total_time": 8.799299478530884,
+      "reading_time": 6.699517250061035,
+      "writing_time": 1.8855109214782715,
+      "cpu_time": 0.21400070190429688
+    },
+    "input/synthesizedFLASH25inMNI_6010.nii.gz": {
+      "size": 6009892187,
+      "memory": 6041595904,
+      "total_time": 59.34409022331238,
+      "reading_time": 24.344244718551636,
+      "writing_time": 34.23870086669922,
+      "cpu_time": 0.7608397006988525
+    }
+  },
+  {
+    "input/sub08.zip": {
+      "size": 809288782,
+      "memory": 841003008,
+      "total_time": 5.8022620677948,
+      "reading_time": 4.989480495452881,
+      "writing_time": 0.7055737972259521,
+      "cpu_time": 0.10696244239807129
+    },
+    "input/sub16.zip": {
+      "size": 1618576908,
+      "memory": 1650286592,
+      "total_time": 8.564763069152832,
+      "reading_time": 6.668758392333984,
+      "writing_time": 1.692251205444336,
+      "cpu_time": 0.20351338386535645
+    },
+    "input/synthesizedFLASH25inMNI_6010.nii.gz": {
+      "size": 6009892187,
+      "memory": 6041600000,
+      "total_time": 57.940959453582764,
+      "reading_time": 23.73549771308899,
+      "writing_time": 33.43781137466431,
+      "cpu_time": 0.7672080993652344
+    }
+  },
+  {
+    "input/sub08.zip": {
+      "size": 809288782,
+      "memory": 841031680,
+      "total_time": 6.220451831817627,
+      "reading_time": 5.4258458614349365,
+      "writing_time": 0.6883640289306641,
+      "cpu_time": 0.10600924491882324
+    },
+    "input/sub16.zip": {
+      "size": 1618576908,
+      "memory": 1650319360,
+      "total_time": 8.481416463851929,
+      "reading_time": 6.752255201339722,
+      "writing_time": 1.5203373432159424,
+      "cpu_time": 0.20853042602539062
+    },
+    "input/synthesizedFLASH25inMNI_6010.nii.gz": {
+      "size": 6009892187,
+      "memory": 6041640960,
+      "total_time": 57.8743314743042,
+      "reading_time": 24.560850858688354,
+      "writing_time": 32.51417016983032,
+      "cpu_time": 0.7990355491638184
+    }
+  },
+  {
+    "input/sub08.zip": {
+      "size": 809288782,
+      "memory": 841031680,
+      "total_time": 5.504716873168945,
+      "reading_time": 4.702399253845215,
+      "writing_time": 0.6955907344818115,
+      "cpu_time": 0.10643458366394043
+    },
+    "input/sub16.zip": {
+      "size": 1618576908,
+      "memory": 1650323456,
+      "total_time": 8.22693920135498,
+      "reading_time": 6.497694969177246,
+      "writing_time": 1.5246233940124512,
+      "cpu_time": 0.20435500144958496
+    },
+    "input/synthesizedFLASH25inMNI_6010.nii.gz": {
+      "size": 6009892187,
+      "memory": 6041640960,
+      "total_time": 59.60997700691223,
+      "reading_time": 24.13230323791504,
+      "writing_time": 34.66659164428711,
+      "cpu_time": 0.8107151985168457
+    }
+  },
+  {
+    "input/sub08.zip": {
+      "size": 809288782,
+      "memory": 841068544,
+      "total_time": 6.012192249298096,
+      "reading_time": 5.226407051086426,
+      "writing_time": 0.6811039447784424,
+      "cpu_time": 0.10441207885742188
+    },
+    "input/sub16.zip": {
+      "size": 1618576908,
+      "memory": 1650360320,
+      "total_time": 8.187695980072021,
+      "reading_time": 6.507338762283325,
+      "writing_time": 1.4770033359527588,
+      "cpu_time": 0.2030787467956543
+    },
+    "input/synthesizedFLASH25inMNI_6010.nii.gz": {
+      "size": 6009892187,
+      "memory": 6041690112,
+      "total_time": 56.42561626434326,
+      "reading_time": 23.45486068725586,
+      "writing_time": 32.19237732887268,
+      "cpu_time": 0.7774815559387207
+    }
+  },
+  {
+    "input/sub08.zip": {
+      "size": 809288782,
+      "memory": 841072640,
+      "total_time": 6.997655391693115,
+      "reading_time": 6.151330947875977,
+      "writing_time": 0.7326405048370361,
+      "cpu_time": 0.11336898803710938
+    },
+    "input/sub16.zip": {
+      "size": 1618576908,
+      "memory": 1650372608,
+      "total_time": 8.547279834747314,
+      "reading_time": 6.725225925445557,
+      "writing_time": 1.6191344261169434,
+      "cpu_time": 0.20267486572265625
+    },
+    "input/synthesizedFLASH25inMNI_6010.nii.gz": {
+      "size": 6009892187,
+      "memory": 6041706496,
+      "total_time": 60.49407362937927,
+      "reading_time": 24.550177574157715,
+      "writing_time": 35.17397737503052,
+      "cpu_time": 0.7696452140808105
+    }
+  },
+  {
+    "input/sub08.zip": {
+      "size": 809288782,
+      "memory": 841093120,
+      "total_time": 5.711660146713257,
+      "reading_time": 4.945688486099243,
+      "writing_time": 0.6539409160614014,
+      "cpu_time": 0.11085128784179688
+    },
+    "input/sub16.zip": {
+      "size": 1618576908,
+      "memory": 1650405376,
+      "total_time": 8.369581460952759,
+      "reading_time": 6.538837432861328,
+      "writing_time": 1.6300156116485596,
+      "cpu_time": 0.20047616958618164
+    },
+    "input/synthesizedFLASH25inMNI_6010.nii.gz": {
+      "size": 6009892187,
+      "memory": 6041743360,
+      "total_time": 57.09716725349426,
+      "reading_time": 23.493605375289917,
+      "writing_time": 32.84642481803894,
+      "cpu_time": 0.7555105686187744
+    }
+  },
+  {
+    "input/sub08.zip": {
+      "size": 809288782,
+      "memory": 841134080,
+      "total_time": 5.696181297302246,
+      "reading_time": 4.8987791538238525,
+      "writing_time": 0.6898097991943359,
+      "cpu_time": 0.10668396949768066
+    },
+    "input/sub16.zip": {
+      "size": 1618576908,
+      "memory": 1650429952,
+      "total_time": 8.49419617652893,
+      "reading_time": 6.6211934089660645,
+      "writing_time": 1.6711997985839844,
+      "cpu_time": 0.20154595375061035
+    },
+    "input/synthesizedFLASH25inMNI_6010.nii.gz": {
+      "size": 6009892187,
+      "memory": 6041763840,
+      "total_time": 56.15007138252258,
+      "reading_time": 23.373353004455566,
+      "writing_time": 32.02235746383667,
+      "cpu_time": 0.7540509700775146
+    }
+  },
+  {
+    "input/sub08.zip": {
+      "size": 809288782,
+      "memory": 841162752,
+      "total_time": 6.534091234207153,
+      "reading_time": 5.722426176071167,
+      "writing_time": 0.6872889995574951,
+      "cpu_time": 0.1240990161895752
+    },
+    "input/sub16.zip": {
+      "size": 1618576908,
+      "memory": 1650462720,
+      "total_time": 8.75360631942749,
+      "reading_time": 6.832168340682983,
+      "writing_time": 1.7192378044128418,
+      "cpu_time": 0.20194053649902344
+    },
+    "input/synthesizedFLASH25inMNI_6010.nii.gz": {
+      "size": 6009892187,
+      "memory": 6041780224,
+      "total_time": 62.364378690719604,
+      "reading_time": 24.910752296447754,
+      "writing_time": 36.66398096084595,
+      "cpu_time": 0.7893643379211426
+    }
+  },
+  {
+    "input/sub08.zip": {
+      "size": 809288782,
+      "memory": 841175040,
+      "total_time": 5.799015522003174,
+      "reading_time": 5.031574964523315,
+      "writing_time": 0.6653885841369629,
+      "cpu_time": 0.10183048248291016
+    },
+    "input/sub16.zip": {
+      "size": 1618576908,
+      "memory": 1650475008,
+      "total_time": 8.608516931533813,
+      "reading_time": 6.61837100982666,
+      "writing_time": 1.774174690246582,
+      "cpu_time": 0.2156510353088379
+    },
+    "input/synthesizedFLASH25inMNI_6010.nii.gz": {
+      "size": 6009892187,
+      "memory": 6041796608,
+      "total_time": 57.149410009384155,
+      "reading_time": 24.025557041168213,
+      "writing_time": 32.36264157295227,
+      "cpu_time": 0.760962724685669
+    }
+  },
+  {
+    "input/sub08.zip": {
+      "size": 809288782,
+      "memory": 841207808,
+      "total_time": 6.245288133621216,
+      "reading_time": 5.43177342414856,
+      "writing_time": 0.7053408622741699,
+      "cpu_time": 0.10792851448059082
+    },
+    "input/sub16.zip": {
+      "size": 1618576908,
+      "memory": 1650499584,
+      "total_time": 8.68153190612793,
+      "reading_time": 6.587406158447266,
+      "writing_time": 1.8306586742401123,
+      "cpu_time": 0.26320981979370117
+    },
+    "input/synthesizedFLASH25inMNI_6010.nii.gz": {
+      "size": 6009892187,
+      "memory": 6041812992,
+      "total_time": 59.26359820365906,
+      "reading_time": 23.861669540405273,
+      "writing_time": 34.60033941268921,
+      "cpu_time": 0.8013184070587158
+    }
+  },
+  {
+    "input/sub08.zip": {
+      "size": 809288782,
+      "memory": 841216000,
+      "total_time": 6.5756800174713135,
+      "reading_time": 5.779932260513306,
+      "writing_time": 0.6914792060852051,
+      "cpu_time": 0.10395503044128418
+    },
+    "input/sub16.zip": {
+      "size": 1618576908,
+      "memory": 1650503680,
+      "total_time": 8.530413389205933,
+      "reading_time": 6.665922164916992,
+      "writing_time": 1.6570165157318115,
+      "cpu_time": 0.20712828636169434
+    },
+    "input/synthesizedFLASH25inMNI_6010.nii.gz": {
+      "size": 6009892187,
+      "memory": 6041833472,
+      "total_time": 59.09267473220825,
+      "reading_time": 24.416635513305664,
+      "writing_time": 33.9247567653656,
+      "cpu_time": 0.7504193782806396
+    }
+  },
+  {
+    "input/sub08.zip": {
+      "size": 809288782,
+      "memory": 841236480,
+      "total_time": 5.381917953491211,
+      "reading_time": 4.58292818069458,
+      "writing_time": 0.6938211917877197,
+      "cpu_time": 0.10488533973693848
+    },
+    "input/sub16.zip": {
+      "size": 1618576908,
+      "memory": 1650524160,
+      "total_time": 8.52725076675415,
+      "reading_time": 6.684561252593994,
+      "writing_time": 1.571641445159912,
+      "cpu_time": 0.27080464363098145
+    },
+    "input/synthesizedFLASH25inMNI_6010.nii.gz": {
+      "size": 6009892187,
+      "memory": 6041837568,
+      "total_time": 57.6190299987793,
+      "reading_time": 23.800067901611328,
+      "writing_time": 33.0447359085083,
+      "cpu_time": 0.7739298343658447
+    }
+  },
+  {
+    "input/sub08.zip": {
+      "size": 809288782,
+      "memory": 841256960,
+      "total_time": 6.608072757720947,
+      "reading_time": 5.800930738449097,
+      "writing_time": 0.6932802200317383,
+      "cpu_time": 0.11359357833862305
+    },
+    "input/sub16.zip": {
+      "size": 1618576908,
+      "memory": 1650540544,
+      "total_time": 8.448164701461792,
+      "reading_time": 6.740973472595215,
+      "writing_time": 1.4935822486877441,
+      "cpu_time": 0.21335673332214355
+    },
+    "input/synthesizedFLASH25inMNI_6010.nii.gz": {
+      "size": 6009892187,
+      "memory": 6041837568,
+      "total_time": 60.853495597839355,
+      "reading_time": 24.525476932525635,
+      "writing_time": 35.53362798690796,
+      "cpu_time": 0.7931783199310303
+    }
+  },
+  {
+    "input/sub08.zip": {
+      "size": 809288782,
+      "memory": 841281536,
+      "total_time": 6.304382562637329,
+      "reading_time": 5.48219108581543,
+      "writing_time": 0.7086336612701416,
+      "cpu_time": 0.11329531669616699
+    },
+    "input/sub16.zip": {
+      "size": 1618576908,
+      "memory": 1650565120,
+      "total_time": 8.61056137084961,
+      "reading_time": 6.8080737590789795,
+      "writing_time": 1.5951409339904785,
+      "cpu_time": 0.20708417892456055
+    },
+    "input/synthesizedFLASH25inMNI_6010.nii.gz": {
+      "size": 6009892187,
+      "memory": 6041866240,
+      "total_time": 58.8164496421814,
+      "reading_time": 24.2862606048584,
+      "writing_time": 33.729679107666016,
+      "cpu_time": 0.7990078926086426
+    }
+  },
+  {
+    "input/sub08.zip": {
+      "size": 809288782,
+      "memory": 841293824,
+      "total_time": 6.201797723770142,
+      "reading_time": 5.411679983139038,
+      "writing_time": 0.679957389831543,
+      "cpu_time": 0.10923147201538086
+    },
+    "input/sub16.zip": {
+      "size": 1618576908,
+      "memory": 1650581504,
+      "total_time": 8.966379642486572,
+      "reading_time": 6.4658753871917725,
+      "writing_time": 2.2831573486328125,
+      "cpu_time": 0.21709394454956055
+    },
+    "input/synthesizedFLASH25inMNI_6010.nii.gz": {
+      "size": 6009892187,
+      "memory": 6041894912,
+      "total_time": 57.40160036087036,
+      "reading_time": 23.859017372131348,
+      "writing_time": 32.74302268028259,
+      "cpu_time": 0.7992215156555176
+    }
+  },
+  {
+    "input/sub08.zip": {
+      "size": 809288782,
+      "memory": 840900608,
+      "total_time": 6.206172704696655,
+      "reading_time": 5.418313980102539,
+      "writing_time": 0.6814136505126953,
+      "cpu_time": 0.10619449615478516
+    },
+    "input/sub16.zip": {
+      "size": 1618576908,
+      "memory": 1650196480,
+      "total_time": 8.826334953308105,
+      "reading_time": 6.656663656234741,
+      "writing_time": 1.9499266147613525,
+      "cpu_time": 0.21948766708374023
+    },
+    "input/synthesizedFLASH25inMNI_6010.nii.gz": {
+      "size": 6009892187,
+      "memory": 6041911296,
+      "total_time": 57.028648138046265,
+      "reading_time": 24.086437702178955,
+      "writing_time": 32.13137769699097,
+      "cpu_time": 0.8105387687683105
+    }
+  },
+  {
+    "input/sub08.zip": {
+      "size": 809288782,
+      "memory": 840916992,
+      "total_time": 6.211664199829102,
+      "reading_time": 5.371068000793457,
+      "writing_time": 0.7188239097595215,
+      "cpu_time": 0.12115192413330078
+    },
+    "input/sub16.zip": {
+      "size": 1618576908,
+      "memory": 1650204672,
+      "total_time": 8.693671941757202,
+      "reading_time": 6.644320726394653,
+      "writing_time": 1.825479507446289,
+      "cpu_time": 0.22360515594482422
+    },
+    "input/synthesizedFLASH25inMNI_6010.nii.gz": {
+      "size": 6009892187,
+      "memory": 6041931776,
+      "total_time": 59.551193952560425,
+      "reading_time": 24.364553451538086,
+      "writing_time": 34.37913465499878,
+      "cpu_time": 0.8072006702423096
+    }
+  },
+  {
+    "input/sub08.zip": {
+      "size": 809288782,
+      "memory": 840921088,
+      "total_time": 6.460607528686523,
+      "reading_time": 5.681152820587158,
+      "writing_time": 0.6710963249206543,
+      "cpu_time": 0.10806584358215332
+    },
+    "input/sub16.zip": {
+      "size": 1618576908,
+      "memory": 1650221056,
+      "total_time": 8.867471694946289,
+      "reading_time": 6.726799249649048,
+      "writing_time": 1.9206411838531494,
+      "cpu_time": 0.21978545188903809
+    },
+    "input/synthesizedFLASH25inMNI_6010.nii.gz": {
+      "size": 6009892187,
+      "memory": 6041948160,
+      "total_time": 59.42932748794556,
+      "reading_time": 24.34649157524109,
+      "writing_time": 34.27450704574585,
+      "cpu_time": 0.8080129623413086
+    }
+  },
+  {
+    "input/sub08.zip": {
+      "size": 809288782,
+      "memory": 840945664,
+      "total_time": 6.364747762680054,
+      "reading_time": 5.5221288204193115,
+      "writing_time": 0.7261502742767334,
+      "cpu_time": 0.11618208885192871
+    },
+    "input/sub16.zip": {
+      "size": 1618576908,
+      "memory": 1650233344,
+      "total_time": 8.67313003540039,
+      "reading_time": 6.683518171310425,
+      "writing_time": 1.77565598487854,
+      "cpu_time": 0.21365666389465332
+    },
+    "input/synthesizedFLASH25inMNI_6010.nii.gz": {
+      "size": 6009892187,
+      "memory": 6041550848,
+      "total_time": 59.754735231399536,
+      "reading_time": 24.106973886489868,
+      "writing_time": 34.859215259552,
+      "cpu_time": 0.7824985980987549
+    }
+  },
+  {
+    "input/sub08.zip": {
+      "size": 809288782,
+      "memory": 840953856,
+      "total_time": 6.281003952026367,
+      "reading_time": 5.469287395477295,
+      "writing_time": 0.7037293910980225,
+      "cpu_time": 0.10773372650146484
+    },
+    "input/sub16.zip": {
+      "size": 1618576908,
+      "memory": 1650245632,
+      "total_time": 8.457741975784302,
+      "reading_time": 6.696298837661743,
+      "writing_time": 1.5629026889801025,
+      "cpu_time": 0.19829082489013672
+    },
+    "input/synthesizedFLASH25inMNI_6010.nii.gz": {
+      "size": 6009892187,
+      "memory": 6041563136,
+      "total_time": 59.125120639801025,
+      "reading_time": 24.285519123077393,
+      "writing_time": 33.976062059402466,
+      "cpu_time": 0.8620939254760742
+    }
+  },
+  {
+    "input/sub08.zip": {
+      "size": 809288782,
+      "memory": 840957952,
+      "total_time": 5.7919487953186035,
+      "reading_time": 4.978898286819458,
+      "writing_time": 0.7067134380340576,
+      "cpu_time": 0.10608053207397461
+    },
+    "input/sub16.zip": {
+      "size": 1618576908,
+      "memory": 1650262016,
+      "total_time": 8.845201969146729,
+      "reading_time": 6.639486312866211,
+      "writing_time": 1.991973638534546,
+      "cpu_time": 0.21351289749145508
+    },
+    "input/synthesizedFLASH25inMNI_6010.nii.gz": {
+      "size": 6009892187,
+      "memory": 6041575424,
+      "total_time": 58.21019768714905,
+      "reading_time": 23.98886203765869,
+      "writing_time": 33.44987893104553,
+      "cpu_time": 0.771080493927002
+    }
+  },
+  {
+    "input/sub08.zip": {
+      "size": 809288782,
+      "memory": 840978432,
+      "total_time": 5.933670520782471,
+      "reading_time": 5.124871253967285,
+      "writing_time": 0.6988255977630615,
+      "cpu_time": 0.1097257137298584
+    },
+    "input/sub16.zip": {
+      "size": 1618576908,
+      "memory": 1650266112,
+      "total_time": 8.736438035964966,
+      "reading_time": 6.7115092277526855,
+      "writing_time": 1.8048923015594482,
+      "cpu_time": 0.21979808807373047
+    },
+    "input/synthesizedFLASH25inMNI_6010.nii.gz": {
+      "size": 6009892187,
+      "memory": 6041329664,
+      "total_time": 57.62232995033264,
+      "reading_time": 23.81766176223755,
+      "writing_time": 33.03373742103577,
+      "cpu_time": 0.7706704139709473
+    }
+  },
+  {
+    "input/sub08.zip": {
+      "size": 809288782,
+      "memory": 840728576,
+      "total_time": 6.542426586151123,
+      "reading_time": 5.7280895709991455,
+      "writing_time": 0.7050371170043945,
+      "cpu_time": 0.10903692245483398
+    },
+    "input/sub16.zip": {
+      "size": 1618576908,
+      "memory": 1650020352,
+      "total_time": 8.495200634002686,
+      "reading_time": 6.783034086227417,
+      "writing_time": 1.5062892436981201,
+      "cpu_time": 0.20550036430358887
+    },
+    "input/synthesizedFLASH25inMNI_6010.nii.gz": {
+      "size": 6009892187,
+      "memory": 6041600000,
+      "total_time": 59.747278690338135,
+      "reading_time": 24.46009135246277,
+      "writing_time": 34.52636241912842,
+      "cpu_time": 0.7605211734771729
+    }
+  },
+  {
+    "input/sub08.zip": {
+      "size": 809288782,
+      "memory": 841003008,
+      "total_time": 5.946385383605957,
+      "reading_time": 5.136254787445068,
+      "writing_time": 0.7012465000152588,
+      "cpu_time": 0.10865402221679688
+    },
+    "input/sub16.zip": {
+      "size": 1618576908,
+      "memory": 1650294784,
+      "total_time": 8.724159717559814,
+      "reading_time": 6.5963475704193115,
+      "writing_time": 1.9179530143737793,
+      "cpu_time": 0.20959019660949707
+    },
+    "input/synthesizedFLASH25inMNI_6010.nii.gz": {
+      "size": 6009892187,
+      "memory": 6041612288,
+      "total_time": 58.705278635025024,
+      "reading_time": 24.039191722869873,
+      "writing_time": 33.86264991760254,
+      "cpu_time": 0.803154706954956
+    }
+  },
+  {
+    "input/sub08.zip": {
+      "size": 809288782,
+      "memory": 841015296,
+      "total_time": 6.166884183883667,
+      "reading_time": 5.355380535125732,
+      "writing_time": 0.6807177066802979,
+      "cpu_time": 0.13046622276306152
+    },
+    "input/sub16.zip": {
+      "size": 1618576908,
+      "memory": 1650044928,
+      "total_time": 8.346994638442993,
+      "reading_time": 6.613258123397827,
+      "writing_time": 1.5265648365020752,
+      "cpu_time": 0.20691967010498047
+    },
+    "input/synthesizedFLASH25inMNI_6010.nii.gz": {
+      "size": 6009892187,
+      "memory": 6041362432,
+      "total_time": 57.4232280254364,
+      "reading_time": 24.12418031692505,
+      "writing_time": 32.5291633605957,
+      "cpu_time": 0.7695696353912354
+    }
+  },
+  {
+    "input/sub08.zip": {
+      "size": 809288782,
+      "memory": 840769536,
+      "total_time": 6.081838846206665,
+      "reading_time": 5.275733947753906,
+      "writing_time": 0.7006051540374756,
+      "cpu_time": 0.10522603988647461
+    },
+    "input/sub16.zip": {
+      "size": 1618576908,
+      "memory": 1650053120,
+      "total_time": 8.659072160720825,
+      "reading_time": 6.743260383605957,
+      "writing_time": 1.7138872146606445,
+      "cpu_time": 0.20150375366210938
+    },
+    "input/synthesizedFLASH25inMNI_6010.nii.gz": {
+      "size": 6009892187,
+      "memory": 6041366528,
+      "total_time": 60.61027383804321,
+      "reading_time": 24.45176386833191,
+      "writing_time": 35.297311544418335,
+      "cpu_time": 0.8601558208465576
+    }
+  },
+  {
+    "input/sub08.zip": {
+      "size": 809288782,
+      "memory": 840777728,
+      "total_time": 6.307387351989746,
+      "reading_time": 5.518789529800415,
+      "writing_time": 0.6797103881835938,
+      "cpu_time": 0.10862612724304199
+    },
+    "input/sub16.zip": {
+      "size": 1618576908,
+      "memory": 1650069504,
+      "total_time": 8.471789598464966,
+      "reading_time": 6.667941093444824,
+      "writing_time": 1.5921201705932617,
+      "cpu_time": 0.2106647491455078
+    },
+    "input/synthesizedFLASH25inMNI_6010.nii.gz": {
+      "size": 6009892187,
+      "memory": 6041382912,
+      "total_time": 62.046947717666626,
+      "reading_time": 23.773749113082886,
+      "writing_time": 37.50631546974182,
+      "cpu_time": 0.7658805847167969
+    }
+  },
+  {
+    "input/sub08.zip": {
+      "size": 809288782,
+      "memory": 841056256,
+      "total_time": 6.345402240753174,
+      "reading_time": 5.495591640472412,
+      "writing_time": 0.7112140655517578,
+      "cpu_time": 0.13835906982421875
+    },
+    "input/sub16.zip": {
+      "size": 1618576908,
+      "memory": 1650352128,
+      "total_time": 8.742703199386597,
+      "reading_time": 6.810797214508057,
+      "writing_time": 1.7267365455627441,
+      "cpu_time": 0.2048807144165039
+    },
+    "input/synthesizedFLASH25inMNI_6010.nii.gz": {
+      "size": 6009892187,
+      "memory": 6041669632,
+      "total_time": 60.10215377807617,
+      "reading_time": 24.17273759841919,
+      "writing_time": 35.16096472740173,
+      "cpu_time": 0.7675142288208008
+    }
+  },
+  {
+    "input/sub08.zip": {
+      "size": 809288782,
+      "memory": 841068544,
+      "total_time": 6.086457967758179,
+      "reading_time": 5.262405633926392,
+      "writing_time": 0.7048258781433105,
+      "cpu_time": 0.11893200874328613
+    },
+    "input/sub16.zip": {
+      "size": 1618576908,
+      "memory": 1650356224,
+      "total_time": 8.343066692352295,
+      "reading_time": 6.632363557815552,
+      "writing_time": 1.5053842067718506,
+      "cpu_time": 0.20508146286010742
+    },
+    "input/synthesizedFLASH25inMNI_6010.nii.gz": {
+      "size": 6009892187,
+      "memory": 6041677824,
+      "total_time": 58.36440896987915,
+      "reading_time": 23.874587059020996,
+      "writing_time": 33.67261290550232,
+      "cpu_time": 0.8157100677490234
+    }
+  },
+  {
+    "input/sub08.zip": {
+      "size": 809288782,
+      "memory": 841076736,
+      "total_time": 5.965104103088379,
+      "reading_time": 5.1563560962677,
+      "writing_time": 0.7014946937561035,
+      "cpu_time": 0.10693883895874023
+    },
+    "input/sub16.zip": {
+      "size": 1618576908,
+      "memory": 1650372608,
+      "total_time": 8.766813516616821,
+      "reading_time": 6.6029274463653564,
+      "writing_time": 1.9465129375457764,
+      "cpu_time": 0.21712231636047363
+    },
+    "input/synthesizedFLASH25inMNI_6010.nii.gz": {
+      "size": 6009892187,
+      "memory": 6041698304,
+      "total_time": 58.449658155441284,
+      "reading_time": 23.919361352920532,
+      "writing_time": 33.7478141784668,
+      "cpu_time": 0.7809691429138184
+    }
+  },
+  {
+    "input/sub08.zip": {
+      "size": 809288782,
+      "memory": 841097216,
+      "total_time": 6.263320207595825,
+      "reading_time": 5.439918041229248,
+      "writing_time": 0.7054738998413086,
+      "cpu_time": 0.1176609992980957
+    },
+    "input/sub16.zip": {
+      "size": 1618576908,
+      "memory": 1650384896,
+      "total_time": 8.334049940109253,
+      "reading_time": 6.567685127258301,
+      "writing_time": 1.5508084297180176,
+      "cpu_time": 0.21529245376586914
+    },
+    "input/synthesizedFLASH25inMNI_6010.nii.gz": {
+      "size": 6009892187,
+      "memory": 6041702400,
+      "total_time": 57.74565553665161,
+      "reading_time": 23.76039457321167,
+      "writing_time": 33.189112186431885,
+      "cpu_time": 0.7946000099182129
+    }
+  },
+  {
+    "input/sub08.zip": {
+      "size": 809288782,
+      "memory": 841105408,
+      "total_time": 6.538970470428467,
+      "reading_time": 5.749227523803711,
+      "writing_time": 0.6813759803771973,
+      "cpu_time": 0.1080923080444336
+    },
+    "input/sub16.zip": {
+      "size": 1618576908,
+      "memory": 1650393088,
+      "total_time": 8.689444541931152,
+      "reading_time": 6.724941253662109,
+      "writing_time": 1.7622911930084229,
+      "cpu_time": 0.201934814453125
+    },
+    "input/synthesizedFLASH25inMNI_6010.nii.gz": {
+      "size": 6009892187,
+      "memory": 6041710592,
+      "total_time": 61.85330271720886,
+      "reading_time": 24.592893600463867,
+      "writing_time": 36.48497009277344,
+      "cpu_time": 0.7745115756988525
+    }
+  },
+  {
+    "input/sub08.zip": {
+      "size": 809288782,
+      "memory": 841125888,
+      "total_time": 6.167482137680054,
+      "reading_time": 5.355664491653442,
+      "writing_time": 0.6995425224304199,
+      "cpu_time": 0.1119852066040039
+    },
+    "input/sub16.zip": {
+      "size": 1618576908,
+      "memory": 1650413568,
+      "total_time": 8.263715505599976,
+      "reading_time": 6.5507612228393555,
+      "writing_time": 1.4869990348815918,
+      "cpu_time": 0.22567272186279297
+    },
+    "input/synthesizedFLASH25inMNI_6010.nii.gz": {
+      "size": 6009892187,
+      "memory": 6041464832,
+      "total_time": 58.855939626693726,
+      "reading_time": 23.88328528404236,
+      "writing_time": 34.210195779800415,
+      "cpu_time": 0.7620294094085693
+    }
+  },
+  {
+    "input/sub08.zip": {
+      "size": 809288782,
+      "memory": 840863744,
+      "total_time": 5.976109743118286,
+      "reading_time": 5.172993421554565,
+      "writing_time": 0.69728684425354,
+      "cpu_time": 0.10558700561523438
+    },
+    "input/sub16.zip": {
+      "size": 1618576908,
+      "memory": 1650159616,
+      "total_time": 8.629345893859863,
+      "reading_time": 6.612009048461914,
+      "writing_time": 1.8115675449371338,
+      "cpu_time": 0.20544052124023438
+    },
+    "input/synthesizedFLASH25inMNI_6010.nii.gz": {
+      "size": 6009892187,
+      "memory": 6041477120,
+      "total_time": 57.623342990875244,
+      "reading_time": 24.004717111587524,
+      "writing_time": 32.87327814102173,
+      "cpu_time": 0.7449662685394287
+    }
+  },
+  {
+    "input/sub08.zip": {
+      "size": 809288782,
+      "memory": 840613888,
+      "total_time": 5.660516262054443,
+      "reading_time": 4.86958122253418,
+      "writing_time": 0.6797714233398438,
+      "cpu_time": 0.11088895797729492
+    },
+    "input/sub16.zip": {
+      "size": 1618576908,
+      "memory": 1649909760,
+      "total_time": 8.405078887939453,
+      "reading_time": 6.653489589691162,
+      "writing_time": 1.543832778930664,
+      "cpu_time": 0.20744824409484863
+    },
+    "input/synthesizedFLASH25inMNI_6010.nii.gz": {
+      "size": 6009892187,
+      "memory": 6041227264,
+      "total_time": 60.36796760559082,
+      "reading_time": 24.10287833213806,
+      "writing_time": 35.4859893321991,
+      "cpu_time": 0.776949405670166
+    }
+  },
+  {
+    "input/sub08.zip": {
+      "size": 809288782,
+      "memory": 840638464,
+      "total_time": 6.354125022888184,
+      "reading_time": 5.563631296157837,
+      "writing_time": 0.6877660751342773,
+      "cpu_time": 0.10246777534484863
+    },
+    "input/sub16.zip": {
+      "size": 1618576908,
+      "memory": 1649926144,
+      "total_time": 8.939296960830688,
+      "reading_time": 6.66901421546936,
+      "writing_time": 2.06823468208313,
+      "cpu_time": 0.20168662071228027
+    },
+    "input/synthesizedFLASH25inMNI_6010.nii.gz": {
+      "size": 6009892187,
+      "memory": 6041505792,
+      "total_time": 61.60016942024231,
+      "reading_time": 24.245567560195923,
+      "writing_time": 36.58841109275818,
+      "cpu_time": 0.7659401893615723
+    }
+  },
+  {
+    "input/sub08.zip": {
+      "size": 809288782,
+      "memory": 840904704,
+      "total_time": 5.973762273788452,
+      "reading_time": 5.171939373016357,
+      "writing_time": 0.6981046199798584,
+      "cpu_time": 0.10342621803283691
+    },
+    "input/sub16.zip": {
+      "size": 1618576908,
+      "memory": 1650188288,
+      "total_time": 8.505149364471436,
+      "reading_time": 6.628676652908325,
+      "writing_time": 1.6616480350494385,
+      "cpu_time": 0.2132244110107422
+    },
+    "input/synthesizedFLASH25inMNI_6010.nii.gz": {
+      "size": 6009892187,
+      "memory": 6041513984,
+      "total_time": 57.618539333343506,
+      "reading_time": 23.917322874069214,
+      "writing_time": 32.921597957611084,
+      "cpu_time": 0.7792565822601318
+    }
+  },
+  {
+    "input/sub08.zip": {
+      "size": 809288782,
+      "memory": 840916992,
+      "total_time": 6.596672058105469,
+      "reading_time": 5.784809589385986,
+      "writing_time": 0.7069284915924072,
+      "cpu_time": 0.10468554496765137
+    },
+    "input/sub16.zip": {
+      "size": 1618576908,
+      "memory": 1650204672,
+      "total_time": 8.425255537033081,
+      "reading_time": 6.691010475158691,
+      "writing_time": 1.5281434059143066,
+      "cpu_time": 0.20579314231872559
+    },
+    "input/synthesizedFLASH25inMNI_6010.nii.gz": {
+      "size": 6009892187,
+      "memory": 6041522176,
+      "total_time": 57.64168429374695,
+      "reading_time": 24.100111961364746,
+      "writing_time": 32.75572729110718,
+      "cpu_time": 0.7855534553527832
     }
   }
 ]

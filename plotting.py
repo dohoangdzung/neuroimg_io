@@ -6,64 +6,88 @@ from pipeline import Pipeline
 single = ast.literal_eval(open("export/single.py.json", "r").read())
 bag = ast.literal_eval(open("export/bag.py.json", "r").read())
 
+single_result = single[0]
+file_sizes_in_mb = [x[Pipeline.SIZE] / 1000000 for x in dict(single_result).values()]
+
+input_files = {}
+input_file_names = list(dict(single_result).keys())
+for filename in input_file_names:
+    input_files[filename] = single_result[filename][Pipeline.SIZE] / 1000000
+
+input_size = len(input_file_names)
+
 
 def parse_single_records(results, attr):
-
+    # This is the dictionary that stores the statistics of a single task
+    # The structure is
+    # {'filename1': {
+    #     'attr1': value1,
+    #     'attr2': value2
+    #     },
+    #     'filename1': {
+    #         'attr1': value1,
+    #         'attr2': value2
+    #     }
+    # }
     stats = {}
-
-    filenames = []
-    if len(results) > 0:
-        filenames = dict(results[0]).keys()
-        for fn in filenames:
-            stats[fn] = []
+    for fn in input_files:
+        stats[fn] = []
 
     for res in results:
-        for fn in filenames:
+        for fn in input_files:
             stats[fn].append(res[fn][attr])
-
 
     return stats
 
 
-single_result = single[0]
-sizes = [x[Pipeline.SIZE] / pow(2, 20) for x in dict(single_result).values()]
-
-
-def plot_single_io():
-    f = plt.figure(0)
-
-    single_read_records = parse_single_records(single, Pipeline.READING_TIME)
-    single_write_records = parse_single_records(single, Pipeline.WRITING_TIME)
+def plot_single_avg():
+    single_read_arrs = parse_single_records(single, Pipeline.READING_TIME)
+    single_write_arrs = parse_single_records(single, Pipeline.WRITING_TIME)
 
     single_read_avg = []
-    for fn in single_read_records.keys():
-        single_read_avg.append(sum(single_read_records[fn]) / len(single_read_records[fn]))
+    for fn in single_read_arrs.keys():
+        single_read_avg.append(sum(single_read_arrs[fn]) / len(single_read_arrs[fn]))
 
     single_write_avg = []
-    for fn in single_write_records.keys():
-        single_write_avg.append(sum(single_write_records[fn]) / len(single_write_records[fn]))
+    for fn in single_write_arrs.keys():
+        single_write_avg.append(sum(single_write_arrs[fn]) / len(single_write_arrs[fn]))
 
-    single_read_records.values()
+    single_read_arrs.values()
 
     fig, (read, write) = plt.subplots(1, 2)
 
-    read.plot(sizes, single_read_avg, 'r.')
+    read.plot(file_sizes_in_mb, single_read_avg, 'r.')
     read.set_title("read")
-    read.legend(loc="upper left")
 
-    write.plot(sizes, single_write_avg, 'b.')
+    write.plot(file_sizes_in_mb, single_write_avg, 'b.')
     write.set_title("write")
-    write.legend(loc="upper left")
 
     plt.xlabel('size (MB)')
     plt.ylabel('time (s)')
     plt.gca().xaxis.set_major_formatter(mtick.FormatStrFormatter('%.0f'))
-    return f
+
+
+def plot_single_spectrum():
+    single_read_arrs = parse_single_records(single, Pipeline.READING_TIME)
+    single_write_arrs = parse_single_records(single, Pipeline.WRITING_TIME)
+
+    fig, axes = plt.subplots(len(input_files), 2)
+    plt.tight_layout()
+
+    for i in range(0, input_size):
+        fn = input_file_names[i]
+        filesize_in_mb = input_files[fn]
+
+        axes[i][0].hist([filesize_in_mb / x for x in single_read_arrs[fn]], bins=20)
+        axes[i][0].set_xlabel("MBps")
+        axes[i][0].set_title('Read, file size = {0:.0f} MB'.format(filesize_in_mb))
+
+        axes[i][1].hist([filesize_in_mb / x for x in single_write_arrs[fn]], bins=20)
+        axes[i][1].set_xlabel("MBps")
+        axes[i][1].set_title('Write, file size = {0:.0f} MB'.format(filesize_in_mb))
 
 
 def create_pipeline_table(obj, title):
-    f = plt.figure(1)
-
     files = list(dict(obj).keys())
 
     headers = ["", "Read (s)", "Write (s)", "Total (s)"]
@@ -102,10 +126,9 @@ def create_pipeline_table(obj, title):
         axes[i].set_title("File size: {0:.0f} MB".format(task1_stats[Pipeline.SIZE] / 1000000))
         axes[i].axis('off')
 
-    return f
 
-
-f1 = plot_single_io()
+plot_single_avg()
+plot_single_spectrum()
 # f2 = create_pipeline_table(bag, "Pipeline tasks")
 
 plt.show()

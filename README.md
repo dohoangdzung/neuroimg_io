@@ -12,8 +12,9 @@ Run *plotting.py* to show the result.
 ## System specs
 1. CPU: Intel(R) Core(TM)2 Quad CPU Q8400  @ 2.66GHz
 2. RAM: 15 MB of RAM
-3. Disk: 220 GB
-4. Measure disk bandwidth using *dd* command (run randomly):  84.4 MBps / 80.7 MBps (read/write)
+3. vm.dirty_ratio = 20, vm.dirty_background_ratio = 10
+4. Disk: 220 GB
+5. Measure disk bandwidth using *dd* command (run randomly):  72.5 MBps / 346 MBps (read/write)
  
 ## Cases
 Task detail: read input file and generate 1 output file, 1 temp file.
