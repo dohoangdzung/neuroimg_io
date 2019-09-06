@@ -170,8 +170,8 @@ def create_pipeline_table(results, title):
         axes[i].axis('off')
 
 
-# plot_single_avg()
-# plot_single_spectrum()
+plot_single_avg()
+plot_single_spectrum()
 create_pipeline_table(bag, "Pipeline tasks")
 
 plt.show()
