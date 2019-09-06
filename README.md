@@ -1,5 +1,5 @@
 # neuroimg_io
-Investigation of file read/write operations of neuroimaging pipelines
+Investigation of file read/write operations of neuroimaging pipelines.
     
 ## Requirement
 1. *python3*
@@ -17,8 +17,9 @@ Run *plotting.py* to show the result.
 4. Disk: 220 GB
 5. Measure disk bandwidth using *dd* command (run randomly):  72.5 MBps / 346 MBps (read/write)
  
-## Cases
+## Details
 Task detail: read input file, increase every byte of input file by 1, and generate 1 output file.
+The experiment is run for 100 times.
 
 1. Run single task with different input files.
 2. Execute a dask.bag with 3 mapping functions in which the output file of a task is the input of it's following task.
