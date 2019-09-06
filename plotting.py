@@ -15,6 +15,7 @@ for filename in input_file_names:
     input_files[filename] = single_result[filename][Pipeline.SIZE] / 1000000
 
 input_size = len(input_file_names)
+repetition = len(single)
 
 
 def parse_single_records(results, attr):
@@ -48,8 +49,8 @@ def plot_single_avg():
     single_write_avg = []
     for fn in input_file_names:
         file_size = input_files[fn]
-        single_read_avg.append(file_size * len(single_read_arrs[fn]) / sum(single_read_arrs[fn]))
-        single_write_avg.append(file_size * len(single_write_arrs[fn]) / sum(single_write_arrs[fn]))
+        single_read_avg.append(file_size * repetition / sum(single_read_arrs[fn]))
+        single_write_avg.append(file_size * repetition / sum(single_write_arrs[fn]))
 
     single_read_arrs.values()
 
@@ -89,30 +90,70 @@ def plot_single_spectrum():
         axes[i][1].set_title('Write, file size = {0:.0f} MB'.format(filesize_in_mb))
 
 
-def create_pipeline_table(obj, title):
-    files = list(dict(obj).keys())
-
+def create_pipeline_table(results, title):
     headers = ["", "Read (s)", "Write (s)", "Total (s)"]
-    fig, axes = plt.subplots(len(files), 1)
+    fig, axes = plt.subplots(input_size, 1)
     fig.suptitle(title)
 
-    for i in range(0, len(files)):
-        key = files[i]
-        file_stats = obj[key]
+    # filename
+    #     task
+    #         read
+    #         write
+    stats = {}
+    for fn in input_file_names:
+        stats[fn] = {}
+        stats[fn]['task1'] = {}
+        stats[fn]['task1'][Pipeline.READING_TIME] = []
+        stats[fn]['task1'][Pipeline.WRITING_TIME] = []
+        stats[fn]['task1'][Pipeline.TOTAL_TIME] = []
 
-        task1_stats = file_stats['task1_res'][Pipeline.STATS]
-        task2_stats = file_stats['task2_res'][Pipeline.STATS]
-        task3_stats = file_stats['task3_res'][Pipeline.STATS]
+        stats[fn]['task2'] = {}
+        stats[fn]['task2'][Pipeline.READING_TIME] = []
+        stats[fn]['task2'][Pipeline.WRITING_TIME] = []
+        stats[fn]['task2'][Pipeline.TOTAL_TIME] = []
 
-        task1 = [task1_stats[Pipeline.READING_TIME],
-                 task1_stats[Pipeline.WRITING_TIME],
-                 task1_stats[Pipeline.TOTAL_TIME]]
-        task2 = [task2_stats[Pipeline.READING_TIME],
-                 task2_stats[Pipeline.WRITING_TIME],
-                 task2_stats[Pipeline.TOTAL_TIME]]
-        task3 = [task3_stats[Pipeline.READING_TIME],
-                 task3_stats[Pipeline.WRITING_TIME],
-                 task3_stats[Pipeline.TOTAL_TIME]]
+        stats[fn]['task3'] = {}
+        stats[fn]['task3'][Pipeline.READING_TIME] = []
+        stats[fn]['task3'][Pipeline.WRITING_TIME] = []
+        stats[fn]['task3'][Pipeline.TOTAL_TIME] = []
+
+    for i in range(0, repetition):
+        rec = results[i]
+        for fn in input_file_names:
+            file_stats = rec[fn]
+
+            stats[fn]['task1'][Pipeline.READING_TIME].append(
+                file_stats['task1_res'][Pipeline.STATS][Pipeline.READING_TIME])
+            stats[fn]['task1'][Pipeline.WRITING_TIME].append(
+                file_stats['task1_res'][Pipeline.STATS][Pipeline.WRITING_TIME])
+            stats[fn]['task1'][Pipeline.TOTAL_TIME].append(file_stats['task1_res'][Pipeline.STATS][Pipeline.TOTAL_TIME])
+
+            stats[fn]['task2'][Pipeline.READING_TIME].append(
+                file_stats['task2_res'][Pipeline.STATS][Pipeline.READING_TIME])
+            stats[fn]['task2'][Pipeline.WRITING_TIME].append(
+                file_stats['task2_res'][Pipeline.STATS][Pipeline.WRITING_TIME])
+            stats[fn]['task2'][Pipeline.TOTAL_TIME].append(file_stats['task2_res'][Pipeline.STATS][Pipeline.TOTAL_TIME])
+
+            stats[fn]['task3'][Pipeline.READING_TIME].append(
+                file_stats['task3_res'][Pipeline.STATS][Pipeline.READING_TIME])
+            stats[fn]['task3'][Pipeline.WRITING_TIME].append(
+                file_stats['task3_res'][Pipeline.STATS][Pipeline.WRITING_TIME])
+            stats[fn]['task3'][Pipeline.TOTAL_TIME].append(file_stats['task3_res'][Pipeline.STATS][Pipeline.TOTAL_TIME])
+
+    for i in range(0, len(input_file_names)):
+        fn = input_file_names[i]
+
+        task1 = [sum(stats[fn]['task1'][Pipeline.READING_TIME]) / repetition,
+                 sum(stats[fn]['task1'][Pipeline.WRITING_TIME]) / repetition,
+                 sum(stats[fn]['task1'][Pipeline.TOTAL_TIME]) / repetition]
+
+        task2 = [sum(stats[fn]['task2'][Pipeline.READING_TIME]) / repetition,
+                 sum(stats[fn]['task2'][Pipeline.WRITING_TIME]) / repetition,
+                 sum(stats[fn]['task2'][Pipeline.TOTAL_TIME]) / repetition]
+
+        task3 = [sum(stats[fn]['task3'][Pipeline.READING_TIME]) / repetition,
+                 sum(stats[fn]['task3'][Pipeline.WRITING_TIME]) / repetition,
+                 sum(stats[fn]['task3'][Pipeline.TOTAL_TIME]) / repetition]
 
         task1 = ["%.2f" % x for x in task1]
         task2 = ["%.2f" % x for x in task2]
@@ -125,12 +166,12 @@ def create_pipeline_table(obj, title):
         table_data = [headers, task1, task2, task3]
 
         axes[i].table(cellText=table_data, loc='center')
-        axes[i].set_title("File size: {0:.0f} MB".format(task1_stats[Pipeline.SIZE] / 1000000))
+        axes[i].set_title("File size: {0:.0f} MB".format(input_files[fn]))
         axes[i].axis('off')
 
 
-plot_single_avg()
-plot_single_spectrum()
-# f2 = create_pipeline_table(bag, "Pipeline tasks")
+# plot_single_avg()
+# plot_single_spectrum()
+create_pipeline_table(bag, "Pipeline tasks")
 
 plt.show()
