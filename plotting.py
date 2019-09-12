@@ -55,6 +55,7 @@ def plot_single_avg():
     single_read_arrs.values()
 
     fig, (read, write) = plt.subplots(1, 2, dpi=80)
+    fig.suptitle("Single task")
     plt.tight_layout()
 
     read.plot(file_sizes_in_mb, single_read_avg, 'r.')
@@ -90,10 +91,10 @@ def plot_single_spectrum():
         axes[i][1].set_title('Write, file size = {0:.0f} MB'.format(filesize_in_mb))
 
 
-def create_pipeline_table(results, title):
+def plot_pipeline_result(results, title):
     headers = ["", "Read (s)", "Write (s)", "Total (s)"]
-    fig, axes = plt.subplots(input_size, 1)
-    fig.suptitle(title)
+    fig_avg, tables = plt.subplots(input_size, 1)
+    fig_avg.suptitle(title)
 
     # filename
     #     task
@@ -140,9 +141,15 @@ def create_pipeline_table(results, title):
                 file_stats['task3_res'][Pipeline.STATS][Pipeline.WRITING_TIME])
             stats[fn]['task3'][Pipeline.TOTAL_TIME].append(file_stats['task3_res'][Pipeline.STATS][Pipeline.TOTAL_TIME])
 
-    for i in range(0, len(input_file_names)):
-        fn = input_file_names[i]
+    fig_hist, hists = plt.subplots(input_size, 3, dpi=80)
+    fig_hist.suptitle(title)
+    plt.tight_layout()
 
+    for i in range(0, input_size):
+        fn = input_file_names[i]
+        filesize_in_mb = input_files[fn]
+
+        # Show average results in a table
         task1 = [sum(stats[fn]['task1'][Pipeline.READING_TIME]) / repetition,
                  sum(stats[fn]['task1'][Pipeline.WRITING_TIME]) / repetition,
                  sum(stats[fn]['task1'][Pipeline.TOTAL_TIME]) / repetition]
@@ -165,13 +172,26 @@ def create_pipeline_table(results, title):
 
         table_data = [headers, task1, task2, task3]
 
-        axes[i].table(cellText=table_data, loc='center')
-        axes[i].set_title("File size: {0:.0f} MB".format(input_files[fn]))
-        axes[i].axis('off')
+        tables[i].table(cellText=table_data, loc='center')
+        tables[i].set_title("File size: {0:.0f} MB".format(input_files[fn]))
+        tables[i].axis('off')
+
+        # Show histogram of READING_TIME
+        hists[i][0].hist(stats[fn]['task1'][Pipeline.READING_TIME], bins=20)
+        hists[i][0].set_xlabel("sec")
+        hists[i][0].set_title('task1, file size = {0:.0f} MB'.format(filesize_in_mb))
+
+        hists[i][1].hist(stats[fn]['task2'][Pipeline.READING_TIME], bins=20)
+        hists[i][1].set_xlabel("sec")
+        hists[i][1].set_title('task2, file size = {0:.0f} MB'.format(filesize_in_mb))
+
+        hists[i][2].hist(stats[fn]['task3'][Pipeline.READING_TIME], bins=20)
+        hists[i][2].set_xlabel("sec")
+        hists[i][2].set_title('task3, file size = {0:.0f} MB'.format(filesize_in_mb))
 
 
 plot_single_avg()
 plot_single_spectrum()
-create_pipeline_table(bag, "Pipeline tasks")
+plot_pipeline_result(bag, "Pipeline tasks")
 
 plt.show()

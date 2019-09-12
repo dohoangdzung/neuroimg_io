@@ -11,15 +11,22 @@ Investigation of file read/write operations of neuroimaging pipelines.
 Run *plotting.py* to show the result.
 
 ## System specs
-1. CPU: Intel(R) Core(TM)2 Quad CPU Q8400  @ 2.66GHz
-2. RAM: 15 MB of RAM
-3. vm.dirty_ratio = 20, vm.dirty_background_ratio = 10
-4. Disk: 220 GB
-5. Measure disk bandwidth using *dd* command (run randomly):  72.5 MBps / 346 MBps (read/write)
- 
-## Details
-Task detail: read input file, increase every byte of input file by 1, and generate 1 output file.
-The experiment is run for 100 times.
+Run on Cloud VM:
+- CentOS Linux release 7.6.1810 (Core)
+- CPU: Intel(R) Core(TM)2 Quad CPU Q8400  @ 2.66GHz
+- RAM: 15 MB of RAM, cache size = 12.9 GB
+- vm.dirty_ratio = 20, vm.dirty_background_ratio = 10
+- Disk: 220 GB
+- Measure disk bandwidth using *dd* command (run randomly):  72.5 MBps / 346 MBps (read/write)
 
-1. Run single task with different input files.
-2. Execute a dask.bag with 3 mapping functions in which the output file of a task is the input of it's following task.
+##Input files
+There are 3 input files sized 809MB, 1619MB, 6010MB.
+
+## How it runs
+
+- Single task: Read input files as a binary file, increase all bytes by 1. write the output to an output file.
+- Pipeline: Execute a dask.bag with sequence of 3 functions in which the output file of a task is the input of it's following task.
+
+1. Before each single task and pipeline tasks, clear the cache with command: sudo echo 3 | sudo tee /proc/sys/vm/drop_caches
+2. Run with each input file.
+3. Repear experiment for 100 times.
