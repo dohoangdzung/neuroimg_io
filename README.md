@@ -10,6 +10,7 @@ Investigation of file read/write operations of neuroimaging pipelines.
 ## How to run
 Run *plotting.py* to show the result.
 
+# Experiment Details
 ## System specs
 Run on Cloud VM:
 - CentOS Linux release 7.6.1810 (Core)
@@ -29,4 +30,4 @@ There are 3 input files sized 809MB, 1619MB, 6010MB.
 
 1. Before each single task and pipeline tasks, clear the cache with command: sudo echo 3 | sudo tee /proc/sys/vm/drop_caches
 2. Run with each input file.
-3. Repear experiment for 100 times.
+3. Repeat experiment for 100 times.
