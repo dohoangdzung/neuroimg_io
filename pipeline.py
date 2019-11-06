@@ -59,6 +59,10 @@ class Pipeline:
         finish_reading = time.time()
         reading_time = finish_reading - start_reading
 
+        start_cpu = time.time()
+        byte_arr += 1
+        end_cpu = time.time()
+
         statinfo = os.stat(input_file)
 
         output_file = "output/{0}_{1}.nii.gz".format(subject, suffix)
@@ -110,9 +114,6 @@ class Pipeline:
         print("File size: {0} bytes".format(statinfo.st_size))
         print("Reading time: {0:.2f} sec".format(reading_time))
 
-        start_cpu = time.time()
-        byte_arr += 1
-        end_cpu = time.time()
         cpu_time = end_cpu - start_cpu
         print("CPU time: {0:.2f} sec".format(cpu_time))
 
