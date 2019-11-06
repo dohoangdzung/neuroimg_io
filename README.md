@@ -20,7 +20,7 @@ Run on Cloud VM:
 - Disk: 220 GB
 - Measure disk bandwidth using *dd* command (run randomly):  72.5 MBps / 346 MBps (read/write)
 
-##Input files
+## Input files
 There are 3 input files sized 809MB, 1619MB, 6010MB.
 
 ## How it runs

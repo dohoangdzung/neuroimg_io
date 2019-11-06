@@ -11,7 +11,13 @@ if len(args) < 2:
     print("Input file is required!")
 else:
     in_file = args[1]
-    iteration = int(args[2])
+
+    fincore = False
+    iteration = 0
+    if len(args) > 2:
+        iteration = int(args[2])
+        fincore = False
+
     export_file = "export/" + args[0] + ".json"
     if os.path.exists(export_file):
         stats = ast.literal_eval(open(export_file, "r").read())
@@ -20,13 +26,15 @@ else:
 
     start = time.time()
 
-    p = Pipeline(in_file)
+    p = Pipeline(in_file, fincore)
 
-    if iteration >= len(stats):
-        new_iter_stat = {}
-        if len(stats) == 0:
-            stats = []
-        stats.append(new_iter_stat)
+    if not fincore:
+        # If benchmarking
+        if iteration >= len(stats):
+            new_iter_stat = {}
+            if len(stats) == 0:
+                stats = []
+            stats.append(new_iter_stat)
 
     stats[iteration][in_file] = p.execute()
 
