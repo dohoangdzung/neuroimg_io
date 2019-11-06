@@ -60,7 +60,7 @@ class Pipeline:
         reading_time = finish_reading - start_reading
 
         start_cpu = time.time()
-        byte_arr += 1
+        byte_arr = byte_arr + 1
         end_cpu = time.time()
 
         statinfo = os.stat(input_file)
