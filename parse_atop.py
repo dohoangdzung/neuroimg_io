@@ -1,5 +1,6 @@
 import matplotlib.pyplot as plt
 import numpy as np
+import json
 
 f = open('export/pipeline_mem_c.log', 'r')
 lines = f.readlines()
@@ -67,111 +68,103 @@ time = np.arange(0, intervals)
 #     app_mem.append(0)
 
 
-fig = plt.figure()
+with open('export/timestamps_c.json') as json_file:
+    data = json.load(json_file)
+    start = data["start"]
+    read1end = data["read1end"]
+    write1start = data["write1start"]
+    write1end = data["write1end"]
+    read2start = data["read2start"]
+    read2end = data["read2end"]
+    write2start = data["write2start"]
+    write2end = data["write2end"]
+    read3start = data["read3start"]
+    read3end = data["read3end"]
+    write3start = data["write3start"]
+    write3end = data["write3end"]
+
+
+def mem_plot(fig):
+    fig.minorticks_on()
+    fig.set_title("pipeline memory profiling")
+    fig.axvspan(xmin=read1end - start, xmax=write1start - start, color="y", alpha=0.4, label="computation")
+    fig.axvspan(xmin=0, xmax=read1end - start, color="g", alpha=0.2, label="task1 read")
+    fig.axvspan(xmin=write1start - start, xmax=write1end - start, color="g", alpha=0.4, label="task1 write")
+
+    fig.axvspan(xmin=read2start - start, xmax=read2end - start, color="b", alpha=0.2, label="task2 read")
+    fig.axvspan(xmin=read2end - start, xmax=write2start - start, color="y", alpha=0.4)
+    fig.axvspan(xmin=write2start - start, xmax=write2end - start, color="b", alpha=0.4, label="task2 write")
+
+    fig.axvspan(xmin=read3start - start, xmax=read3end - start, color="r", alpha=0.2, label="task3 read")
+    fig.axvspan(xmin=read3end - start, xmax=write3start - start, color="y", alpha=0.4)
+    fig.axvspan(xmin=write3start - start, xmax=write3end - start, color="r", alpha=0.4, label="task3 write")
+
+    # app_cache = list(np.array(app_mem) + np.array(cache_used))
+
+    fig.plot(time, sys_mem, color='k', linewidth=1.5, label="total mem")
+    # ax1.plot(time, free_mem, color='g', linewidth=1.5, linestyle="-.", label="free memory")
+    fig.plot(time, used_mem, color='g', linewidth=1.5, label="used mem")
+    # ax1.plot(time, app_mem, color='c', linewidth=1.5, label="app memory")
+    fig.plot(time, cache_used, color='m', linewidth=1.5, label="cache used")
+    # ax1.plot(time, app_cache, color='c', linewidth=1.5, label="cache + app")
+    fig.plot(time, dirty_pages, color='r', linewidth=1.5, label="dirty data")
+    fig.plot(time, avai_mem, color='b', linewidth=1, linestyle="-.", label="available mem")
+    fig.plot(time, dirty_ratio, color='k', linewidth=1, linestyle="-.", label="dirty_ratio")
+    fig.plot(time, dirty_bg_ratio, color='r', linewidth=1, linestyle="-.", label="dirty_bg_ratio")
+
+    # plt.annotate("(1)", (10, 4000))
+    # plt.annotate("(2)", (40, 14000))
+    # plt.annotate("(3)", (62, 12000))
+    # plt.annotate("(4)", (70, 14000))
+    # plt.annotate("(5)", (104, 1700))
+    # plt.annotate("(6)", (104, 8600))
+    # plt.annotate("(7)", (115, 9500))
+    # plt.annotate("(8)", (115, 700))
+    # plt.annotate("(9)", (125, 10700))
+    # plt.annotate("(10)", (132, 14200))
+    # plt.annotate("(11)", (132, 8700))
+
+    fig.legend(fontsize='small', loc='best')
+
+    # plot_timeframe()
+    # plt.title("MR=6.5GBps, MW=3.4 GBps, DR=[136,146] MBps, DW=[124,142] MBps")
+    # plt.plot(time, dirty_pages, color='r', linewidth=1.5, label="dirty data")
+    # plt.legend()
+
+
+def collectl_plot(fig):
+    dsk_data = np.loadtxt('export/collectl-simgrid-vm-20200103.dsk.csv', skiprows=1, delimiter=',')
+    read = dsk_data[:, 2] / 1024
+    write = dsk_data[:, 6] / 1024
+
+    time = np.arange(0, len(read))
+
+    fig.minorticks_on()
+    fig.set_title("disk throughput (MB)")
+
+    fig.axvspan(xmin=read1end - start, xmax=write1start - start, color="y", alpha=0.4)
+    fig.axvspan(xmin=0, xmax=read1end - start, color="g", alpha=0.2)
+    fig.axvspan(xmin=write1start - start, xmax=write1end - start, color="g", alpha=0.4)
+
+    fig.axvspan(xmin=read2start - start, xmax=read2end - start, color="b", alpha=0.2)
+    fig.axvspan(xmin=read2end - start, xmax=write2start - start, color="y", alpha=0.4)
+    fig.axvspan(xmin=write2start - start, xmax=write2end - start, color="b", alpha=0.4)
+
+    fig.axvspan(xmin=read3start - start, xmax=read3end - start, color="r", alpha=0.2)
+    fig.axvspan(xmin=read3end - start, xmax=write3start - start, color="y", alpha=0.4)
+    fig.axvspan(xmin=write3start - start, xmax=write3end - start, color="r", alpha=0.4)
+
+    fig.plot(time, read, color='g', linewidth=1.5, label="read")
+    fig.plot(time, write, color='r', linewidth=1.5, label="write")
+    fig.legend()
+
+
+figure = plt.figure()
 plt.tight_layout()
+ax1 = figure.add_subplot(2, 1, 1)
+ax2 = figure.add_subplot(2, 1, 2, sharex=ax1)
 
-# ==========================ATOP PLOT===================================
-ax1 = fig.add_subplot(2, 1, 1)
-ax1.minorticks_on()
-ax1.set_title("pipeline memory profiling")
-
-# PYTHON
-# start = 0.02
-# read1end = 23.53
-# write1start = 26.68
-# write1end = 56.90
-# read2start = 58.03
-# read2end = 60.81
-# write2start = 64.76
-# write2end = 108.49
-# read3start = 110.31
-# read3end = 112.67
-# write3start = 116.81
-# write3end = 160.84
-
-# C
-start = 1578088922.567
-read1end = 1578088944.653
-write1start = 1578088958.261
-write1end = 1578088982.909
-read2start = 1578088984.643
-read2end = 1578088986.824
-write2start = 1578089001.055
-write2end = 1578089026.693
-read3start = 1578089028.978
-read3end = 1578089069.075
-write3start = 1578089083.655
-write3end = 1578089111.399
-
-ax1.axvspan(xmin=read1end - start, xmax=write1start - start, color="y", alpha=0.4, label="computation")
-ax1.axvspan(xmin=0, xmax=read1end - start, color="g", alpha=0.2, label="task1 read")
-ax1.axvspan(xmin=write1start - start, xmax=write1end - start, color="g", alpha=0.4, label="task1 write")
-
-ax1.axvspan(xmin=read2start - start, xmax=read2end - start, color="b", alpha=0.2, label="task2 read")
-ax1.axvspan(xmin=read2end - start, xmax=write2start - start, color="y", alpha=0.4)
-ax1.axvspan(xmin=write2start - start, xmax=write2end - start, color="b", alpha=0.4, label="task2 write")
-
-ax1.axvspan(xmin=read3start - start, xmax=read3end - start, color="r", alpha=0.2, label="task3 read")
-ax1.axvspan(xmin=read3end - start, xmax=write3start - start, color="y", alpha=0.4)
-ax1.axvspan(xmin=write3start - start, xmax=write3end - start, color="r", alpha=0.4, label="task3 write")
-
-# app_cache = list(np.array(app_mem) + np.array(cache_used))
-
-ax1.plot(time, sys_mem, color='k', linewidth=1.5, label="total mem")
-# ax1.plot(time, free_mem, color='g', linewidth=1.5, linestyle="-.", label="free memory")
-ax1.plot(time, used_mem, color='g', linewidth=1.5, label="used mem")
-# ax1.plot(time, app_mem, color='c', linewidth=1.5, label="app memory")
-ax1.plot(time, cache_used, color='m', linewidth=1.5, label="cache used")
-# ax1.plot(time, app_cache, color='c', linewidth=1.5, label="cache + app")
-ax1.plot(time, dirty_pages, color='r', linewidth=1.5, label="dirty data")
-ax1.plot(time, avai_mem, color='b', linewidth=1, linestyle="-.", label="available mem")
-ax1.plot(time, dirty_ratio, color='k', linewidth=1, linestyle="-.", label="dirty_ratio")
-ax1.plot(time, dirty_bg_ratio, color='r', linewidth=1, linestyle="-.", label="dirty_bg_ratio")
-
-# plt.annotate("(1)", (10, 4000))
-# plt.annotate("(2)", (40, 14000))
-# plt.annotate("(3)", (62, 12000))
-# plt.annotate("(4)", (70, 14000))
-# plt.annotate("(5)", (104, 1700))
-# plt.annotate("(6)", (104, 8600))
-# plt.annotate("(7)", (115, 9500))
-# plt.annotate("(8)", (115, 700))
-# plt.annotate("(9)", (125, 10700))
-# plt.annotate("(10)", (132, 14200))
-# plt.annotate("(11)", (132, 8700))
-
-ax1.legend(fontsize='small', loc='best')
-
-# plot_timeframe()
-# plt.title("MR=6.5GBps, MW=3.4 GBps, DR=[136,146] MBps, DW=[124,142] MBps")
-# plt.plot(time, dirty_pages, color='r', linewidth=1.5, label="dirty data")
-# plt.legend()
-
-# ==========================COLLECTL PLOT===================================
-dsk_data = np.loadtxt('export/collectl-simgrid-vm-20200103.dsk.csv', skiprows=1, delimiter=',')
-read = dsk_data[:, 2] / 1024
-write = dsk_data[:, 6] / 1024
-
-time = np.arange(0, len(read))
-
-ax2 = fig.add_subplot(2, 1, 2, sharex=ax1)
-ax2.minorticks_on()
-ax2.set_title("disk throughput (MB)")
-
-ax2.axvspan(xmin=read1end - start, xmax=write1start - start, color="y", alpha=0.4)
-ax2.axvspan(xmin=0, xmax=read1end - start, color="g", alpha=0.2)
-ax2.axvspan(xmin=write1start - start, xmax=write1end - start, color="g", alpha=0.4)
-
-ax2.axvspan(xmin=read2start - start, xmax=read2end - start, color="b", alpha=0.2)
-ax2.axvspan(xmin=read2end - start, xmax=write2start - start, color="y", alpha=0.4)
-ax2.axvspan(xmin=write2start - start, xmax=write2end - start, color="b", alpha=0.4)
-
-ax2.axvspan(xmin=read3start - start, xmax=read3end - start, color="r", alpha=0.2)
-ax2.axvspan(xmin=read3end - start, xmax=write3start - start, color="y", alpha=0.4)
-ax2.axvspan(xmin=write3start - start, xmax=write3end - start, color="r", alpha=0.4)
-
-ax2.plot(time, read, color='g', linewidth=1.5, label="read")
-ax2.plot(time, write, color='r', linewidth=1.5, label="write")
-ax2.legend()
+mem_plot(ax1)
+collectl_plot(ax2)
 
 plt.show()
