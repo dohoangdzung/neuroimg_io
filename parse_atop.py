@@ -84,20 +84,24 @@ with open('export/timestamps_c.json') as json_file:
     write3end = data["write3end"]
 
 
+def timestamp_plot(fig):
+    fig.axvspan(xmin=read1end - start, xmax=write1start - start, color="k", alpha=0.2, label="computation")
+    fig.axvspan(xmin=0, xmax=read1end - start, color="g", alpha=0.2, label="read")
+    fig.axvspan(xmin=write1start - start, xmax=write1end - start, color="b", alpha=0.2, label="write")
+
+    fig.axvspan(xmin=read2start - start, xmax=read2end - start, color="g", alpha=0.2)
+    fig.axvspan(xmin=read2end - start, xmax=write2start - start, color="k", alpha=0.2)
+    fig.axvspan(xmin=write2start - start, xmax=write2end - start, color="b", alpha=0.2)
+
+    fig.axvspan(xmin=read3start - start, xmax=read3end - start, color="g", alpha=0.2)
+    fig.axvspan(xmin=read3end - start, xmax=write3start - start, color="k", alpha=0.2)
+    fig.axvspan(xmin=write3start - start, xmax=write3end - start, color="b", alpha=0.2)
+
+
 def mem_plot(fig):
     fig.minorticks_on()
     fig.set_title("pipeline memory profiling")
-    fig.axvspan(xmin=read1end - start, xmax=write1start - start, color="y", alpha=0.4, label="computation")
-    fig.axvspan(xmin=0, xmax=read1end - start, color="g", alpha=0.2, label="task1 read")
-    fig.axvspan(xmin=write1start - start, xmax=write1end - start, color="g", alpha=0.4, label="task1 write")
-
-    fig.axvspan(xmin=read2start - start, xmax=read2end - start, color="b", alpha=0.2, label="task2 read")
-    fig.axvspan(xmin=read2end - start, xmax=write2start - start, color="y", alpha=0.4)
-    fig.axvspan(xmin=write2start - start, xmax=write2end - start, color="b", alpha=0.4, label="task2 write")
-
-    fig.axvspan(xmin=read3start - start, xmax=read3end - start, color="r", alpha=0.2, label="task3 read")
-    fig.axvspan(xmin=read3end - start, xmax=write3start - start, color="y", alpha=0.4)
-    fig.axvspan(xmin=write3start - start, xmax=write3end - start, color="r", alpha=0.4, label="task3 write")
+    timestamp_plot(fig)
 
     # app_cache = list(np.array(app_mem) + np.array(cache_used))
 
@@ -142,21 +146,11 @@ def collectl_plot(fig):
     fig.minorticks_on()
     fig.set_title("disk throughput (MB)")
 
-    fig.axvspan(xmin=read1end - start, xmax=write1start - start, color="y", alpha=0.4)
-    fig.axvspan(xmin=0, xmax=read1end - start, color="g", alpha=0.2)
-    fig.axvspan(xmin=write1start - start, xmax=write1end - start, color="g", alpha=0.4)
-
-    fig.axvspan(xmin=read2start - start, xmax=read2end - start, color="b", alpha=0.2)
-    fig.axvspan(xmin=read2end - start, xmax=write2start - start, color="y", alpha=0.4)
-    fig.axvspan(xmin=write2start - start, xmax=write2end - start, color="b", alpha=0.4)
-
-    fig.axvspan(xmin=read3start - start, xmax=read3end - start, color="r", alpha=0.2)
-    fig.axvspan(xmin=read3end - start, xmax=write3start - start, color="y", alpha=0.4)
-    fig.axvspan(xmin=write3start - start, xmax=write3end - start, color="r", alpha=0.4)
+    timestamp_plot(fig)
 
     fig.plot(time, read, color='g', linewidth=1.5, label="read")
     fig.plot(time, write, color='r', linewidth=1.5, label="write")
-    fig.legend()
+    fig.legend(fontsize='small', loc='best')
 
 
 figure = plt.figure()
