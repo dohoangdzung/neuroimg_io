@@ -42,7 +42,23 @@ class Pipeline:
 
         # TODO FINCORE
         print("\n------------------------------------------------------------")
-        print("fincore result before task{0} read:".format(suffix))
+        print("fincore before task{0} read:".format(suffix))
+        for i in range(0, suffix):
+            if i == 0:
+                target_filename = self.input_file
+            else:
+                target_filename = "output/{0}_{1}.nii.gz".format(subject, i)
+            print("\nStats of file: {0}".format(target_filename))
+            command.fincore(target_filename)
+        start_reading = time.time()
+        byte_arr = np.fromfile(input_file, dtype=np.int8)
+
+        finish_reading = time.time()
+        reading_time = finish_reading - start_reading
+
+        # TODO FINCORE
+        print("\n------------------------------------------------------------")
+        print("fincore after task{0} read:".format(suffix))
         for i in range(0, suffix):
             if i == 0:
                 target_filename = self.input_file
@@ -51,25 +67,11 @@ class Pipeline:
             print("\nStats of file: {0}".format(target_filename))
             command.fincore(target_filename)
 
-        start_reading = time.time()
-        # inp = open(input_file, 'rb')
-        # file_obj = inp.read()
-        byte_arr = np.fromfile(input_file, dtype=np.int8)
-
-        finish_reading = time.time()
-        reading_time = finish_reading - start_reading
-
         start_cpu = time.time()
         byte_arr = byte_arr + 1
         end_cpu = time.time()
 
-        statinfo = os.stat(input_file)
-
         output_file = "output/{0}_{1}.nii.gz".format(subject, suffix)
-        # temp_file = "output/{0}_{1}_temp.nii.gz".format(subject, suffix)
-
-        # out = open(output_file, 'wb')
-        # out_temp = open(temp_file, 'wb')
 
         # TODO FINCORE
         print("\n------------------------------------------------------------")
@@ -81,12 +83,9 @@ class Pipeline:
                 target_filename = "output/{0}_{1}.nii.gz".format(subject, i)
             print("\nStats of file: {0}".format(target_filename))
             command.fincore(target_filename)
-        # cmd.atop("export/task{0}_read.mem".format(suffix))
 
         start_writing = time.time()
         byte_arr.tofile(output_file)
-        # out.write(byte_arr.tobytes())
-        # out_temp.write(file_obj)
 
         finish_writing = time.time()
 
@@ -100,10 +99,9 @@ class Pipeline:
                 target_filename = "output/{0}_{1}.nii.gz".format(subject, i)
             print("\nStats of file: {0}".format(target_filename))
             command.fincore(target_filename)
-        if suffix == 3:
-            command.fincore("output/{0}_3.nii.gz".format(subject))
-        # cmd.atop("export/task{0}_write.mem".format(suffix))
+        command.fincore("output/{0}_{1}.nii.gz".format(subject, i + 1))
 
+        statinfo = os.stat(input_file)
         print("\nRESULT:")
         print("Start reading:{0:.2f}".format(start_reading - self.start_time))
         print("End reading:{0:.2f}".format(finish_reading - self.start_time))

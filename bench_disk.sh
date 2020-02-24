@@ -11,10 +11,10 @@ do
 
     echo 3 | sudo tee /proc/sys/vm/drop_caches
     echo 'Read:'
-    dd if=$device of=/dev/null bs=1M count=1024 status=progress
+    sudo dd if=$device of=/dev/null bs=1M count=1024 status=progress
 
     echo 'Buffered read:'
-    dd if=$device of=/dev/null bs=1M count=1024 status=progress
+    sudo dd if=$device of=/dev/null bs=1M count=1024 status=progress
 
     echo 3 | sudo tee /proc/sys/vm/drop_caches
 done

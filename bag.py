@@ -6,43 +6,47 @@ import os
 from pipeline import Pipeline
 from export import export
 
-args = sys.argv
-if len(args) < 2:
-    print("Input file is required!")
-else:
-    in_file = args[1]
 
-    fincore = False
-    iteration = 0
-    if len(args) > 2:
-        iteration = int(args[2])
-        fincore = False
-
-    export_file = "export/" + args[0] + ".json"
-    if os.path.exists(export_file):
-        stats = ast.literal_eval(open(export_file, "r").read())
+def run(args):
+    if len(args) < 2:
+        print("Input file is required!")
     else:
-        stats = []
+        in_file = args[1]
 
-    start = time.time()
+        fincore = False
+        iteration = 0
+        if len(args) > 2:
+            iteration = int(args[2])
+            fincore = False
 
-    p = Pipeline(in_file, fincore)
+        export_file = "export/" + args[0] + ".json"
+        if os.path.exists(export_file):
+            stats = ast.literal_eval(open(export_file, "r").read())
+        else:
+            stats = []
 
-    if not fincore:
-        # If benchmarking
-        if iteration >= len(stats):
-            new_iter_stat = {}
-            if len(stats) == 0:
-                stats = []
-            stats.append(new_iter_stat)
+        start = time.time()
 
-    stats[iteration][in_file] = p.execute()
+        p = Pipeline(in_file, fincore)
 
-    Pipeline.clean_output_folder()
+        if not fincore:
+            # If benchmarking
+            if iteration >= len(stats):
+                new_iter_stat = {}
+                if len(stats) == 0:
+                    stats = []
+                stats.append(new_iter_stat)
 
-    end = time.time()
+        stats[iteration][in_file] = p.execute()
 
-    print("TOTAL RUNTIME: {0:.4f}".format(end - start))
-    print("=====================================\n")
+        Pipeline.clean_output_folder()
 
-    export(export_file, json.dumps(stats))
+        end = time.time()
+
+        print("TOTAL RUNTIME: {0:.4f}".format(end - start))
+        print("=====================================\n")
+
+        export(export_file, json.dumps(stats))
+
+
+run(sys.argv)
