@@ -2,7 +2,12 @@ import matplotlib.pyplot as plt
 import numpy as np
 import json
 
-f = open('export/pipeline_mem_c.log', 'r')
+timestamps_file = "export/timestamps_c_readonly_2gb.log"
+mem_prof_file = "export/pipeline_mem_c.log"
+collectl_file = "export/collectl-simgrid-vm-20200310_readonly_2gb.dsk.csv"
+input_size = "2000 MB"
+
+f = open(mem_prof_file)
 lines = f.readlines()
 
 sys_mem = []
@@ -68,39 +73,54 @@ time = np.arange(0, intervals)
 #     app_mem.append(0)
 
 
-with open('export/timestamps_c.json') as json_file:
-    data = json.load(json_file)
-    start = data["start"]
-    read1end = data["read1end"]
-    write1start = data["write1start"]
-    write1end = data["write1end"]
-    read2start = data["read2start"]
-    read2end = data["read2end"]
-    write2start = data["write2start"]
-    write2end = data["write2end"]
-    read3start = data["read3start"]
-    read3end = data["read3end"]
-    write3start = data["write3start"]
-    write3end = data["write3end"]
+time_stamp = {
+        "read_start": [],
+        "read_end": [],
+        "write_start": [],
+        "write_end": []
+    }
+with open(timestamps_file) as time_stamp_file:
+
+    lines = time_stamp_file.read().splitlines()
+
+    for line in lines:
+        part = line.split(":")
+        time_stamp[part[0]].append(float(part[1]) / 1000)
+
+    read1start = time_stamp["read_start"][0]
+    read2start = time_stamp["read_start"][1]
+    read3start = time_stamp["read_start"][2]
+
+    read1end = time_stamp["read_end"][0]
+    read2end = time_stamp["read_end"][1]
+    read3end = time_stamp["read_end"][2]
+
+    write1start = time_stamp["write_start"][0]
+    write2start = time_stamp["write_start"][1]
+    write3start = time_stamp["write_start"][2]
+
+    write1end = time_stamp["write_end"][0]
+    write2end = time_stamp["write_end"][1]
+    write3end = time_stamp["write_end"][2]
 
 
 def timestamp_plot(fig):
-    fig.axvspan(xmin=read1end - start, xmax=write1start - start, color="k", alpha=0.2, label="computation")
-    fig.axvspan(xmin=0, xmax=read1end - start, color="g", alpha=0.2, label="read")
-    fig.axvspan(xmin=write1start - start, xmax=write1end - start, color="b", alpha=0.2, label="write")
+    fig.axvspan(xmin=read1end - read1start, xmax=write1start - read1start, color="k", alpha=0.2, label="computation")
+    fig.axvspan(xmin=0, xmax=read1end - read1start, color="g", alpha=0.2, label="read")
+    fig.axvspan(xmin=write1start - read1start, xmax=write1end - read1start, color="b", alpha=0.2, label="write")
 
-    fig.axvspan(xmin=read2start - start, xmax=read2end - start, color="g", alpha=0.2)
-    fig.axvspan(xmin=read2end - start, xmax=write2start - start, color="k", alpha=0.2)
-    fig.axvspan(xmin=write2start - start, xmax=write2end - start, color="b", alpha=0.2)
+    fig.axvspan(xmin=read2start - read1start, xmax=read2end - read1start, color="g", alpha=0.2)
+    fig.axvspan(xmin=read2end - read1start, xmax=write2start - read1start, color="k", alpha=0.2)
+    fig.axvspan(xmin=write2start - read1start, xmax=write2end - read1start, color="b", alpha=0.2)
 
-    fig.axvspan(xmin=read3start - start, xmax=read3end - start, color="g", alpha=0.2)
-    fig.axvspan(xmin=read3end - start, xmax=write3start - start, color="k", alpha=0.2)
-    fig.axvspan(xmin=write3start - start, xmax=write3end - start, color="b", alpha=0.2)
+    fig.axvspan(xmin=read3start - read1start, xmax=read3end - read1start, color="g", alpha=0.2)
+    fig.axvspan(xmin=read3end - read1start, xmax=write3start - read1start, color="k", alpha=0.2)
+    fig.axvspan(xmin=write3start - read1start, xmax=write3end - read1start, color="b", alpha=0.2)
 
 
 def mem_plot(fig):
     fig.minorticks_on()
-    fig.set_title("pipeline memory profiling")
+    fig.set_title("memory profiling (input size = %s)" % input_size)
     timestamp_plot(fig)
 
     # app_cache = list(np.array(app_mem) + np.array(cache_used))
@@ -137,7 +157,7 @@ def mem_plot(fig):
 
 
 def collectl_plot(fig):
-    dsk_data = np.loadtxt('export/collectl-simgrid-vm-20200103.dsk.csv', skiprows=1, delimiter=',')
+    dsk_data = np.loadtxt(collectl_file, skiprows=1, delimiter=',')
     read = dsk_data[:, 2] / 1024
     write = dsk_data[:, 6] / 1024
 
