@@ -14,6 +14,6 @@ sudo echo 3 | sudo tee /proc/sys/vm/drop_caches
 atop -P MEM 1 200 > export/pipeline_mem_c.log &
 collectl -sCDnfM -omT --dskopts z --cpuopts z -i 1 --sep , -P -f export/collectl --procfilt P p  &
 
-./read_write "input/223913" "output/file2.dat" "export/timestamps_c_readonly_2gb.log"
-./read_write "output/file2.dat" "output/file3.dat" "export/timestamps_c_readonly_2gb.log"
-./read_write "output/file3.dat" "output/file4.dat" "export/timestamps_c_readonly_2gb.log"
+./read_write "input/file1.dat" "output/file2.dat" "export/timestamps_c_readonly.log"
+./read_write "output/file2.dat" "output/file3.dat" "export/timestamps_c_readonly.log"
+./read_write "output/file3.dat" "output/file4.dat" "export/timestamps_c_readonly.log"

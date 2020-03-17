@@ -2,9 +2,9 @@ import matplotlib.pyplot as plt
 import numpy as np
 import json
 
-timestamps_file = "export/timestamps_c_readonly_2gb.log"
+timestamps_file = "export/timestamps_c_readonly.log"
 mem_prof_file = "export/pipeline_mem_c.log"
-collectl_file = "export/collectl-simgrid-vm-20200310_readonly_2gb.dsk.csv"
+collectl_file = "export/collectl-simgrid-vm-20200313.dsk.csv"
 input_size = "2000 MB"
 
 f = open(mem_prof_file)
@@ -25,7 +25,7 @@ swap_free = []
 
 # bw_r = []
 # bw_w = []
-for i in range(len(lines)):
+for i in range(160):
     line = lines[i]
     if line.startswith("MEM"):
         values = line.split(" ")
