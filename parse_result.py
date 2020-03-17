@@ -2,10 +2,10 @@ import matplotlib.pyplot as plt
 import numpy as np
 import json
 
-timestamps_file = "export/timestamps_c_readonly.log"
-mem_prof_file = "export/pipeline_mem_c.log"
-collectl_file = "export/collectl-simgrid-vm-20200313.dsk.csv"
-input_size = "2000 MB"
+timestamps_file = "export/timestamps_readonly.log"
+mem_prof_file = "export/pipeline_mem_readonly.log"
+collectl_file = "export/collectl-simgrid-vm-20200317.dsk.csv"
+input_size = "4702 MB"
 
 f = open(mem_prof_file)
 lines = f.readlines()
@@ -25,7 +25,7 @@ swap_free = []
 
 # bw_r = []
 # bw_w = []
-for i in range(160):
+for i in range(len(lines)):
     line = lines[i]
     if line.startswith("MEM"):
         values = line.split(" ")
@@ -74,54 +74,60 @@ time = np.arange(0, intervals)
 
 
 time_stamp = {
-        "read_start": [],
-        "read_end": [],
-        "write_start": [],
-        "write_end": []
-    }
-with open(timestamps_file) as time_stamp_file:
+    "read_start": [],
+    "read_end": [],
+    "write_start": [],
+    "write_end": []
+}
 
+read_timestamp = {
+    "read_start": [],
+    "read_end": []
+}
+
+with open(timestamps_file) as time_stamp_file:
     lines = time_stamp_file.read().splitlines()
 
     for line in lines:
         part = line.split(":")
         time_stamp[part[0]].append(float(part[1]) / 1000)
 
-    read1start = time_stamp["read_start"][0]
-    read2start = time_stamp["read_start"][1]
-    read3start = time_stamp["read_start"][2]
 
-    read1end = time_stamp["read_end"][0]
-    read2end = time_stamp["read_end"][1]
-    read3end = time_stamp["read_end"][2]
+def timestamp_plot(fig, time_stamps):
+    read_start = time_stamps["read_start"]
+    read_end = time_stamps["read_end"]
+    write_start = time_stamps["write_start"]
+    write_end = time_stamps["write_end"]
+    start = read_start[0]
 
-    write1start = time_stamp["write_start"][0]
-    write2start = time_stamp["write_start"][1]
-    write3start = time_stamp["write_start"][2]
+    for idx in range(len(read_start)):
+        if idx == 0:
+            fig.axvspan(xmin=read_end[idx] - start, xmax=write_start[idx] - start, color="k",
+                        alpha=0.2, label="computation")
+            fig.axvspan(xmin=0, xmax=read_end[idx] - start, color="g", alpha=0.2, label="read")
+            fig.axvspan(xmin=write_start[idx] - start, xmax=write_end[idx] - start, color="b", alpha=0.2, label="write")
+        else:
+            fig.axvspan(xmin=read_end[idx] - start, xmax=write_start[idx] - start, color="k", alpha=0.2)
+            fig.axvspan(xmin=read_start[idx] - start, xmax=read_end[idx] - start, color="g", alpha=0.2)
+            fig.axvspan(xmin=write_start[idx] - start, xmax=write_end[idx] - start, color="b", alpha=0.2)
 
-    write1end = time_stamp["write_end"][0]
-    write2end = time_stamp["write_end"][1]
-    write3end = time_stamp["write_end"][2]
 
+def timestamp_readonly_plot(fig, time_stamps):
+    read_start = time_stamps["read_start"]
+    read_end = time_stamps["read_end"]
+    start = read_start[0]
 
-def timestamp_plot(fig):
-    fig.axvspan(xmin=read1end - read1start, xmax=write1start - read1start, color="k", alpha=0.2, label="computation")
-    fig.axvspan(xmin=0, xmax=read1end - read1start, color="g", alpha=0.2, label="read")
-    fig.axvspan(xmin=write1start - read1start, xmax=write1end - read1start, color="b", alpha=0.2, label="write")
-
-    fig.axvspan(xmin=read2start - read1start, xmax=read2end - read1start, color="g", alpha=0.2)
-    fig.axvspan(xmin=read2end - read1start, xmax=write2start - read1start, color="k", alpha=0.2)
-    fig.axvspan(xmin=write2start - read1start, xmax=write2end - read1start, color="b", alpha=0.2)
-
-    fig.axvspan(xmin=read3start - read1start, xmax=read3end - read1start, color="g", alpha=0.2)
-    fig.axvspan(xmin=read3end - read1start, xmax=write3start - read1start, color="k", alpha=0.2)
-    fig.axvspan(xmin=write3start - read1start, xmax=write3end - read1start, color="b", alpha=0.2)
+    for idx in range(len(read_start)):
+        if idx == 0:
+            fig.axvspan(xmin=read_start[idx] - start, xmax=read_end[idx] - start, color="g",
+                    alpha=0.2)
+        # fig.axvspan(xmin=0, xmax=read_end[idx] - start, color="g", alpha=0.2, label="read")
 
 
 def mem_plot(fig):
     fig.minorticks_on()
     fig.set_title("memory profiling (input size = %s)" % input_size)
-    timestamp_plot(fig)
+    timestamp_plot(fig, time_stamp)
 
     # app_cache = list(np.array(app_mem) + np.array(cache_used))
 
@@ -166,7 +172,7 @@ def collectl_plot(fig):
     fig.minorticks_on()
     fig.set_title("disk throughput (MB)")
 
-    timestamp_plot(fig)
+    timestamp_readonly_plot(fig, time_stamp)
 
     fig.plot(time, read, color='g', linewidth=1.5, label="read")
     fig.plot(time, write, color='r', linewidth=1.5, label="write")
@@ -175,10 +181,10 @@ def collectl_plot(fig):
 
 figure = plt.figure()
 plt.tight_layout()
-ax1 = figure.add_subplot(2, 1, 1)
-ax2 = figure.add_subplot(2, 1, 2, sharex=ax1)
+ax1 = figure.add_subplot(1, 1, 1)
+# ax2 = figure.add_subplot(2, 1, 2, sharex=ax1)
 
-mem_plot(ax1)
-collectl_plot(ax2)
+# mem_plot(ax1)
+collectl_plot(ax1)
 
 plt.show()

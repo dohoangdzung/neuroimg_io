@@ -88,9 +88,9 @@ int main(int argc, char ** argv)
 
     gettimeofday(&start, NULL);
 //     Write buffer
-//    FILE * out_file = fopen(out_file_name, "wb");
-//    fwrite(buff, fsize, 1, out_file);
-//    fclose(out_file);
+    FILE * out_file = fopen(out_file_name, "wb");
+    fwrite(buff, fsize, 1, out_file);
+    fclose(out_file);
     gettimeofday(&end, NULL);
 
     start_in_mill = (start.tv_sec) * 1000 + (start.tv_usec) / 1000 ;
