@@ -11,7 +11,11 @@ collectl -sCDnfM -omT --dskopts z --cpuopts z -i 1 --sep , -P -f export/collectl
 
 ./read "input/6010_synthesizedFLASH25inMNI.nii.gz" "export/timestamps_readonly.log"
 ./read "input/4702_Synthesized_FLASH25_in_MNI_v2_100um.nii.gz"  "export/timestamps_readonly.log"
-./read "input/1150_Synthesized_FLASH25_in_MNI_v2_200um.nii.gz" "export/timestamps_readonly.log"
 ./read "input/8271_Acquired_FA25_100um.nii.gz"  "export/timestamps_readonly.log"
 ./read "input/1999_Synthesized_FLASH25_100um_TIFF_Axial_Images.zip" "export/timestamps_readonly.log"
+./read "input/1150_Synthesized_FLASH25_in_MNI_v2_200um.nii.gz" "export/timestamps_readonly.log"
+./read "input/1150_Synthesized_FLASH25_in_MNI_v2_200um.nii" "export/timestamps_readonly.log"
 ./read "input/1024_Acquired_FA25_downsampled_200um.nii.gz" "export/timestamps_readonly.log"
+./read "input/1024_Acquired_FA25_downsampled_200um.nii" "export/timestamps_readonly.log"
+./read "input/1029_Synthesized_FLASH25_downsampled_200um.nii.gz" "export/timestamps_readonly.log"
+./read "input/1029_Synthesized_FLASH25_downsampled_200um.nii" "export/timestamps_readonly.log"

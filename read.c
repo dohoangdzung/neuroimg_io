@@ -46,7 +46,8 @@ int main(int argc, char ** argv)
 
     fprintf(log_file, "read_start: %lf\n", start_in_mill);
     fprintf(log_file, "read_end: %lf\n", end_in_mill);
-    printf("Read in: %lf", (end_in_mill - start_in_mill) / 1000);
+    printf("Read in: %lf\n", (end_in_mill - start_in_mill) / 1000);
+    printf("Avg bw: %4.2lf MBps\n", fsize / ((end_in_mill - start_in_mill) * 1024));
 
     fclose(log_file);
 

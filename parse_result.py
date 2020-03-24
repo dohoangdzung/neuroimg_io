@@ -2,10 +2,10 @@ import matplotlib.pyplot as plt
 import numpy as np
 import json
 
-timestamps_file = "export/timestamps_readonly.log"
-mem_prof_file = "export/pipeline_mem_readonly.log"
-collectl_file = "export/collectl-simgrid-vm-20200317.dsk.csv"
-input_size = "4702 MB"
+timestamps_file = "export/timestamps_pipeline.log"
+mem_prof_file = "export/pipeline_mem_c.log"
+collectl_file = "export/collectl-simgrid-vm-20200324.dsk.csv"
+input_size = "6000 MB"
 
 f = open(mem_prof_file)
 lines = f.readlines()
@@ -18,7 +18,7 @@ cache_used = []
 avai_mem = []
 dirty_ratio = []
 dirty_bg_ratio = []
-dirty_pages = []
+dirty_data = []
 
 swap_size = []
 swap_free = []
@@ -40,11 +40,15 @@ for i in range(len(lines)):
 
         cache_in_mb = int(values[9]) * 4096 / 2 ** 20
         cache_used.append(cache_in_mb)
-        dirty_pages.append(int(values[12]) * 4096 / 2 ** 20)
 
-        avai_mem.append(free_mem_mb + cache_in_mb)
-        dirty_ratio.append(0.2 * (free_mem_mb + cache_in_mb))
-        dirty_bg_ratio.append(0.1 * (free_mem_mb + cache_in_mb))
+        dirty_amt_mb = int(values[12]) * 4096 / 2 ** 20
+        dirty_data.append(dirty_amt_mb)
+
+        available_mb = free_mem_mb + cache_in_mb - dirty_amt_mb
+        avai_mem.append(available_mb)
+
+        dirty_ratio.append(0.2 * available_mb)
+        dirty_bg_ratio.append(0.1 * available_mb)
 
     else:
         if line.startswith("SWP"):
@@ -52,8 +56,8 @@ for i in range(len(lines)):
             swap_size.append(int(values[7]) * 4096 / 2 ** 20)
             swap_free.append(int(values[8]) * 4096 / 2 ** 20)
 
-intervals = len(dirty_pages)
-dirty_pages = np.array(dirty_pages)
+intervals = len(dirty_data)
+dirty_data = np.array(dirty_data)
 time = np.arange(0, intervals)
 
 # ==========================MEM PROFILING===================================
@@ -118,16 +122,21 @@ def timestamp_readonly_plot(fig, time_stamps):
     start = read_start[0]
 
     for idx in range(len(read_start)):
-        if idx == 0:
-            fig.axvspan(xmin=read_start[idx] - start, xmax=read_end[idx] - start, color="g",
+        fig.axvspan(xmin=read_start[idx] - start, xmax=read_end[idx] - start, color="g",
                     alpha=0.2)
-        # fig.axvspan(xmin=0, xmax=read_end[idx] - start, color="g", alpha=0.2, label="read")
+        if idx < len(read_start) - 1:
+            fig.axvspan(xmin=read_end[idx] - start, xmax=read_start[idx + 1] - start, color="k", alpha=0.2)
 
 
-def mem_plot(fig):
+def mem_plot(fig, readonly=False):
     fig.minorticks_on()
     fig.set_title("memory profiling (input size = %s)" % input_size)
-    timestamp_plot(fig, time_stamp)
+
+    if readonly:
+        timestamp_readonly_plot(fig, time_stamp)
+    else:
+        timestamp_plot(fig, time_stamp)
+
 
     # app_cache = list(np.array(app_mem) + np.array(cache_used))
 
@@ -137,7 +146,7 @@ def mem_plot(fig):
     # ax1.plot(time, app_mem, color='c', linewidth=1.5, label="app memory")
     fig.plot(time, cache_used, color='m', linewidth=1.5, label="cache used")
     # ax1.plot(time, app_cache, color='c', linewidth=1.5, label="cache + app")
-    fig.plot(time, dirty_pages, color='r', linewidth=1.5, label="dirty data")
+    fig.plot(time, dirty_data, color='r', linewidth=1.5, label="dirty data")
     fig.plot(time, avai_mem, color='b', linewidth=1, linestyle="-.", label="available mem")
     fig.plot(time, dirty_ratio, color='k', linewidth=1, linestyle="-.", label="dirty_ratio")
     fig.plot(time, dirty_bg_ratio, color='r', linewidth=1, linestyle="-.", label="dirty_bg_ratio")
@@ -162,7 +171,7 @@ def mem_plot(fig):
     # plt.legend()
 
 
-def collectl_plot(fig):
+def collectl_plot(fig, readonly=False):
     dsk_data = np.loadtxt(collectl_file, skiprows=1, delimiter=',')
     read = dsk_data[:, 2] / 1024
     write = dsk_data[:, 6] / 1024
@@ -172,7 +181,10 @@ def collectl_plot(fig):
     fig.minorticks_on()
     fig.set_title("disk throughput (MB)")
 
-    timestamp_readonly_plot(fig, time_stamp)
+    if readonly:
+        timestamp_readonly_plot(fig, time_stamp)
+    else:
+        timestamp_plot(fig, time_stamp)
 
     fig.plot(time, read, color='g', linewidth=1.5, label="read")
     fig.plot(time, write, color='r', linewidth=1.5, label="write")
@@ -181,10 +193,10 @@ def collectl_plot(fig):
 
 figure = plt.figure()
 plt.tight_layout()
-ax1 = figure.add_subplot(1, 1, 1)
-# ax2 = figure.add_subplot(2, 1, 2, sharex=ax1)
+ax1 = figure.add_subplot(2, 1, 1)
+ax2 = figure.add_subplot(2, 1, 2, sharex=ax1)
 
-# mem_plot(ax1)
-collectl_plot(ax1)
+mem_plot(ax1)
+collectl_plot(ax2)
 
 plt.show()
