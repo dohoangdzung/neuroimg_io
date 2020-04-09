@@ -50,8 +50,7 @@ int main(int argc, char ** argv)
     double start_in_mill = (start.tv_sec) * 1000 + (start.tv_usec) / 1000 ;
     double end_in_mill = (end.tv_sec) * 1000 + (end.tv_usec) / 1000 ;
 
-    fprintf(log_file, "read_start: %lf\n", start_in_mill);
-    fprintf(log_file, "read_end: %lf\n", end_in_mill);
+    fprintf(log_file, "read, %lf, %lf\n", start_in_mill/1000, end_in_mill/1000);
     printf("Read in: %lf\n", (end_in_mill - start_in_mill) / 1000);
     printf("Avg read bw: %4.2lf MBps\n", fsize / ((end_in_mill - start_in_mill) * 1024));
 
@@ -90,8 +89,7 @@ int main(int argc, char ** argv)
     start_in_mill = (start.tv_sec) * 1000 + (start.tv_usec) / 1000 ;
     end_in_mill = (end.tv_sec) * 1000 + (end.tv_usec) / 1000 ;
 
-    fprintf(log_file, "write_start: %lf\n", start_in_mill);
-    fprintf(log_file, "write_end: %lf\n", end_in_mill);
+    fprintf(log_file, "write, %lf, %lf\n", start_in_mill/1000, end_in_mill/1000);
     printf("Write in: %lf\n", (end_in_mill - start_in_mill) / 1000);
     printf("Avg write bw: %4.2lf MBps\n", fsize / ((end_in_mill - start_in_mill) * 1024));
 
