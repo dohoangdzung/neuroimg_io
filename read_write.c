@@ -23,18 +23,15 @@ int main(int argc, char ** argv)
     struct timeval  start;
     struct timeval  end;
 
-    printf("\n----------------BEFORE READ-%s-----------------\n", in_file_name);
-    printf("\nFile %s \n", in_file_name);
-    char fincore[200];
-    strcpy(fincore, "fincore -justsummarize ");
-    strcat(fincore, in_file_name);
-    system(fincore);
-    printf("\nFile file2.dat\n");
-    system("fincore -justsummarize output/file2.dat");
-    printf("\nFile file3.dat\n");
-    system("fincore -justsummarize output/file3.dat");
-    printf("\nFile file4.dat\n");
-    system("fincore -justsummarize output/file4.dat");
+    printf("\n---------------- READ-%s-----------------\n", in_file_name);
+//    printf("\nFile file1.dat\n");
+//    system("fincore -justsummarize output/file1.dat");
+//    printf("\nFile file2.dat\n");
+//    system("fincore -justsummarize output/file2.dat");
+//    printf("\nFile file3.dat\n");
+//    system("fincore -justsummarize output/file3.dat");
+//    printf("\nFile file4.dat\n");
+//    system("fincore -justsummarize output/file4.dat");
 
     gettimeofday(&start, NULL);
     // Get file size
@@ -58,32 +55,30 @@ int main(int argc, char ** argv)
     printf("Read in: %lf\n", (end_in_mill - start_in_mill) / 1000);
     printf("Avg read bw: %4.2lf MBps\n", fsize / ((end_in_mill - start_in_mill) * 1024));
 
-    printf("\n----------------AFTER READ-%s-----------------", in_file_name);
-    printf("\nFile %s \n", in_file_name);
-    strcpy(fincore, "fincore -justsummarize ");
-    strcat(fincore, in_file_name);
-    system(fincore);
-    printf("\nFile file2.dat\n");
-    system("fincore -justsummarize output/file2.dat");
-    printf("\nFile file3.dat\n");
-    system("fincore -justsummarize output/file3.dat");
-    printf("\nFile file4.dat\n");
-    system("fincore -justsummarize output/file4.dat");
+//    printf("\n----------------AFTER READ-%s-----------------", in_file_name);
+//    printf("\nFile file1.dat\n");
+//    system("fincore -justsummarize output/file1.dat");
+//    printf("\nFile file2.dat\n");
+//    system("fincore -justsummarize output/file2.dat");
+//    printf("\nFile file3.dat\n");
+//    system("fincore -justsummarize output/file3.dat");
+//    printf("\nFile file4.dat\n");
+//    system("fincore -justsummarize output/file4.dat");
 
     // Increment buffer
     long int i;
     for(i = 0 ; i < fsize ; i++)
         buff[i]++;
 
-    printf("\n----------------BEFORE WRITE-%s-----------------", out_file_name);
-    printf("\nFile file1.dat\n");
-    system("fincore -justsummarize output/file2.dat");
-    printf("\nFile file2.dat\n");
-    system("fincore -justsummarize output/file2.dat");
-    printf("\nFile file3.dat\n");
-    system("fincore -justsummarize output/file3.dat");
-    printf("\nFile file4.dat\n");
-    system("fincore -justsummarize output/file4.dat");
+    printf("\n---------------- WRITE-%s-----------------\n", out_file_name);
+//    printf("\nFile file1.dat\n");
+//    system("fincore -justsummarize output/file1.dat");
+//    printf("\nFile file2.dat\n");
+//    system("fincore -justsummarize output/file2.dat");
+//    printf("\nFile file3.dat\n");
+//    system("fincore -justsummarize output/file3.dat");
+//    printf("\nFile file4.dat\n");
+//    system("fincore -justsummarize output/file4.dat");
 
     gettimeofday(&start, NULL);
 //     Write buffer
@@ -100,15 +95,15 @@ int main(int argc, char ** argv)
     printf("Write in: %lf\n", (end_in_mill - start_in_mill) / 1000);
     printf("Avg write bw: %4.2lf MBps\n", fsize / ((end_in_mill - start_in_mill) * 1024));
 
-    printf("\n----------------AFTER WRITE-%s-----------------", out_file_name);
-    printf("\nFile file1.dat\n");
-    system("fincore -justsummarize output/file2.dat");
-    printf("\nFile file2.dat\n");
-    system("fincore -justsummarize output/file2.dat");
-    printf("\nFile file3.dat\n");
-    system("fincore -justsummarize output/file3.dat");
-    printf("\nFile file4.dat\n");
-    system("fincore -justsummarize output/file4.dat");
+//    printf("\n----------------AFTER WRITE-%s-----------------", out_file_name);
+//    printf("\nFile file1.dat\n");
+//    system("fincore -justsummarize output/file1.dat");
+//    printf("\nFile file2.dat\n");
+//    system("fincore -justsummarize output/file2.dat");
+//    printf("\nFile file3.dat\n");
+//    system("fincore -justsummarize output/file3.dat");
+//    printf("\nFile file4.dat\n");
+//    system("fincore -justsummarize output/file4.dat");
 
     printf("===================================================================\n");
 
