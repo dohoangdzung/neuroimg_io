@@ -105,9 +105,9 @@ def timestamp_plot(fig, tasks_time):
                         label="read" if i == 0 else "")
         else:
             fig.axvspan(xmin=tasks_time[i - 1][2] - start, xmax=tasks_time[i][1] - start, color="k", alpha=0.2,
-                        label="computation" if i == 0 else "")
+                        label="computation" if i == 1 else "")
             fig.axvspan(xmin=tasks_time[i][1] - start, xmax=tasks_time[i][2] - start, color="b", alpha=0.2,
-                        label="write" if i == 0 else "")
+                        label="write" if i == 1 else "")
 
 
 def timestamp_readonly_plot(fig, time_stamps):
@@ -130,10 +130,11 @@ def mem_plot(fig, atoplog, time_stamp, input_size, readonly=False):
     fig.minorticks_on()
     fig.set_title("memory profiling (input size = %s MB)" % input_size)
 
-    if readonly:
-        timestamp_readonly_plot(fig, time_stamp)
-    else:
-        timestamp_plot(fig, time_stamp)
+    if time_stamp is not None:
+        if readonly:
+            timestamp_readonly_plot(fig, time_stamp)
+        else:
+            timestamp_plot(fig, time_stamp)
 
     # app_cache = list(np.array(app_mem) + np.array(cache_used))
 
@@ -176,10 +177,11 @@ def collectl_plot(fig, collectl_log_file, time_stamp, readonly=False):
     fig.minorticks_on()
     fig.set_title("disk throughput (MB)")
 
-    if readonly:
-        timestamp_readonly_plot(fig, time_stamp)
-    else:
-        timestamp_plot(fig, time_stamp)
+    if time_stamp is not None:
+        if readonly:
+            timestamp_readonly_plot(fig, time_stamp)
+        else:
+            timestamp_plot(fig, time_stamp)
 
     fig.plot(time, read, color='g', linewidth=1.5, label="read")
     fig.plot(time, write, color='r', linewidth=1.5, label="write")
@@ -187,8 +189,9 @@ def collectl_plot(fig, collectl_log_file, time_stamp, readonly=False):
 
 
 def plot(atop_log_file, timestamps_file, collectl_log_file, input_size):
-    atop_log = log_parse.read_atop_log(atop_log_file)
-    timestamps = log_parse.read_timelog(timestamps_file, skip_header=False)
+    atop_log = log_parse.read_atop_log(atop_log_file, dirty_ratio=0.4)
+    # timestamps = log_parse.read_timelog(timestamps_file, skip_header=False)
+    timestamps = None
 
     figure = plt.figure()
     plt.tight_layout()
@@ -204,7 +207,7 @@ def plot(atop_log_file, timestamps_file, collectl_log_file, input_size):
     plt.show()
 
 
-plot(atop_log_file="export/cluster/atop_mem.log",
-     timestamps_file="export/cluster/timestamps_pipeline.csv",
-     collectl_log_file="export/cluster/collectl-comp01-20200422.dsk.csv",
-     input_size=20000)
+plot(atop_log_file="export/cluster/exp2/atop_mem.log",
+     timestamps_file="export/cluster/20gb/timestamps_pipeline.csv",
+     collectl_log_file="export/cluster/exp2/collectl-comp01-20200525.dsk",
+     input_size=100000)

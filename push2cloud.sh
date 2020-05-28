@@ -6,7 +6,7 @@ scp -i ~/.ssh/simgridvm-key -p ./read.c ./read_write.c centos@206.167.182.108:/m
 
 echo "Copying running script to cloud..."
 #scp -i ~/.ssh/simgridvm-key -p run.sh centos@206.167.182.108:/mnt/io_benchmark/run.sh
-scp -i ~/.ssh/simgridvm-key -p run_pipeline_c.sh run_atop.sh run_readonly.sh centos@206.167.182.108:/mnt/io_benchmark/
+scp -i ~/.ssh/simgridvm-key -p run_pipeline_c.sh pipeline.sh run_atop.sh run_readonly.sh centos@206.167.182.108:/mnt/io_benchmark/
 
 #to cluster
-scp read_write.c run_pipeline_c.sh dzung@cluster:~/io_benchmark/
+scp read_write.c run_pipeline_c.sh pipeline.sh dzung@cluster:~/io_benchmark/

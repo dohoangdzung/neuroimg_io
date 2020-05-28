@@ -15,15 +15,15 @@ def read_timelog(filename, skip_header=True):
     return result
 
 
-def read_atop_log(filename):
+def read_atop_log(filename, dirty_ratio=0.2, dirty_bg_ratio=0.1):
     sys_mem = []
     free_mem = []
     used_mem = []
     cache_used = []
     dirty_data = []
     avai_mem = []
-    dirty_ratio = []
-    dirty_bg_ratio = []
+    dirty_threshold = []
+    dirty_bg_threshold = []
 
     f = open(filename)
     lines = f.readlines()
@@ -49,8 +49,8 @@ def read_atop_log(filename):
             available_mb = free_mem_mb + cache_in_mb - dirty_amt_mb
             avai_mem.append(available_mb)
 
-            dirty_ratio.append(0.2 * available_mb)
-            dirty_bg_ratio.append(0.1 * available_mb)
+            dirty_threshold.append(dirty_ratio * available_mb)
+            dirty_bg_threshold.append(dirty_bg_ratio * available_mb)
 
     return {
         "total": sys_mem,
@@ -59,8 +59,8 @@ def read_atop_log(filename):
         "dirty_data": dirty_data,
         "avai_mem": avai_mem,
         "free_mem": free_mem,
-        "dirty_ratio": dirty_ratio,
-        "dirty_bg_ratio": dirty_bg_ratio
+        "dirty_ratio": dirty_threshold,
+        "dirty_bg_ratio": dirty_bg_threshold
     }
 
 

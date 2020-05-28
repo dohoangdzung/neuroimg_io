@@ -65,9 +65,15 @@ int main(int argc, char ** argv)
 //    system("fincore -justsummarize output/file4.dat");
 
     // Increment buffer
+    gettimeofday(&start, NULL);
     long int i;
     for(i = 0 ; i < fsize ; i++)
         buff[i]++;
+    gettimeofday(&end, NULL);
+
+    start_in_mill = (start.tv_sec) * 1000 + (start.tv_usec) / 1000 ;
+    end_in_mill = (end.tv_sec) * 1000 + (end.tv_usec) / 1000 ;
+    fprintf(log_file, "compute, %lf, %lf\n", start_in_mill/1000, end_in_mill/1000);
 
     printf("\n---------------- WRITE-%s-----------------\n", out_file_name);
 //    printf("\nFile file1.dat\n");
