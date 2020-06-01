@@ -17,7 +17,18 @@ There are results of 4 experiments stored in the [export/cluster](export/cluster
 - Lustre: ...
 
 ## Run the experiments
-The scripts to run the experiments are `run_exp1.sh`, `run_exp2.sh`, `run_exp3.sh` ,`run_exp4.sh`. 
+- To the experiments, get `read_write.c` source file compiled: `gcc -Wall read_write.c -o read_write`
+- The scripts to run the experiments are `run_exp1.sh`, `run_exp2.sh`, `run_exp3.sh` ,`run_exp4.sh`.
+
+### Single threaded experiment (Exp1)
+1. Update line 7, 8, 9, 10 in script `run_exp1.sh`.
+2. Output files:
+- `logfile` in the script.
+- `atop.log`
+- `collectl-*.dsk.gz`
+
+### Multi-threaded experiment (Exp2)
+1. 
 
 ## Visualize the results.
 Run *plot_result.py* to show the result.
