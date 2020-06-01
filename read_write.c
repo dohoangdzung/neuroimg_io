@@ -17,21 +17,10 @@ int main(int argc, char ** argv)
     char * out_file_name = argv[2];
     char * log_file_name = argv[3];
 
-
     FILE * log_file = fopen(log_file_name, "a");
 
     struct timeval  start;
     struct timeval  end;
-
-    printf("\n---------------- READ-%s-----------------\n", in_file_name);
-//    printf("\nFile file1.dat\n");
-//    system("fincore -justsummarize output/file1.dat");
-//    printf("\nFile file2.dat\n");
-//    system("fincore -justsummarize output/file2.dat");
-//    printf("\nFile file3.dat\n");
-//    system("fincore -justsummarize output/file3.dat");
-//    printf("\nFile file4.dat\n");
-//    system("fincore -justsummarize output/file4.dat");
 
     gettimeofday(&start, NULL);
     // Get file size
@@ -47,22 +36,11 @@ int main(int argc, char ** argv)
 
     gettimeofday(&end, NULL);
 
-    double start_in_mill = (start.tv_sec) * 1000 + (start.tv_usec) / 1000 ;
-    double end_in_mill = (end.tv_sec) * 1000 + (end.tv_usec) / 1000 ;
+    double read_start_in_mil = (start.tv_sec) * 1000 + (start.tv_usec) / 1000 ;
+    double read_end_in_mil = (end.tv_sec) * 1000 + (end.tv_usec) / 1000 ;
 
-    fprintf(log_file, "read, %lf, %lf\n", start_in_mill/1000, end_in_mill/1000);
-    printf("Read in: %lf\n", (end_in_mill - start_in_mill) / 1000);
-    printf("Avg read bw: %4.2lf MBps\n", fsize / ((end_in_mill - start_in_mill) * 1024));
-
-//    printf("\n----------------AFTER READ-%s-----------------", in_file_name);
-//    printf("\nFile file1.dat\n");
-//    system("fincore -justsummarize output/file1.dat");
-//    printf("\nFile file2.dat\n");
-//    system("fincore -justsummarize output/file2.dat");
-//    printf("\nFile file3.dat\n");
-//    system("fincore -justsummarize output/file3.dat");
-//    printf("\nFile file4.dat\n");
-//    system("fincore -justsummarize output/file4.dat");
+    printf("Read %s in: %lf\n", in_file_name, (read_end_in_mil - read_start_in_mil) / 1000);
+    printf("Avg read bw: %4.2lf MBps\n\n", fsize / ((read_end_in_mil - read_start_in_mil) * 1000));
 
     // Increment buffer
     gettimeofday(&start, NULL);
@@ -71,19 +49,8 @@ int main(int argc, char ** argv)
         buff[i]++;
     gettimeofday(&end, NULL);
 
-    start_in_mill = (start.tv_sec) * 1000 + (start.tv_usec) / 1000 ;
-    end_in_mill = (end.tv_sec) * 1000 + (end.tv_usec) / 1000 ;
-    fprintf(log_file, "compute, %lf, %lf\n", start_in_mill/1000, end_in_mill/1000);
-
-    printf("\n---------------- WRITE-%s-----------------\n", out_file_name);
-//    printf("\nFile file1.dat\n");
-//    system("fincore -justsummarize output/file1.dat");
-//    printf("\nFile file2.dat\n");
-//    system("fincore -justsummarize output/file2.dat");
-//    printf("\nFile file3.dat\n");
-//    system("fincore -justsummarize output/file3.dat");
-//    printf("\nFile file4.dat\n");
-//    system("fincore -justsummarize output/file4.dat");
+    double cpu_start_in_mil = (start.tv_sec) * 1000 + (start.tv_usec) / 1000 ;
+    double cpu_end_in_mil = (end.tv_sec) * 1000 + (end.tv_usec) / 1000 ;
 
     gettimeofday(&start, NULL);
 //     Write buffer
@@ -92,24 +59,15 @@ int main(int argc, char ** argv)
     fclose(out_file);
     gettimeofday(&end, NULL);
 
-    start_in_mill = (start.tv_sec) * 1000 + (start.tv_usec) / 1000 ;
-    end_in_mill = (end.tv_sec) * 1000 + (end.tv_usec) / 1000 ;
+    double write_start_in_mil = (start.tv_sec) * 1000 + (start.tv_usec) / 1000 ;
+    double write_end_in_mil = (end.tv_sec) * 1000 + (end.tv_usec) / 1000 ;
 
-    fprintf(log_file, "write, %lf, %lf\n", start_in_mill/1000, end_in_mill/1000);
-    printf("Write in: %lf\n", (end_in_mill - start_in_mill) / 1000);
-    printf("Avg write bw: %4.2lf MBps\n", fsize / ((end_in_mill - start_in_mill) * 1024));
-
-//    printf("\n----------------AFTER WRITE-%s-----------------", out_file_name);
-//    printf("\nFile file1.dat\n");
-//    system("fincore -justsummarize output/file1.dat");
-//    printf("\nFile file2.dat\n");
-//    system("fincore -justsummarize output/file2.dat");
-//    printf("\nFile file3.dat\n");
-//    system("fincore -justsummarize output/file3.dat");
-//    printf("\nFile file4.dat\n");
-//    system("fincore -justsummarize output/file4.dat");
-
-    printf("===================================================================\n");
+    fprintf(log_file, "%lf, %lf, %lf, %lf, %lf, %lf\n",
+        read_start_in_mil/1000, read_end_in_mil/1000,
+        cpu_start_in_mil/1000, cpu_end_in_mil/1000,
+        write_start_in_mil/1000, write_end_in_mil/1000);
+    printf("Write %s in: %lf\n", out_file_name, (write_end_in_mil - write_start_in_mil) / 1000);
+    printf("Avg write bw: %4.2lf MBps\n\n", fsize / ((write_end_in_mil - write_start_in_mil) * 1000));
 
     fclose(log_file);
 

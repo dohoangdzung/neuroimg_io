@@ -189,9 +189,9 @@ def collectl_plot(fig, collectl_log_file, time_stamp, readonly=False):
 
 
 def plot(atop_log_file, timestamps_file, collectl_log_file, input_size):
-    atop_log = log_parse.read_atop_log(atop_log_file, dirty_ratio=0.4)
-    # timestamps = log_parse.read_timelog(timestamps_file, skip_header=False)
-    timestamps = None
+    atop_log = log_parse.read_atop_log(atop_log_file, dirty_ratio=0.4, dirty_bg_ratio=0.1)
+    timestamps = log_parse.read_timelog(timestamps_file, skip_header=False)
+    # timestamps = None
 
     figure = plt.figure()
     plt.tight_layout()
@@ -199,7 +199,7 @@ def plot(atop_log_file, timestamps_file, collectl_log_file, input_size):
     ax2 = figure.add_subplot(2, 1, 2, sharex=ax1)
 
     ax1.set_ylim(top=280000, bottom=-10000)
-    ax1.set_xlim(left=0, right=200)
+    ax1.set_xlim(left=0, right=700)
     mem_plot(ax1, atop_log, timestamps, input_size)
 
     collectl_plot(ax2, collectl_log_file, timestamps)
@@ -208,6 +208,6 @@ def plot(atop_log_file, timestamps_file, collectl_log_file, input_size):
 
 
 plot(atop_log_file="export/cluster/exp2/atop_mem.log",
-     timestamps_file="export/cluster/20gb/timestamps_pipeline.csv",
-     collectl_log_file="export/cluster/exp2/collectl-comp01-20200525.dsk",
-     input_size=100000)
+     timestamps_file="export/cluster/exp2/timestamps_pipeline_4.csv",
+     collectl_log_file="export/cluster/exp2/collectl-comp01-20200529.dsk",
+     input_size=20000)
