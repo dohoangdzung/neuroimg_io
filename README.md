@@ -26,9 +26,10 @@ There are results of 4 experiments stored in the [export/cluster](export/cluster
 - `logfile` in the script.
 - `atop.log`
 - `collectl-*.dsk.gz`
+3. Visualize the result: Run *plot_result.py* to show the result.
 
 ### Multi-threaded experiment (Exp2)
-1. 
-
-## Visualize the results.
-Run *plot_result.py* to show the result.
+1. Generate input files: modify line 5, 6, 7 in `gen_data_ex2.sh` and run the script.
+2. Run the pipelines: Modify line 9, 10, 11 in `run_exp2.sh` and run the script.
+3. Output files are stored in `log_dir` defined in line 11.
+4. Visualize the result: 

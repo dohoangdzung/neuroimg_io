@@ -1,7 +1,12 @@
 #! /bin/bash
 
 rm -f /disk0/dzung/data/file*
-for i in {1..32}
+
+max_pipe=32
+size=3000 # File size, in MB
+data_dir="/disk0/dzung/data/"
+
+for i in $(seq 1 ${max_pipe})
 do
-    dd if=/dev/urandom of=/disk0/dzung/data/file${i} bs=1MB count=3000
+    dd if=/dev/urandom of=${data_dir}file${i} bs=1MB count=${size}
 done
